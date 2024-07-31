@@ -199,7 +199,76 @@ table(data$data_type)
 saveRDS(data, file=file.path(outdir, "GFDX_2008_2024_industrially_processed_percents.Rds"))
 
 
+# Format data
+################################################################################
+
+# Read data
+data_orig <- readxl::read_excel(file.path(indir, "Micronutrient Compound_20240722.xlsx"), col_types = "text")
+
+# Format data
+data <- data_orig %>% 
+  # Remove garbage extra columns
+  select(-c("...13", "...14")) %>% 
+  # Rename
+  janitor::clean_names("snake") %>% 
+  rename(income=income_status,
+         nutrient_level=nutrient_level_from_fortification_standard,
+         indicator_value=indicator_value22) %>% 
+  # Convert to numeric
+  mutate_at(vars(c(year)), as.numeric) %>% 
+  mutate(nutrient_level=gsub(",", "", nutrient_level),
+         nutrient_level_num=as.numeric(nutrient_level)) %>% 
+  mutate(indicator_value=gsub(",", "", indicator_value),
+         indicator_value_num=as.numeric(indicator_value)) %>%  
+  # Format nutrient
+  mutate(nutrient=gsub(" level", "", nutrient),
+         nutrient=recode(nutrient, 
+                         "B12"="Vitamin B12",
+                         "B6"="Vitamin B6")) %>% 
+  # Add ISO3
+  mutate(country=recode(country, 
+                        "Micronesia"="Federated States of Micronesia"),
+         iso3=countrycode::countrycode(country, "country.name", "iso3c"),
+         iso3=case_when(country=="Kosovo" ~ "XKX", 
+                        T ~ iso3)) %>% 
+  # Arrange
+  select(country, iso3, region, indicator, food_vehicle, 
+         compound, nutrient, unit, year, 
+         nutrient_level, nutrient_level_num, 
+         indicator_value, indicator_value_num, source, everything())
+
+# Inspect
+str(data)
+freeR::complete(data)
+
+# Numeric
+freeR::uniq(data$nutrient_level)
+check1 <- data %>% 
+  count(nutrient_level, nutrient_level_num)
+check2 <- data %>% 
+  count(indicator_value, indicator_value_num)
+
+# More
+range(data$year, na.rm=T)
+table(data$income)
+table(data$region)
+table(data$unit)
+table(data$nutrient)
+table(data$compound)
+table(data$year)
+
+# Country key
+cntry_key <- data %>% 
+  count(country, iso3, region, income)
+freeR::which_duplicated(cntry_key$country)
+freeR::which_duplicated(cntry_key$iso3)
 
 
+# Nutrient key (not sure what this tells me yet)
+# nurt_key <- data %>% 
+#   count(nutrient, compound)
+# freeR::which_duplicated(nurt_key$compound)
 
+# Export data
+saveRDS(data, file=file.path(outdir, "GFDX_1940_2024_compound_levels.Rds"))
 
