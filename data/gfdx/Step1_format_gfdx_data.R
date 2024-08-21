@@ -13,6 +13,9 @@ library(countrycode)
 indir <- "data/gfdx/raw"
 outdir <- "data/gfdx/processed"
 
+# Read nutrient key
+nutr_key <- readxl::read_excel("data/nutrient_key.xlsx")
+
 
 # Format data
 ################################################################################
@@ -83,8 +86,11 @@ data <- data_orig %>%
   # Add ISO3
   mutate(iso3=countrycode::countrycode(country, "country.name", "iso3c"),
          iso3=case_when(country=="Kosovo" ~ "XKX", T ~ iso3)) %>% 
+  # Add nutrient type
+  left_join(nutr_key %>% select(nutrient_orig, nutrient_type), by=c("nutrient"="nutrient_orig")) %>% 
   # Arrange
   select(country, iso3, everything()) %>% 
+  relocate(nutrient_type, .before=nutrient) %>% 
   arrange(country, food_vehicle, nutrient, year)
 
 # Inspect
