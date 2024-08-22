@@ -99,6 +99,24 @@ data <- supply %>%
 freeR::complete(data)
 
 
+# Themes
+################################################################################
+
+# Base theme
+base_theme <-  theme(axis.text=element_text(size=7),
+                     axis.title=element_text(size=8),
+                     legend.text=element_text(size=7),
+                     legend.title=element_text(size=8),
+                     strip.text=element_text(size=8),
+                     plot.tag=element_text(size=8),
+                     # Gridlines
+                     panel.grid.major = element_blank(), 
+                     panel.grid.minor = element_blank(),
+                     panel.background = element_blank(), 
+                     axis.line = element_line(colour = "black"),
+                     # Legend
+                     legend.key = element_rect(fill = NA, color=NA),
+                     legend.background = element_rect(fill=alpha('blue', 0)))
 
 # Plot data
 ################################################################################
@@ -110,19 +128,25 @@ ystats <- data %>%
   # Gather
   gather(key="data_type", value="year", 3:ncol(.)) %>% 
   mutate(data_type=recode_factor(data_type,
-                                 "year_supply"="Supply",
+                                 "year_supply"="Daily intake",
                                  "year_processed"="% processed",
                                  "year_pfort"="% fortified"))
 
 # Plot data
-ggplot(ystats, aes(x=year, fill=food_vehicle)) +
+g <- ggplot(ystats, aes(x=year, fill=food_vehicle)) +
   facet_wrap(~data_type, scale="free_y") +
-  geom_density(alpha=0.3) +
+  geom_density(alpha=0.3, lwd=0.2) +
   # Labels
   labs(x='Year', y="Density") +
   scale_fill_discrete(name="Food vehicle") +
   # Theme
-  theme_bw()
+  theme_bw() + base_theme +
+  theme(legend.key.size = unit(0.5, "cm"))
+g
+
+# Export data
+ggsave(g, filename=file.path(plotdir, "FigSX_gfdx_data_years.png"), 
+       width=6.5, height=2.25, units="in", dpi=600)
 
 
 # Plot data
@@ -287,3 +311,101 @@ ggsave(g2, filename=file.path(plotdir, "FigSX_gfdx_nutr_stds_minerals.png"),
        width=6.5, height=4.5, units="in", dpi=600)
 
 
+
+# Plot distributions of intakes
+################################################################################
+
+# Daily intake
+g0 <- ggplot(data, aes(y=food_vehicle, x=daily_intake_g, fill=food_vehicle)) +
+  geom_boxplot(alpha=0.4, size=0.2) +
+  # Labels
+  labs(x="Daily intake (g)", y="", tag="A") +
+  # Theme
+  theme_bw() + base_theme +
+  theme(legend.position = "none")
+g0
+
+# Processed
+g1 <- ggplot(data, aes(y=food_vehicle, x=processed_prop, fill=food_vehicle)) +
+  geom_boxplot(alpha=0.4, size=0.2) +
+  # Labels
+  labs(x="% industrially processed", y="", tag="B") +
+  # Theme
+  theme_bw() + base_theme +
+  theme(legend.position = "none")
+g1
+
+# Fortified
+g2 <- ggplot(data, aes(y=food_vehicle, x=fortified_prop, fill=food_vehicle)) +
+  geom_boxplot(alpha=0.4, size=0.2) +
+  # Reference line
+  geom_vline(xintercept = 90, linetype="dashed") +
+  # Labels
+  labs(x="% fortification compliance", y="", tag="C") +
+  # Theme
+  theme_bw() + base_theme +
+  theme(legend.position = "none")
+g2
+
+
+# Merge 
+g <- gridExtra::grid.arrange(g0, g1, g2, nrow=1)
+
+# Export
+ggsave(g, filename=file.path(plotdir, "FigSX_gfdx_intake_prop_dists.png"), 
+       width=6.5, height=2.25, units="in", dpi=600)
+
+
+
+# Plot data availabiliy
+################################################################################
+
+# 
+stats <- data %>% 
+  # Fortification programs
+  filter(fort_status!="None") %>% 
+  # Simplify 
+  select(iso3, food_vehicle, fort_status, processed_prop, fortified_prop) %>% 
+  # Gather
+  gather(key="data_type", value="value", 4:ncol(.)) %>% 
+  mutate(data_type=recode_factor(data_type,
+                                 "processed_prop"="% processed",
+                                 "fortified_prop"="% fortified")) %>% 
+  # Format
+  mutate(value=!is.na(value))
+
+
+
+g1 <- ggplot(stats %>% filter(fort_status=="Mandatory" & food_vehicle=="Salt"), aes(y=iso3, x=data_type, fill=value)) +
+  facet_grid(food_vehicle~., space="free", scales="free") +
+  geom_tile() +
+  # Labels
+  labs(x="Data type", y="Country", title="Mandatory programs") +
+  # Legend
+  scale_fill_manual(values=c("white", "darkred")) +
+  # Theme
+  theme_bw() + base_theme +
+  theme(legend.position = "none",
+        axis.title=element_text(size=8))
+g1
+
+
+g2 <- ggplot(stats %>% filter(fort_status=="Mandatory" & food_vehicle!="Salt"), aes(y=iso3, x=data_type, fill=value)) +
+  facet_grid(food_vehicle~., space="free", scales="free") +
+  geom_tile() +
+  # Labels
+  labs(x="Data type", y="Country", title=" ") +
+  # Legend
+  scale_fill_manual(values=c("white", "darkred")) +
+  # Theme
+  theme_bw() + base_theme +
+  theme(legend.position = "none",
+        axis.title=element_text(size=8))
+g2
+
+# Merge
+g <- gridExtra::grid.arrange(g1, g2, nrow=1)
+g
+
+ggsave(g, filename=file.path(plotdir, "FigSX_gfdx_prop_availability.png"), 
+       width=4.5, height=12, units="in", dpi=600)
