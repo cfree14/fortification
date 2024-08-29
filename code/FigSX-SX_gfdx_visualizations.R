@@ -232,8 +232,16 @@ nutrients_sf <- purrr::map_df(1:nrow(nutr_key), function(x){
            nutrient_type=nutr_key$nutrient_type[x])
 })
 
+# Prep vitamins
+nutrients_sf_vit <- nutrients_sf %>% 
+  filter(nutrient_type=="Vitamin") %>% 
+  mutate(food_vehicle=factor(food_vehicle, levels=c("Rice", "Wheat flour", "Maize flour", "Oil")),
+         nutrient=factor(nutrient, levels=c("Vitamin D", "Vitamin A",
+                                            "Vitamin B6", "Vitamin B12",
+                                            "Folate", "Niacin", "Riboflavin", "Thiamin", "Vitamin E")))
+
 # Plot
-g1 <- ggplot(nutrients_sf %>% filter(nutrient_type=="Vitamin"), aes(fill=standard_mg_kg)) +
+g1 <- ggplot(nutrients_sf_vit, aes(fill=standard_mg_kg)) +
   facet_grid(nutrient ~ food_vehicle) +
   geom_sf() +
   # Legend
@@ -251,8 +259,15 @@ g1
 ggsave(g1, filename=file.path(plotdir, "FigSX_gfdx_nutr_stds_vitamins.png"), 
        width=6.5, height=6, units="in", dpi=600)
 
+# Prep minerals
+nutrients_sf_min <- nutrients_sf %>% 
+  filter(nutrient_type=="Mineral") %>% 
+  mutate(food_vehicle=factor(food_vehicle, levels=c("Rice", "Wheat flour", "Maize flour", "Salt")),
+         nutrient=factor(nutrient, levels=c("Iron", "Calcium", "Zinc",
+                                            "Selenium", "Iodine", "Fluoride")))
+
 # Plot
-g2 <- ggplot(nutrients_sf %>% filter(nutrient_type=="Mineral"), aes(fill=standard_mg_kg)) +
+g2 <- ggplot(nutrients_sf_min, aes(fill=standard_mg_kg)) +
   facet_grid(nutrient ~ food_vehicle) +
   geom_sf() +
   # Legend
@@ -352,6 +367,20 @@ data1 <- data %>%
          fort_status=recode(fort_status,
                             "Mandatory"="Mand.",
                             "Voluntary"="Vol."))
+
+
+data1 %>% 
+  group_by(food_vehicle) %>% 
+  summarize(nmissing=sum(is.na(processed_prop)),
+            pmissing=nmissing/n()*100) %>% 
+  arrange(desc(pmissing))
+
+data1 %>% 
+  group_by(food_vehicle) %>% 
+  summarize(nmissing=sum(is.na(fortified_prop)),
+            pmissing=nmissing/n()*100) %>% 
+  arrange(desc(pmissing))
+
 
 # Split
 continents1 <- c("Africa", "Asia")
