@@ -49,7 +49,6 @@ table(nutrients$food_vehicle)
 table(nutrients$nutrient)
 table(nutrients$fort_status)
 
-
 # Format fortification compliance
 fortified <- fortified_orig %>% 
   # Simplify
@@ -66,11 +65,11 @@ fortified <- fortified_orig %>%
 # Format supply data
 supply <- supply_orig  %>% 
   # Simplify
-  select(country, iso3, food_vehicle, legislation_status, year, daily_intake_g) %>% 
+  select(region, income, country, iso3, food_vehicle, legislation_status, year, daily_intake_g) %>% 
   filter(!is.na(daily_intake_g)) %>% 
   # Reduce to most recent year
-  arrange(country, iso3, food_vehicle, desc(year)) %>% 
-  group_by(country, iso3, food_vehicle) %>% 
+  arrange(region, income, country, iso3, food_vehicle, desc(year)) %>% 
+  group_by(region, income, country, iso3, food_vehicle) %>% 
   slice(1) %>% 
   ungroup() %>% 
   # Rename year
