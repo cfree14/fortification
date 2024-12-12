@@ -173,6 +173,7 @@ g2 <- ggplot(data_sf, aes(fill=processed_prop)) +
   geom_sf(color="grey30", lwd=0.1) +
   # Legend
   scale_fill_gradientn(name="Industrially processed (%)", na.value = "white",
+                       labels=scales::percent_format(),
                        colors=RColorBrewer::brewer.pal(9, "Spectral") %>% rev()) +
   guides(fill = guide_colorbar(ticks.colour = "black", frame.colour = "black", frame.linewidth = 0.2)) +
   # Crop
@@ -189,6 +190,7 @@ g3 <- ggplot(data_sf, aes(fill=fortified_prop)) +
   geom_sf(color="grey30", lwd=0.1) +
   # Legend
   scale_fill_gradientn(name="Fortification compiance (%)", na.value = "white",
+                       labels=scales::percent_format(),
                        colors=RColorBrewer::brewer.pal(9, "Spectral") %>% rev()) +
   guides(fill = guide_colorbar(ticks.colour = "black", frame.colour = "black", frame.linewidth = 0.2)) +
   # Crop
@@ -305,6 +307,7 @@ g1 <- ggplot(data, aes(y=food_vehicle, x=processed_prop, fill=food_vehicle)) +
   geom_boxplot(size=0.2) +
   # Labels
   labs(x="% industrially processed", y="", tag="B") +
+  scale_x_continuous(labels=scales::percent_format()) +
   # Theme
   theme_bw() + base_theme +
   theme(legend.position = "none")
@@ -314,9 +317,10 @@ g1
 g2 <- ggplot(data, aes(y=food_vehicle, x=fortified_prop, fill=food_vehicle)) +
   geom_boxplot(size=0.2) +
   # Reference line
-  geom_vline(xintercept = 90, linetype="dashed") +
+  geom_vline(xintercept = 0.9, linetype="dashed") +
   # Labels
   labs(x="% fortification compliance", y="", tag="C") +
+  scale_x_continuous(labels=scales::percent_format()) +
   # Theme
   theme_bw() + base_theme +
   theme(legend.position = "none")
@@ -393,9 +397,10 @@ g1 <- ggplot(data1 %>% filter(continent %in% continents1), aes(x=food_vehicle, y
   labs(x="Food vehicle", y="Country") +
   # Legend
   scale_fill_gradientn(name="% processed", 
+                       labels=scales::percent_format(),
                        colors=RColorBrewer::brewer.pal(9, "Spectral"), 
                        na.value="grey70",
-                       lim=c(0,100)) +
+                       lim=c(0,1)) +
   guides(fill = guide_colorbar(ticks.colour = "black", frame.colour = "black", frame.linewidth = 0.2)) +
   # Theme
   theme_bw() + base_theme +
@@ -411,9 +416,10 @@ g2 <- ggplot(data1 %>% filter(!continent %in% continents1), aes(x=food_vehicle, 
   labs(x="Food vehicle", y="Country") +
   # Legend
   scale_fill_gradientn(name="% processed", 
+                       labels=scales::percent_format(),
                        colors=RColorBrewer::brewer.pal(9, "Spectral"), 
                        na.value="grey70",
-                       lim=c(0,100)) +
+                       lim=c(0,1)) +
   guides(fill = guide_colorbar(ticks.colour = "black", frame.colour = "black", frame.linewidth = 0.2)) +
   # Theme
   theme_bw() + base_theme +
@@ -442,9 +448,10 @@ g1 <- ggplot(data1 %>% filter(continent %in% continents1), aes(x=food_vehicle, y
   labs(x="Food vehicle", y="Country") +
   # Legend
   scale_fill_gradientn(name="% fortified", 
+                       labels=scales::percent_format(),
                        colors=RColorBrewer::brewer.pal(9, "Spectral"), 
                        na.value="grey70",
-                       lim=c(0,100)) +
+                       lim=c(0,1)) +
   guides(fill = guide_colorbar(ticks.colour = "black", frame.colour = "black", frame.linewidth = 0.2)) +
   # Theme
   theme_bw() + base_theme +
@@ -460,9 +467,10 @@ g2 <- ggplot(data1 %>% filter(!continent %in% continents1), aes(x=food_vehicle, 
   labs(x="Food vehicle", y="Country") +
   # Legend
   scale_fill_gradientn(name="% fortified", 
+                       labels=scales::percent_format(),
                        colors=RColorBrewer::brewer.pal(9, "Spectral"), 
                        na.value="grey70",
-                       lim=c(0,100)) +
+                       lim=c(0,1)) +
   guides(fill = guide_colorbar(ticks.colour = "black", frame.colour = "black", frame.linewidth = 0.2)) +
   # Theme
   theme_bw() + base_theme +

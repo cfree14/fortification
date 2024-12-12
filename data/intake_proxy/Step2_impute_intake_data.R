@@ -40,7 +40,7 @@ intake_with <- intake %>%
          source_iso3=iso3,
          source_country=country) %>% 
   # Simplify
-  select(region, iso3, country, sex, age, value, source, source_iso3, source_country) 
+  select(region, iso3, country, sex, age, kcalories, source, source_iso3, source_country) 
 
 # Build data for countries w/out intakes 
 x <- 1

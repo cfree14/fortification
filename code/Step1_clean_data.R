@@ -108,7 +108,10 @@ data <- supply %>%
   # Add percent processed
   left_join(processed) %>% 
   # Add percent fortified
-  left_join(fortified)
+  left_join(fortified) %>% 
+  # Convert proportions
+  mutate(processed_prop=processed_prop/100,
+         fortified_prop=fortified_prop/100)
   
 # Inspect
 freeR::complete(data)
