@@ -64,8 +64,8 @@ data <- data_orig %>%
                                       T ~ processed_prop)) %>% 
   # Impute salt processing prop
   # Low income = 95, High income = 100
-  mutate(processed_prop_use=case_when(processed_prop_type=="Imputed" & food_vehicle=="Salt" & income %in% c("LIC", "LMC", "INX") ~ 95,
-                                      processed_prop_type=="Imputed" & food_vehicle=="Salt" & income %in% c("HIC", "UMC") ~ 100,
+  mutate(processed_prop_use=case_when(processed_prop_type=="Imputed" & food_vehicle=="Salt" & income %in% c("LIC", "LMC", "INX") ~ 0.95,
+                                      processed_prop_type=="Imputed" & food_vehicle=="Salt" & income %in% c("HIC", "UMC") ~ 1,
                                       T ~ processed_prop_use)) %>% 
   ## PERCENT FORTIFIED
   # Calculate % fortified by region/legal status
@@ -120,9 +120,7 @@ data_simple <- data %>%
             year_pfort, fortified_prop, fortified_prop_region, fortified_prop_continent, fortified_prop_income)) %>% 
   # Rename
   rename(processed_prop=processed_prop_use,
-         fortified_prop=fortified_prop_use) %>% 
-  # FIlter
-  filter(fort_status!="None")
+         fortified_prop=fortified_prop_use) 
 
 # Inspect
 str(data_simple)

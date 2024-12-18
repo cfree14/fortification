@@ -35,23 +35,10 @@ food <- food_orig %>%
   # Simplify
   select(iso3, food_vehicle, daily_intake_g, fort_status, processed_prop, fortified_prop)
 
-# # Merge data
-# data <- nutrients_orig %>% 
-#   # Simplify
-#   select(-year_nutrients) %>% 
-#   # Add supply info
-#   left_join(supply)
-# 
-# # Eliminate data still missing assuming that these are fake programs
-# data1 <- na.omit(data)
-# 
-
 # Prepare nutrient standard
 nutrients <- nutrients_orig %>%
   # Simplify
   select(iso3, food_vehicle, nutrient, standard_mg_kg)
-
-
 
 
 # Build master data
@@ -105,7 +92,7 @@ data1 <- data %>%
   # Eliminate NAs -- lazy, no imputing, fix?
   na.omit()
 
-
+# Inspect
 freeR::complete(data1)
 
 # Export data
