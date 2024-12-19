@@ -19,6 +19,9 @@ food_orig <- readRDS(file.path(outdir, "gfdx_data_imputed_simple.Rds"))
 nutrients_orig <- readRDS(file.path(outdir, "gfdx_nutrient_data.Rds"))
 kcal_orig <- readRDS("data/intake_proxy/processed/intake_data_imputed.Rds")
 
+# Source function
+source("code/calc_aligned_standard.R")
+
 
 # Prepare data
 ################################################################################
@@ -88,9 +91,15 @@ freeR::complete(data)
 # Add nutrient standards
 data1 <- data %>% 
   # Add nutrient standard
-  full_join(nutrients, by=c("iso3", "food_vehicle"), relationship = "many-to-many") %>%
-  # Eliminate NAs -- lazy, no imputing, fix?
-  na.omit()
+  inner_join(nutrients, by=c("iso3", "food_vehicle"), relationship = "many-to-many") %>% 
+  # Calculate aligned standard
+  rowwise() %>% 
+  mutate(aligned_standard_mg_kg=calc_aligned_standard(fv=food_vehicle,
+                                                      nutr=nutrient,
+                                                      intake_g_d=daily_intake_g_avg)) %>% 
+  ungroup() %>% 
+  # Use current standard when there is no aligned standard
+  mutate(aligned_standard_mg_kg=ifelse(is.na(aligned_standard_mg_kg), standard_mg_kg, aligned_standard_mg_kg))
 
 # Inspect
 freeR::complete(data1)

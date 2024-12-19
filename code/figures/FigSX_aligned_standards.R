@@ -130,7 +130,7 @@ g1 <- ggplot(standards3 %>% filter(nutrient_type=="Vitamin"),
              mapping=aes(x=daily_intake_g, y=standard_mg_kg, color=type),
              pch=21, alpha=0.5) +
   # Labels
-  labs(x="Per capita intake (g/day)", y="Aligned standard (mg/kg)") +
+  labs(x="Per capita intake (g/day)", y="Nutrient standard (mg/kg)") +
   # Legend
   scale_color_manual(name="", values=c("blue", "red", "grey30")) +
   # Theme
@@ -151,7 +151,7 @@ g2 <- ggplot(standards3 %>% filter(nutrient_type=="Mineral"),
              mapping=aes(x=daily_intake_g, y=standard_mg_kg, color=type),
              pch=21, alpha=0.5) +
   # Labels
-  labs(x="Per capita intake (g/day)", y="Aligned standard (mg/kg)") +
+  labs(x="Per capita intake (g/day)", y="Nutrient standard (mg/kg)") +
   # Legend
   scale_color_manual(name="", values=c("blue", "red", "grey30")) +
   # Theme

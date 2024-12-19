@@ -11,52 +11,52 @@ calc_aligned_standard <- function(fv, nutr, intake_g_d){
     if(nutr=="Vitamin B12"){
       std <- cut(x=intake_g_d,
                  breaks=c(0, 75, 149, 300, Inf),
-                 labels=c(0.04, 0.02, 0.01, 0), right=F) %>% as.character() %>% as.numeric()
+                 labels=c(0.04, 0.02, 0.01, 0.01), right=F) %>% as.character() %>% as.numeric()
     }
     if(nutr=="Vitamin A"){
       std <- cut(x=intake_g_d,
                  breaks=c(0, 75, 149, 300, Inf),
-                 labels=c(6, 3, 1.5, 0), right=F) %>% as.character() %>% as.numeric()
+                 labels=c(6, 3, 1.5, 1.5), right=F) %>% as.character() %>% as.numeric()
     }
     if(nutr=="Folate"){
       std <- cut(x=intake_g_d,
                  breaks=c(0, 75, 149, 300, Inf),
-                 labels=c(5, 2.6, 1.3, 0), right=F) %>% as.character() %>% as.numeric()
+                 labels=c(5, 2.6, 1.3, 1.3), right=F) %>% as.character() %>% as.numeric()
     }
     if(nutr=="Riboflavin"){
       std <- cut(x=intake_g_d,
                  breaks=c(0, 75, 149, 300, Inf),
-                 labels=c(2, 2, 2, 0), right=F) %>% as.character() %>% as.numeric()
+                 labels=c(2, 2, 2, 2), right=F) %>% as.character() %>% as.numeric()
     }
     if(nutr=="Vitamin B6"){
       std <- cut(x=intake_g_d,
                  breaks=c(0, 75, 149, 300, Inf),
-                 labels=c(6.2, 6.2, 6.21, 0), right=F) %>% as.character() %>% as.numeric()
+                 labels=c(6.2, 6.2, 6.21, 6.21), right=F) %>% as.character() %>% as.numeric()
     }
     if(nutr=="Thiamin"){
       std <- cut(x=intake_g_d,
                  breaks=c(0, 75, 149, 300, Inf),
-                 labels=c(3.9, 3.9, 3.9, 0), right=F) %>% as.character() %>% as.numeric()
+                 labels=c(3.9, 3.9, 3.9, 3.9), right=F) %>% as.character() %>% as.numeric()
     }
     if(nutr=="Iron"){
       std <- cut(x=intake_g_d,
                  breaks=c(0, 75, 149, 300, Inf),
-                 labels=c(40, 40, 20, 0), right=F) %>% as.character() %>% as.numeric()
+                 labels=c(40, 40, 20, 20), right=F) %>% as.character() %>% as.numeric()
     }
     if(nutr=="Niacin"){
       std <- cut(x=intake_g_d,
                  breaks=c(0, 75, 149, 300, Inf),
-                 labels=c(36, 36, 36, 0), right=F) %>% as.character() %>% as.numeric()
+                 labels=c(36, 36, 36, 36), right=F) %>% as.character() %>% as.numeric()
     }
     if(nutr=="Zinc"){
       std <- cut(x=intake_g_d,
                  breaks=c(0, 75, 149, 300, Inf),
-                 labels=c(95, 55, 40, 0), right=F) %>% as.character() %>% as.numeric()
+                 labels=c(95, 55, 40, 40), right=F) %>% as.character() %>% as.numeric()
     }
     if(nutr=="Vitamin B5"){
       std <- cut(x=intake_g_d,
                  breaks=c(0, 75, 149, 300, Inf),
-                 labels=c(4.2, 4.2, 4.2, 0), right=F) %>% as.character() %>% as.numeric()
+                 labels=c(4.2, 4.2, 4.2, 4.2), right=F) %>% as.character() %>% as.numeric()
     }
     
   }
@@ -83,8 +83,8 @@ calc_aligned_standard <- function(fv, nutr, intake_g_d){
   if(fv=="Salt"){
     if(nutr=="Iodine"){
       std <- cut(x=intake_g_d,
-               breaks=c(0, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, Inf),
-               labels=c(65, 65, 49, 39, 33, 28, 24, 22, 20, 18, 16, 15, 14), right=F) %>% as.character() %>% as.numeric()
+               breaks=c(0, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, Inf),
+               labels=c(65, 49, 39, 33, 28, 24, 22, 20, 18, 16, 15, 14), right=F) %>% as.character() %>% as.numeric()
     }
   }
   

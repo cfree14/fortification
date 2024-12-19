@@ -15,6 +15,7 @@ gisdir <- "data/world/processed"
 plotdir <- "figures"
 outdir <- "output"
 datadir <- "data/gfdx/processed"
+tabledir <- "tables"
 
 # Read data
 data <- readRDS(file.path(outdir, "fortification_scenario_output.Rds"))
@@ -30,19 +31,25 @@ stats <- data %>%
   summarize(npeople=sum(npeople, na.rm = T),
             ndeficient0=sum(ndeficient0, na.rm = T), 
             ndeficient1=sum(ndeficient1, na.rm = T),
-            ndeficient2=sum(ndeficient2, na.rm = T)) %>% 
+            ndeficient2=sum(ndeficient2, na.rm = T),
+            ndeficient3=sum(ndeficient3, na.rm = T),
+            ndeficient4=sum(ndeficient4, na.rm = T)) %>% 
   ungroup() %>% 
   # Percent deficient by country-nutrient in each scenario
   mutate(pdeficient0=ndeficient0/npeople,
          pdeficient1=ndeficient1/npeople,
-         pdeficient2=ndeficient2/npeople) %>% 
+         pdeficient2=ndeficient2/npeople,
+         pdeficient3=ndeficient3/npeople,
+         pdeficient4=ndeficient4/npeople) %>% 
   # Spread
-  select(nutrient_type, nutrient, iso3, country, npeople, pdeficient0, pdeficient1, pdeficient2) %>% 
+  select(nutrient_type, nutrient, iso3, country, npeople, pdeficient0, pdeficient1, pdeficient2, pdeficient3, pdeficient4) %>% 
   gather(6:ncol(.), key="scenario", value="pdeficient") %>% 
   mutate(scenario=recode_factor(scenario,
                                 "pdeficient0"="No fortification", 
                                 "pdeficient1"="Current fortification",
-                                "pdeficient2"="Improved compliance")) %>% 
+                                "pdeficient2"="Improved compliance",
+                                "pdeficient3"="Aligned standards",
+                                "pdeficient4"="Aligned and improved")) %>% 
   # Add number deficient
   mutate(ndeficient=npeople*pdeficient)
 
@@ -130,21 +137,25 @@ my_theme <-  theme(axis.text=element_text(size=8),
 
 # Order
 nutr_order1 <- gstats %>% 
-  filter(scenario=="Current fortification") %>% 
+  filter(scenario=="No fortification") %>% 
   arrange(ndeficient)
 
 # Total
 g1 <- ggplot(gstats, aes(y=factor(nutrient, levels=nutr_order1$nutrient), 
                          x=ndeficient/1e9, 
-                         color=scenario)) +
-  geom_point() +
+                         fill=scenario)) +
+  geom_point(pch=21, size=2) +
   # Labels
   labs(x="Billions of people\nwith inadequate intakes", y="", tag="A") +
   # Legend
-  scale_color_discrete(name="") +
+  scale_fill_manual(name="", values=c("red", "black", "white", "lightblue", "deepskyblue3")) +
+  guides(fill = guide_legend(nrow = 2, byrow=T)) +
   # Theme
   theme_bw() + my_theme +
-  theme(legend.position = "top")
+  theme(legend.position = "top",
+        legend.justification = "center",
+        legend.key.size = unit(0.3, "cm"),
+        legend.title=element_blank())
 g1
 
 # Order
@@ -156,36 +167,45 @@ nutr_order2 <- gstats %>%
 g2 <- ggplot(gstats %>% filter(scenario!="No fortification") , 
              aes(y=factor(nutrient, levels=nutr_order2$nutrient),
                  x=prevented/1e9,
-                 color=scenario)) +
-  geom_point() +
+                 fill=scenario)) +
+  geom_point(pch=21, size=2) +
   # Labels
   labs(x="Billions of people with\nprevented inadequate intakes", y="", tag="B") +
-  scale_color_discrete(name="", drop=F) +
+  # scale_fill_manual(name="", values=c("red", "black", RColorBrewer::brewer.pal(3, "Blues")), drop=F) +
+  scale_fill_manual(name="", values=c("red", "black", "white", "lightblue", "deepskyblue3"), drop=F) +
   # Theme
   theme_bw() + my_theme +
   theme(legend.position = "none")
+g2
 
 # Order
 nutr_order3 <- gstats %>% 
-  filter(scenario=="Improved compliance") %>% 
+  filter(scenario=="Aligned and improved") %>% 
   arrange(benefits)
 
 # Prevented
-g3 <- ggplot(gstats %>% filter(scenario=="Improved compliance") , 
+g3 <- ggplot(gstats %>% filter(!scenario %in% c("No fortification", "Current fortification")), 
              aes(y=factor(nutrient, levels=nutr_order3$nutrient),
                  x=benefits/1e6,
-                 color=scenario)) +
-  geom_point() +
+                 fill=scenario)) +
+  # Reference line
+  geom_vline(xintercept=0, linetype="dashed", color="grey40") +
+  annotate(geom="text", y="Vitamin A", x=0, hjust=-0.45, vjust=0.5, label="Prevented", size=2) +
+  annotate(geom="text", y="Vitamin A", x=0, hjust=1.2, vjust=0.5, label="Added", size=2) +
+  # Data
+  geom_point(pch=21, size=2) +
   # Labels
-  labs(x="Millions of people with inadequate intakes\nprevented through improved compliance", y="", tag="C") +
-  scale_color_discrete(name="", drop=F) +
+  labs(x="Millions of prevented (or added) intake inadeqeuacies\nrelative to current fortification", y="", tag="C") +
+  # scale_fill_manual(name="", values=c("red", "black", RColorBrewer::brewer.pal(3, "Blues")), drop=F) +
+  scale_fill_manual(name="", values=c("red", "black", "white", "lightblue", "deepskyblue3"), drop=F) +
   # Theme
   theme_bw() + my_theme +
   theme(legend.position = "none")
 g3
 
 # Merge
-g <- gridExtra::grid.arrange(g1, g2, g3, heights=c(0.38, 0.31, 0.31))
+x <- 0.38
+g <- gridExtra::grid.arrange(g1, g2, g3, heights=c(x, (1-x)/2, (1-x)/2))
 
 # Export
 ggsave(g, filename=file.path(plotdir, "Fig3_global_results.png"), 
@@ -205,12 +225,20 @@ gstats1 <- gstats %>%
   mutate(scenario=recode_factor(scenario,
                                 "No fortification"="none",
                                 "Current fortification"="current",
-                                "Improved compliance"="improved")) %>% 
+                                "Improved compliance"="improved",
+                                "Aligned standards"="aligned",
+                                "Aligned and improved"="aligned_plus")) %>% 
   # Spread
   spread(key="scenario", value="ndeficient") %>% 
   # Calculate prevented
   mutate(prevented1=none-current,
-         prevented2=none-improved) %>% 
+         prevented2=none-improved,
+         prevented3=none-aligned,
+         prevented4=none-aligned_plus) %>% 
   # Convert to billions
-  mutate_at(vars(none:prevented2), function(x){x/1e9})
+  mutate_at(vars(none:prevented4), function(x){x/1e9}) %>% 
+  # Arrange
+  arrange(desc(prevented1))
 
+# EXport
+write.csv(gstats1, file.path(tabledir, "TableSX_global_results.csv"), row.names=F)

@@ -85,15 +85,21 @@ table(data0$ar_units)
 
 # Calculate subsidies resulting from scenarios
 subs <- scen_data %>%
-  # Calculate Scenario 1 subsidy
+  # Calculate Scenario 1 (currnet) subsidy
   mutate(subsidy_mg1=daily_intake_kg*processed_prop*fortified_prop*standard_mg_kg) %>% 
-  # Calcultae Scenario 2 subsidy
+  # Calcultae Scenario 2 (improved compliance) subsidy
   mutate(fortified_prop2=pmax(fortified_prop, 0.9)) %>% 
   mutate(subsidy_mg2=daily_intake_kg*processed_prop*fortified_prop2*standard_mg_kg) %>% 
+  # Calcultae Scenario 3 (aligned std, current compliance) subsidy
+  mutate(subsidy_mg3=daily_intake_kg*processed_prop*fortified_prop*aligned_standard_mg_kg) %>% 
+  # Calcultae Scenario 4 (aligned std, improved compliance_ subsidy
+  mutate(subsidy_mg4=daily_intake_kg*processed_prop*fortified_prop2*aligned_standard_mg_kg) %>% 
   # Summarize subsidies across fortified food vehicles
   group_by(iso3, sex, age_group, nutrient) %>% 
   summarize(subsidy_mg1=sum(subsidy_mg1),
-            subsidy_mg2=sum(subsidy_mg2)) %>% 
+            subsidy_mg2=sum(subsidy_mg2),
+            subsidy_mg3=sum(subsidy_mg3),
+            subsidy_mg4=sum(subsidy_mg4)) %>% 
   ungroup() %>% 
   # Build ISO3-nutrient combo
   mutate(iso3nutr=paste(iso3, nutrient, sep="-")) %>% 
@@ -117,19 +123,29 @@ data1 <- data0 %>%
   left_join(subs, by=c("iso3nutr", "nutrient", "iso3", "sex", "age_group")) %>% 
   # Set missing subsidies to zero
   mutate(subsidy_mg1=ifelse(is.na(subsidy_mg1), 0, subsidy_mg1),
-         subsidy_mg2=ifelse(is.na(subsidy_mg2), 0, subsidy_mg2)) %>% 
+         subsidy_mg2=ifelse(is.na(subsidy_mg2), 0, subsidy_mg2),
+         subsidy_mg3=ifelse(is.na(subsidy_mg3), 0, subsidy_mg3),
+         subsidy_mg4=ifelse(is.na(subsidy_mg4), 0, subsidy_mg4)) %>% 
   # Convert subsidies (mg) to target units
   mutate(subsidy1=case_when(units=="mg" ~ subsidy_mg1,
                            units=="ug" ~ subsidy_mg1*1000, 
                            T ~ NA),
          subsidy2=case_when(units=="mg" ~ subsidy_mg2,
                             units=="ug" ~ subsidy_mg2*1000, 
+                            T ~ NA),
+         subsidy3=case_when(units=="mg" ~ subsidy_mg3,
+                            units=="ug" ~ subsidy_mg3*1000, 
+                            T ~ NA),
+         subsidy4=case_when(units=="mg" ~ subsidy_mg4,
+                            units=="ug" ~ subsidy_mg4*1000, 
                             T ~ NA)) %>% 
   # Add subsidy
   mutate(intake1=intake0+subsidy1,
-         intake2=intake0+subsidy2) %>% 
+         intake2=intake0+subsidy2,
+         intake3=intake0+subsidy3,
+         intake4=intake0+subsidy4) %>% 
   # Record whether there is any fortification (update with each scenario added)
-  mutate(fortification_yn=ifelse(subsidy1 > 0 | subsidy2 > 0, "yes", "no"))
+  mutate(fortification_yn=ifelse(subsidy1 > 0 | subsidy2 > 0 | subsidy3 > 0 | subsidy4 > 0, "yes", "no"))
   
 freeR::complete(data1)
 
@@ -149,8 +165,12 @@ data1_fort <- data1 %>%
 data1_unfort_expanded <- data1_unfort %>% 
   mutate(sev1=sev0,
          sev2=sev0,
+         sev3=sev0,
+         sev4=sev0,
          ndeficient1=ndeficient0,
-         ndeficient2=ndeficient0)
+         ndeficient2=ndeficient0,
+         ndeficient3=ndeficient0,
+         ndeficient4=ndeficient0)
   
 
 # Step 5. Split ones needing new calculations and calculate SEVs 
@@ -164,17 +184,28 @@ data1_fort_ln <- data1_fort %>%
   rowwise() %>%
   mutate(ln_meanlog1=nutriR::shift_dist(meanlog=ln_meanlog, sdlog=ln_sdlog, to=intake1, plot=F)$meanlog,
          ln_sdlog1=nutriR::shift_dist(meanlog=ln_meanlog, sdlog=ln_sdlog, to=intake1, plot=F)$sdlog,
+         # Scenario 2
          ln_meanlog2=nutriR::shift_dist(meanlog=ln_meanlog, sdlog=ln_sdlog, to=intake2, plot=F)$meanlog,
-         ln_sdlog2=nutriR::shift_dist(meanlog=ln_meanlog, sdlog=ln_sdlog, to=intake2, plot=F)$sdlog) %>%
+         ln_sdlog2=nutriR::shift_dist(meanlog=ln_meanlog, sdlog=ln_sdlog, to=intake2, plot=F)$sdlog,
+         # Scenario 3
+         ln_meanlog3=nutriR::shift_dist(meanlog=ln_meanlog, sdlog=ln_sdlog, to=intake3, plot=F)$meanlog,
+         ln_sdlog3=nutriR::shift_dist(meanlog=ln_meanlog, sdlog=ln_sdlog, to=intake3, plot=F)$sdlog,
+         # Scenario 4
+         ln_meanlog4=nutriR::shift_dist(meanlog=ln_meanlog, sdlog=ln_sdlog, to=intake4, plot=F)$meanlog,
+         ln_sdlog4=nutriR::shift_dist(meanlog=ln_meanlog, sdlog=ln_sdlog, to=intake4, plot=F)$sdlog) %>%
   ungroup() %>%
   # Calculate intake inadequacy
   rowwise() %>%
   mutate(sev1=nutriR::sev(ear = ar, cv = ar_cv, meanlog=ln_meanlog1, sdlog=ln_sdlog1, plot=F),
-         sev2=nutriR::sev(ear = ar, cv = ar_cv, meanlog=ln_meanlog2, sdlog=ln_sdlog2, plot=F)) %>%
+         sev2=nutriR::sev(ear = ar, cv = ar_cv, meanlog=ln_meanlog2, sdlog=ln_sdlog2, plot=F),
+         sev3=nutriR::sev(ear = ar, cv = ar_cv, meanlog=ln_meanlog3, sdlog=ln_sdlog3, plot=F),
+         sev4=nutriR::sev(ear = ar, cv = ar_cv, meanlog=ln_meanlog4, sdlog=ln_sdlog4, plot=F)) %>%
   ungroup() %>%
-  # Calculate number of people with inadeuate intakes
+  # Calculate number of people with inadequate intakes
   mutate(ndeficient1=npeople*sev1/100,
-         ndeficient2=npeople*sev2/100)
+         ndeficient2=npeople*sev2/100,
+         ndeficient3=npeople*sev3/100,
+         ndeficient4=npeople*sev4/100)
 
 # Break into gamma and lognormal then remerge
 data1_fort_g <- data1_fort %>% 
@@ -184,17 +215,28 @@ data1_fort_g <- data1_fort %>%
   rowwise() %>%
   mutate(g_shape1=nutriR::shift_dist(shape=g_shape, rate=g_rate, to=intake1, plot=F)$shape,
          g_rate1=nutriR::shift_dist(shape=g_shape, rate=g_rate, to=intake1, plot=F)$rate,
+         # Scenario 2
          g_shape2=nutriR::shift_dist(shape=g_shape, rate=g_rate, to=intake2, plot=F)$shape,
-         g_rate2=nutriR::shift_dist(shape=g_shape, rate=g_rate, to=intake2, plot=F)$rate) %>%
+         g_rate2=nutriR::shift_dist(shape=g_shape, rate=g_rate, to=intake2, plot=F)$rate,
+         # Scenario 3
+         g_shape3=nutriR::shift_dist(shape=g_shape, rate=g_rate, to=intake3, plot=F)$shape,
+         g_rate3=nutriR::shift_dist(shape=g_shape, rate=g_rate, to=intake3, plot=F)$rate,
+         # Scenario 4
+         g_shape4=nutriR::shift_dist(shape=g_shape, rate=g_rate, to=intake4, plot=F)$shape,
+         g_rate4=nutriR::shift_dist(shape=g_shape, rate=g_rate, to=intake4, plot=F)$rate) %>%
   ungroup() %>%
   # Calculate intake inadequacy
   rowwise() %>%
   mutate(sev1=nutriR::sev(ear = ar, cv = ar_cv, shape=g_shape1, rate=g_rate1, plot=F),
-         sev2=nutriR::sev(ear = ar, cv = ar_cv, shape=g_shape2, rate=g_rate2, plot=F)) %>%
+         sev2=nutriR::sev(ear = ar, cv = ar_cv, shape=g_shape2, rate=g_rate2, plot=F),
+         sev3=nutriR::sev(ear = ar, cv = ar_cv, shape=g_shape3, rate=g_rate3, plot=F),
+         sev4=nutriR::sev(ear = ar, cv = ar_cv, shape=g_shape4, rate=g_rate4, plot=F)) %>%
   ungroup() %>%
   # Calculate number of people with inadeuate intakes
   mutate(ndeficient1=npeople*sev1/100,
-         ndeficient2=npeople*sev2/100)
+         ndeficient2=npeople*sev2/100,
+         ndeficient3=npeople*sev3/100,
+         ndeficient4=npeople*sev4/100)
 
 
 # Step 6. Merge
