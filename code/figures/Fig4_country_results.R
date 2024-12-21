@@ -102,12 +102,12 @@ g1 <- ggplot(stats1 ,
   # Markers
   geom_vline(xintercept=1:12+0.5, linetype="dashed", color="grey70", size=0.3) +
   # Labels
-  labs(y="Percent of population",
+  labs(y="% of population",
        title="Percent of population with inadequate intakes prevented by fortification",
        x="", tag="A") +
   scale_y_continuous(labels=scales::percent_format()) +
   # Legend
-  scale_fill_manual(name="", values=c("black", "white", "lightblue", "deepskyblue3")) +
+  scale_fill_manual(name="", values=c("grey40", "white", "lightblue", "deepskyblue3")) +
   # Theme
   theme_bw() + my_theme +
   theme(legend.position="top")
@@ -137,10 +137,10 @@ g2 <- ggplot(stats2,
   geom_text(data=labels2, mapping=aes(x=0.5, y=y, label=label), inherit.aes = F, hjust=0, color="grey20", size=2.2) +
   # Labels
   # labs(y="Δ in  of population\nwith inadequate intakes\nrelative to current fortification", x="", tag="B") +
-  labs(y="Percent of population", x="", tag="B", title="Change in percent of population with inadequate intakes relative to current fortification") +
+  labs(y="% of population", x="", tag="B", title="Change in percent of population with inadequate intakes relative to current fortification") +
   scale_y_continuous(labels=scales::percent_format()) +
   # Legend
-  scale_fill_manual(name="", values=c("red", "black", "white", "lightblue", "deepskyblue3"), drop=F) +
+  scale_fill_manual(name="", values=c("red", "grey40", "white", "lightblue", "deepskyblue3"), drop=F) +
   # Theme
   theme_bw() + my_theme +
   theme(legend.position="none")
