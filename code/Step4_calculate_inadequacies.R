@@ -26,6 +26,48 @@ check <- data_orig %>%
   summarize(ndeficient=sum(ndeficient, na.rm=T)/1e9) %>% 
   arrange(desc(ndeficient))
 
+# Get upper limits
+nrvs_orig <- nutriR::nrvs
+
+# Build upper limits key
+################################################################################
+
+# ULs
+uls <- nrvs_orig %>% 
+  # ULs
+  filter(nrv_type=="Upper limit") %>% 
+  # Format nutrient
+  mutate(nutrient=recode(nutrient, 
+                         "Vitamin B-6"="Vitamin B6")) %>% 
+  # Nutrients of interest
+  filter(nutrient %in% scen_data$nutrient) %>% 
+  # Filter to relevant stage
+  filter(!stage %in% c("Lactation", "Pregnancy")) %>% 
+  # Rename
+  rename(ul=nrv,
+         ul_units=units,
+         ul_source=source,) %>% 
+  # Simplify
+  select(-c(nrv_type, nrv_note)) %>% 
+  # Average "4-6 y"   "51-70 y" "7-10 y" 
+  mutate(age_group=recode(age_group,
+                          "4-6 y"="4-10 yr",
+                          "7-10 y"="4-10 yr")) %>% 
+  group_by(nutrient, ul_source, ul_units, sex, stage, age_group) %>% 
+  summarize(ul=mean(ul, na.rm = T)) %>% 
+  ungroup() %>% 
+  # Format units
+  mutate(ul_units=recode(ul_units, 
+                         "mg a-tocopherol"="mg",            
+                         "ug retinol"="ug")) %>% 
+  # SImplify
+  select(-stage)
+
+# Inspect
+freeR::uniq(uls$nutrient)
+freeR::uniq(uls$age_group)
+freeR::uniq(uls$ul_units)
+
 
 # Format data
 ################################################################################
@@ -67,9 +109,21 @@ data0 <- data_orig %>%
                          "µg DFE"="ug",
                          "µg RAE"="ug",
                          "mg a-tocopherol"="mg")) %>% 
+  # Add UL
+  mutate(age_group_ul=case_when(age_group %in% c("0-4") ~ "1-3 y", 
+                                age_group %in% c("5-9") ~ "4-10 yr", # average "4-6 y", "7-10 y",
+                                age_group %in% c("10-14") ~ "11-14 y", 
+                                age_group %in% c("15-19") ~ "15-17 y", 
+                                age_group %in% c("20-24", "25-29", "30-34", "35-39", "40-44", "45-49") ~ "18-50 y", 
+                                age_group %in% c("50-54", "55-59", "60-64", "65-69") ~ "51-70 y", 
+                                age_group %in% c("70-74", "75-79", "80+") ~ ">70 y",
+                                T ~ NA),
+         sex_ul=ifelse(age_group %in% c("0-4", "5-9"), "Children", sex)) %>%
+  left_join( uls, by=c("nutrient", "sex_ul"="sex", "age_group_ul"="age_group")) %>% 
   # Simplify
   select(iso3nutr, nutrient_type, nutrient, units, 
-         ar_units, ar, ar_cv, 
+         ar_source, ar_units, ar, ar_cv, 
+         ul_source, ul_units, ul,
          country, iso3, sex, age_group, npeople, 
          best_dist, g_rate, g_shape, ln_meanlog, ln_sdlog,
          intake0, sev0, ndeficient0) 
@@ -78,6 +132,10 @@ data0 <- data_orig %>%
 freeR::complete(data0)
 table(data0$units)
 table(data0$ar_units)
+
+freeR::uniq(data0$age_group)
+
+sum(data0$ar_units!=data0$ul_units, na.rm=T)
 
 
 # Step 2. Format fortification subsides
