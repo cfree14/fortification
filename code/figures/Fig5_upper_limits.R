@@ -271,11 +271,14 @@ g <- ggplot(cstats, aes(y=p_over_ul, x=p_inadequate, fill=scenario))  +
   # Reference lines
   geom_hline(yintercept=0, linetype="dotted", color="grey70") +
   geom_vline(xintercept=0, linetype="dotted", color="grey70") +
+  # Reference labels
+  annotate(geom="text", x=-1, y=0, label="1", vjust=-0.8, size=2.8, color="grey60") +
+  annotate(geom="text", x=1, y=0, label="2", vjust=1.8, size=2.8, color="grey60") +
   # Data
   geom_point(pch=21) +
   # Labels
   labs(x="Change in percent of population with inadequate intakes\nrelative to no fortifcation",
-       y="Change in percent of population above upper limit\nrelative to no fortification") +
+       y="Change in percent of population with excess intakes\nrelative to no fortification") +
   # Axes
   scale_x_continuous(labels=scales::percent_format()) +
   scale_y_continuous(labels=scales::percent_format()) +
