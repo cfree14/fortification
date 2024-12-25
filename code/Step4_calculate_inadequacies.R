@@ -26,11 +26,12 @@ check <- data_orig %>%
   summarize(ndeficient=sum(ndeficient, na.rm=T)/1e9) %>% 
   arrange(desc(ndeficient))
 
-# Get upper limits
-nrvs_orig <- nutriR::nrvs
 
 # Build upper limits key
 ################################################################################
+
+# Get upper limits
+nrvs_orig <- nutriR::nrvs
 
 # ULs
 uls <- nrvs_orig %>% 
@@ -73,14 +74,15 @@ freeR::uniq(uls$ul_units)
 ################################################################################
 
 # Steps
-# 1. Format baseline data
+# 1. Format intake distributions
 # 2. Format fortification subsidies
-# 3. Add subsidies to baseline
-# 4. Split into ones that need to be updated and ones that dont
-# 5. Split ones that need to be updated into gamma lognormal
+# 3. Add subsidies to intake distributions
+# 4. Split into intakes that are and are not fortified
+# 5. For unfortified, calculate P(>UL) for gamma/log-normal
+# 5. For fortified, shift distributions, calculate SEVs and P(>UL) for g/ln
 # 6. Merge all
 
-# Step 1. Format baseline data
+# Step 1. Format intake distributions
 #############################################
 
 # Nutrients with fort
@@ -98,7 +100,11 @@ data0 <- data_orig %>%
   rename(age_group=age_range,
          sev0=sev,
          ndeficient0=ndeficient,
-         intake0=supply_med) %>% 
+         intake0=supply_med,
+         g_rate0=g_rate_shift,
+         g_shape0=g_shape_shift, 
+         ln_meanlog0=ln_meanlog_shift,
+         ln_sdlog0=ln_sdlog_shift) %>% 
   # Build ISO3-nutrient combo
   mutate(iso3nutr=paste(iso3, nutrient, sep="-")) %>%
   # Clean up units for simplicity
@@ -126,19 +132,20 @@ data0 <- data_orig %>%
          ul_source, ul_units, ul,
          country, iso3, sex, age_group, npeople, 
          best_dist, g_rate, g_shape, ln_meanlog, ln_sdlog,
+         g_rate0, g_shape0, ln_meanlog0, ln_sdlog0,
          intake0, sev0, ndeficient0) 
 
 # Check
 freeR::complete(data0)
 table(data0$units)
 table(data0$ar_units)
-
 freeR::uniq(data0$age_group)
 
+# AR and UL units same? Must be 0
 sum(data0$ar_units!=data0$ul_units, na.rm=T)
 
 
-# Step 2. Format fortification subsides
+# Step 2. Format fortification subsidies
 #############################################
 
 # Calculate subsidies resulting from scenarios
@@ -164,6 +171,7 @@ subs <- scen_data %>%
   # Remove fluoride (not analyzed b/c not in Passerelli)
   filter(nutrient!="Fluoride")
 
+# Inspect
 freeR::complete(subs)
 
 # Confirm that original data exists for all fortification programs
@@ -172,7 +180,7 @@ iso3nutr_subs <- freeR::uniq(subs$iso3nutr)
 iso3nutr_subs[!iso3nutr_subs %in% iso3nutr_og]
 
 
-# Step 3. Add subsidies to baseline
+# Step 3. Add subsidies to intake distributions
 #############################################
 
 # Add subsidies to base data
@@ -204,23 +212,50 @@ data1 <- data0 %>%
          intake4=intake0+subsidy4) %>% 
   # Record whether there is any fortification (update with each scenario added)
   mutate(fortification_yn=ifelse(subsidy1 > 0 | subsidy2 > 0 | subsidy3 > 0 | subsidy4 > 0, "yes", "no"))
-  
+
+# Inspect
 freeR::complete(data1)
 
 
-# Step 4. Split into fortified/unfortified
+# Step 4. Split into fortified/unfortified and process unfortified
 #############################################
-
-# Unfortified
-data1_unfort <- data1 %>% 
-  filter(fortification_yn=="no")
 
 # Fortified
 data1_fort <- data1 %>% 
   filter(fortification_yn=="yes")
 
 # Unfortified
-data1_unfort_expanded <- data1_unfort %>% 
+data1_unfort <- data1 %>% 
+  filter(fortification_yn=="no")
+
+# Unfortified-gamma
+data1_unfort_g <- data1_unfort %>% 
+  # Filter
+  filter(best_dist=="gamma") %>% 
+  # Calculate P(>UL)
+  rowwise() %>%
+  mutate(ul0=nutriR::above_ul(ul = ul, shape = g_shape0, rate=g_rate0)) %>%
+  ungroup() %>% 
+  mutate(ul1=ul0,
+         ul2=ul0,
+         ul3=ul0,
+         ul4=ul0)
+
+# Unfortified-lognormal
+data1_unfort_ln <- data1_unfort %>% 
+  # Filter
+  filter(best_dist=="log-normal") %>% 
+  # Calculate P(>UL)
+  rowwise() %>%
+  mutate(ul0=nutriR::above_ul(ul = ul, meanlog = ln_meanlog0, sdlog=ln_sdlog0)) %>%
+  ungroup() %>% 
+  mutate(ul1=ul0,
+         ul2=ul0,
+         ul3=ul0,
+         ul4=ul0)
+
+# Unfortified-gamma
+data1_unfort_expanded <- bind_rows(data1_unfort_g, data1_unfort_ln) %>% 
   mutate(sev1=sev0,
          sev2=sev0,
          sev3=sev0,
@@ -229,7 +264,7 @@ data1_unfort_expanded <- data1_unfort %>%
          ndeficient2=ndeficient0,
          ndeficient3=ndeficient0,
          ndeficient4=ndeficient0)
-  
+
 
 # Step 5. Split ones needing new calculations and calculate SEVs 
 #############################################
@@ -263,7 +298,15 @@ data1_fort_ln <- data1_fort %>%
   mutate(ndeficient1=npeople*sev1/100,
          ndeficient2=npeople*sev2/100,
          ndeficient3=npeople*sev3/100,
-         ndeficient4=npeople*sev4/100)
+         ndeficient4=npeople*sev4/100) %>% 
+  # Calculate UL
+  rowwise() %>%
+  mutate(ul0=nutriR::above_ul(ul = ul, meanlog = ln_meanlog0, sdlog=ln_sdlog0),
+         ul1=nutriR::above_ul(ul = ul, meanlog = ln_meanlog1, sdlog=ln_sdlog1),
+         ul2=nutriR::above_ul(ul = ul, meanlog = ln_meanlog2, sdlog=ln_sdlog2),
+         ul3=nutriR::above_ul(ul = ul, meanlog = ln_meanlog3, sdlog=ln_sdlog3),
+         ul4=nutriR::above_ul(ul = ul, meanlog = ln_meanlog4, sdlog=ln_sdlog4)) %>%
+  ungroup()
 
 # Break into gamma and lognormal then remerge
 data1_fort_g <- data1_fort %>% 
@@ -294,7 +337,15 @@ data1_fort_g <- data1_fort %>%
   mutate(ndeficient1=npeople*sev1/100,
          ndeficient2=npeople*sev2/100,
          ndeficient3=npeople*sev3/100,
-         ndeficient4=npeople*sev4/100)
+         ndeficient4=npeople*sev4/100) %>% 
+  # Calculate UL
+  rowwise() %>%
+  mutate(ul0=nutriR::above_ul(ul = ul, shape = g_shape0, rate=g_rate0),
+         ul1=nutriR::above_ul(ul = ul, shape = g_shape1, rate=g_rate1),
+         ul2=nutriR::above_ul(ul = ul, shape = g_shape2, rate=g_rate2),
+         ul3=nutriR::above_ul(ul = ul, shape = g_shape3, rate=g_rate3),
+         ul4=nutriR::above_ul(ul = ul, shape = g_shape4, rate=g_rate4)) %>%
+  ungroup()
 
 
 # Step 6. Merge
@@ -304,6 +355,7 @@ data1_fort_g <- data1_fort %>%
 data2 <- bind_rows(data1_unfort_expanded, data1_fort_g, data1_fort_ln) %>% 
   # Arrange
   arrange(nutrient_type, nutrient, iso3, sex, age_group)
+  
 
 # Inspect
 freeR::complete(data2)

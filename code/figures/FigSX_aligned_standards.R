@@ -129,6 +129,8 @@ g1 <- ggplot(standards3 %>% filter(nutrient_type=="Vitamin"),
   geom_point(data=data %>% filter(nutrient_type=="Vitamin"), 
              mapping=aes(x=daily_intake_g, y=standard_mg_kg, color=type),
              pch=21, alpha=0.5) +
+  # Axis
+  lims(y=c(0, NA)) +
   # Labels
   labs(x="Per capita intake (g/day)", y="Nutrient standard (mg/kg)") +
   # Legend
@@ -150,6 +152,8 @@ g2 <- ggplot(standards3 %>% filter(nutrient_type=="Mineral"),
   geom_point(data=data %>% filter(nutrient_type=="Mineral"), 
              mapping=aes(x=daily_intake_g, y=standard_mg_kg, color=type),
              pch=21, alpha=0.5) +
+  # Axis
+  lims(y=c(0, NA)) +
   # Labels
   labs(x="Per capita intake (g/day)", y="Nutrient standard (mg/kg)") +
   # Legend
