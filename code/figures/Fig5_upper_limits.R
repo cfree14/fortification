@@ -160,7 +160,7 @@ g1 <- ggplot(gstats, aes(y=factor(nutrient, gstats_order$nutrient), x=p_over_ul,
   # Markers
   geom_hline(yintercept=1:7+0.5, linetype="dashed", color="grey70", size=0.3) +
   # Labels
-  labs(y="", x="% of global population\nabove tolerable upper level of intake", tag="A") +
+  labs(y="", x="% of global population\nwith excess intakes", tag="A") +
   scale_x_continuous(labels=scales::percent_format()) +
   # Legend
   scale_fill_manual(name="", values=c("red", "black", "grey", "lightblue", "deepskyblue3"), drop=F) +
@@ -177,7 +177,7 @@ g2 <- ggplot(cstats, aes(y=factor(nutrient, gstats_order$nutrient), x=p_over_ul,
   # Markers
   geom_hline(yintercept=1:7+0.5, linetype="dashed", color="grey70", size=0.3) +
   # Labels
-  labs(y="", x="% of national population\nabove tolerable upper level of intake", tag="B") +
+  labs(y="", x="% of national population\nwith excess intakes", tag="B") +
   scale_x_continuous(labels=scales::percent_format()) +
   # Legend
   scale_fill_manual(name="", values=c("red", "black", "grey", "lightblue", "deepskyblue3"), drop=F) +
