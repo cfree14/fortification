@@ -248,13 +248,22 @@ cstats <- data_orig %>%
                          "3"="Aligned standards",
                          "4"="Aligned and improved"))
 
+# Quadrant key
+quad_key <- tibble(nutrient="Calcium",
+                   x=c(-1, 1, 0, 1, 0),
+                   y=c(0.5, -0.5, 1, 0, -1),
+                   label=c(1, 2, 3, 4, 5))
+
 # Setup theme
 my_theme <-  theme(axis.text=element_text(size=8),
                    axis.text.x = element_text(angle = 45, hjust = 1),
                    axis.title=element_text(size=9),
                    legend.text=element_text(size=8),
                    legend.title=element_blank(),
+                   strip.text=element_text(size=8, face="bold"),
                    plot.tag=element_text(size=9),
+                   # Strip
+                   strip.background = element_rect(fill=NA, color=NA),
                    # Gridlines
                    panel.grid.major = element_blank(), 
                    panel.grid.minor = element_blank(),
@@ -272,8 +281,7 @@ g <- ggplot(cstats, aes(y=p_over_ul, x=p_inadequate, fill=scenario))  +
   geom_hline(yintercept=0, linetype="dotted", color="grey70") +
   geom_vline(xintercept=0, linetype="dotted", color="grey70") +
   # Reference labels
-  annotate(geom="text", x=-1, y=0, label="1", vjust=-0.8, size=2.8, color="grey60") +
-  annotate(geom="text", x=1, y=0, label="2", vjust=1.8, size=2.8, color="grey60") +
+  geom_text(data=quad_key, mapping=aes(x=x, y=y, label=label), inherit.aes=F, size=2.8, color="black") +
   # Data
   geom_point(pch=21) +
   # Labels
