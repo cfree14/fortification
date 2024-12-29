@@ -125,8 +125,8 @@ g <- ggplot(dists, aes(x=intake, y=density_rel, color=scenario)) +
   geom_segment(data=df_avg, 
                mapping=aes(x=intake, xend=intake, y=0, yend=density_rel)) +
   # Ref lines
-  geom_vline(xintercept=ul, color="grey20", size=0.5, linetype="dashed") +
-  geom_vline(xintercept=ar, color="grey20", size=0.5, linetype="dashed") +
+  geom_vline(xintercept=ul, color="grey40", size=0.5, linetype="dashed") +
+  geom_vline(xintercept=ar, color="grey40", size=0.5, linetype="dashed") +
   annotate(geom="text", x=ul+20, y=1.1, label="Upper\nlimit", hjust=0, color="grey20", size=2) +
   annotate(geom="text", x=ar+20, y=1.1, label="Average\nrequirement", hjust=0, color="grey20", size=2) +
   # Subsidy lines
