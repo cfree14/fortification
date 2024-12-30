@@ -102,6 +102,6 @@ g <- ggplot(nutrients, aes(y=tidytext::reorder_within(nutrient, desc(standard_mg
 g
 
 # Export plot
-ggsave(g, filename=file.path(plotdir, "Fig2_nutrient_standards.png"), 
+ggsave(g, filename=file.path(plotdir, "FigSX_nutrient_standards.png"), 
        width=4.5, height=5, units="in", dpi=600)
 
