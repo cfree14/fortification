@@ -1,0 +1,935 @@
+"continent","region","income","country","iso3","food_vehicle","fort_status","daily_intake_g","processed_prop_type","processed_prop","fortified_prop_type","fortified_prop"
+"Africa","Sub-Saharan Africa","HIC","Seychelles","SYC","Maize flour","None",36,"Reported",1,"None",NA
+"Africa","Sub-Saharan Africa","HIC","Seychelles","SYC","Oil","None",11,"None",NA,"None",NA
+"Africa","Sub-Saharan Africa","HIC","Seychelles","SYC","Rice","None",133,"Reported",1,"None",NA
+"Africa","Sub-Saharan Africa","HIC","Seychelles","SYC","Salt","None",11.03,"None",NA,"None",NA
+"Africa","Sub-Saharan Africa","HIC","Seychelles","SYC","Wheat flour","None",109,"Reported",1,"None",NA
+"Africa","Sub-Saharan Africa","LIC","Sierra Leone","SLE","Maize flour","None",5,"None",NA,"None",NA
+"Africa","Sub-Saharan Africa","LIC","Sierra Leone","SLE","Oil","Mandatory",28,"Imputed",0.725,"Imputed",0.405125
+"Africa","Sub-Saharan Africa","LIC","Sierra Leone","SLE","Rice","None",277,"Reported",0.37,"None",NA
+"Africa","Sub-Saharan Africa","LIC","Sierra Leone","SLE","Salt","Voluntary",6.38,"Imputed",0.95,"Imputed",0
+"Africa","Sub-Saharan Africa","LIC","Sierra Leone","SLE","Wheat flour","Voluntary",24,"Reported",1,"Imputed",0
+"Africa","Sub-Saharan Africa","LIC","Burkina Faso","BFA","Maize flour","None",168,"Reported",0.01,"None",NA
+"Africa","Sub-Saharan Africa","LIC","Burkina Faso","BFA","Oil","Mandatory",21,"Imputed",0.725,"Reported",0.39
+"Africa","Sub-Saharan Africa","LIC","Burkina Faso","BFA","Rice","None",69,"Reported",0.52,"None",NA
+"Africa","Sub-Saharan Africa","LIC","Burkina Faso","BFA","Salt","Mandatory",7.32,"Imputed",0.95,"Reported",0.439
+"Africa","Sub-Saharan Africa","LIC","Burkina Faso","BFA","Wheat flour","Mandatory",21,"Reported",1,"Reported",0.615
+"Africa","Sub-Saharan Africa","LIC","Burundi","BDI","Maize flour","Mandatory",53,"Imputed",0.453125,"Imputed",0.387636363636364
+"Africa","Sub-Saharan Africa","LIC","Burundi","BDI","Rice","None",17,"None",NA,"None",NA
+"Africa","Sub-Saharan Africa","LIC","Burundi","BDI","Salt","Mandatory",4.4,"Imputed",0.95,"Imputed",0.804916666666667
+"Africa","Sub-Saharan Africa","LIC","Burundi","BDI","Wheat flour","Mandatory",12,"Imputed",0.950217391304348,"Imputed",0.72
+"Africa","Sub-Saharan Africa","LIC","Central African Republic","CAF","Maize flour","None",42,"Reported",0.04,"None",NA
+"Africa","Sub-Saharan Africa","LIC","Central African Republic","CAF","Oil","None",19,"None",NA,"None",NA
+"Africa","Sub-Saharan Africa","LIC","Central African Republic","CAF","Rice","None",12,"Reported",0.62,"None",NA
+"Africa","Sub-Saharan Africa","LIC","Central African Republic","CAF","Salt","Mandatory",7.12,"Imputed",0.95,"Imputed",0.804916666666667
+"Africa","Sub-Saharan Africa","LIC","Central African Republic","CAF","Wheat flour","None",7,"Reported",1,"None",NA
+"Africa","Sub-Saharan Africa","LIC","Chad","TCD","Maize flour","Mandatory",42,"Imputed",0.453125,"Reported",0
+"Africa","Sub-Saharan Africa","LIC","Chad","TCD","Oil","Mandatory",13,"Imputed",0.725,"Imputed",0.405125
+"Africa","Sub-Saharan Africa","LIC","Chad","TCD","Rice","None",37,"Reported",0.02,"None",NA
+"Africa","Sub-Saharan Africa","LIC","Chad","TCD","Salt","Mandatory",7.3,"Imputed",0.95,"Imputed",0.804916666666667
+"Africa","Sub-Saharan Africa","LIC","Chad","TCD","Wheat flour","Mandatory",5,"Reported",1,"Reported",0
+"Africa","Sub-Saharan Africa","LIC","Democratic Republic of the Congo","COD","Maize flour","None",48,"None",NA,"None",NA
+"Africa","Sub-Saharan Africa","LIC","Democratic Republic of the Congo","COD","Oil","None",14,"None",NA,"None",NA
+"Africa","Sub-Saharan Africa","LIC","Democratic Republic of the Congo","COD","Rice","None",29,"None",NA,"None",NA
+"Africa","Sub-Saharan Africa","LIC","Democratic Republic of the Congo","COD","Salt","Mandatory",6.15,"Imputed",0.95,"Imputed",0.804916666666667
+"Africa","Sub-Saharan Africa","LIC","Democratic Republic of the Congo","COD","Wheat flour","None",9,"Reported",0.98,"None",NA
+"Africa","Sub-Saharan Africa","LIC","Eritrea","ERI","Maize flour","None",15,"None",NA,"None",NA
+"Africa","Sub-Saharan Africa","LIC","Eritrea","ERI","Rice","None",0,"Reported",1,"None",NA
+"Africa","Sub-Saharan Africa","LIC","Eritrea","ERI","Salt","None",6.02,"None",NA,"None",NA
+"Africa","Sub-Saharan Africa","LIC","Eritrea","ERI","Wheat flour","None",159,"Reported",0.89,"None",NA
+"Africa","Sub-Saharan Africa","LIC","Ethiopia","ETH","Maize flour","None",134,"None",NA,"None",NA
+"Africa","Sub-Saharan Africa","LIC","Ethiopia","ETH","Oil","Mandatory",5,"Imputed",0.725,"Imputed",0.405125
+"Africa","Sub-Saharan Africa","LIC","Ethiopia","ETH","Rice","None",21,"Reported",0.92,"None",NA
+"Africa","Sub-Saharan Africa","LIC","Ethiopia","ETH","Salt","Mandatory",5.77,"Imputed",0.95,"Reported",0.891
+"Africa","Sub-Saharan Africa","LIC","Ethiopia","ETH","Wheat flour","Mandatory",95,"Reported",0.39,"Reported",0
+"Africa","Sub-Saharan Africa","LIC","Gambia","GMB","Maize flour","None",18,"Reported",0.06,"None",NA
+"Africa","Sub-Saharan Africa","LIC","Gambia","GMB","Oil","Mandatory",23,"Imputed",0.725,"Reported",0
+"Africa","Sub-Saharan Africa","LIC","Gambia","GMB","Rice","None",238,"Reported",0.97,"None",NA
+"Africa","Sub-Saharan Africa","LIC","Gambia","GMB","Salt","Mandatory",7.8,"Imputed",0.95,"Reported",0.61
+"Africa","Sub-Saharan Africa","LIC","Gambia","GMB","Wheat flour","Mandatory",50,"Reported",1,"Reported",0.5
+"Africa","Sub-Saharan Africa","LIC","Guinea-Bissau","GNB","Maize flour","None",17,"None",NA,"None",NA
+"Africa","Sub-Saharan Africa","LIC","Guinea-Bissau","GNB","Oil","None",28,"None",NA,"None",NA
+"Africa","Sub-Saharan Africa","LIC","Guinea-Bissau","GNB","Rice","None",286,"Reported",0.46,"None",NA
+"Africa","Sub-Saharan Africa","LIC","Guinea-Bissau","GNB","Salt","Mandatory",7.7,"Imputed",0.95,"Imputed",0.804916666666667
+"Africa","Sub-Saharan Africa","LIC","Guinea-Bissau","GNB","Wheat flour","None",28,"Reported",1,"None",NA
+"Africa","Sub-Saharan Africa","LIC","Liberia","LBR","Maize flour","None",0,"Reported",1,"None",NA
+"Africa","Sub-Saharan Africa","LIC","Liberia","LBR","Oil","Mandatory",26,"Imputed",0.725,"Reported",0
+"Africa","Sub-Saharan Africa","LIC","Liberia","LBR","Rice","None",293,"Reported",0.67,"None",NA
+"Africa","Sub-Saharan Africa","LIC","Liberia","LBR","Salt","Mandatory",6.81,"Imputed",0.95,"Reported",1
+"Africa","Sub-Saharan Africa","LIC","Liberia","LBR","Wheat flour","Mandatory",8,"Reported",1,"Reported",1
+"Africa","Sub-Saharan Africa","LIC","Madagascar","MDG","Maize flour","None",15,"None",NA,"None",NA
+"Africa","Sub-Saharan Africa","LIC","Madagascar","MDG","Oil","None",7,"None",NA,"None",NA
+"Africa","Sub-Saharan Africa","LIC","Madagascar","MDG","Rice","None",309,"Reported",0.2,"None",NA
+"Africa","Sub-Saharan Africa","LIC","Madagascar","MDG","Salt","Mandatory",5.59,"Imputed",0.95,"Imputed",0.804916666666667
+"Africa","Sub-Saharan Africa","LIC","Madagascar","MDG","Wheat flour","None",24,"Reported",1,"None",NA
+"Africa","Sub-Saharan Africa","LIC","Malawi","MWI","Maize flour","Mandatory",349,"Reported",0.15,"Reported",0.4
+"Africa","Sub-Saharan Africa","LIC","Malawi","MWI","Oil","Mandatory",12,"Imputed",0.725,"Reported",0.49
+"Africa","Sub-Saharan Africa","LIC","Malawi","MWI","Rice","None",12,"Reported",0.02,"None",NA
+"Africa","Sub-Saharan Africa","LIC","Malawi","MWI","Salt","Mandatory",4.22,"Imputed",0.95,"Reported",0.99
+"Africa","Sub-Saharan Africa","LIC","Malawi","MWI","Wheat flour","Mandatory",17,"Reported",1,"Reported",0.975
+"Africa","Sub-Saharan Africa","LIC","Mali","MLI","Maize flour","None",135,"None",NA,"None",NA
+"Africa","Sub-Saharan Africa","LIC","Mali","MLI","Oil","Mandatory",16,"Imputed",0.725,"Imputed",0.405125
+"Africa","Sub-Saharan Africa","LIC","Mali","MLI","Rice","None",135,"Reported",0.42,"None",NA
+"Africa","Sub-Saharan Africa","LIC","Mali","MLI","Salt","Mandatory",8.01,"Imputed",0.95,"Imputed",0.804916666666667
+"Africa","Sub-Saharan Africa","LIC","Mali","MLI","Wheat flour","Mandatory",33,"Reported",1,"Imputed",0.72
+"Africa","Sub-Saharan Africa","LIC","Mozambique","MOZ","Maize flour","Mandatory",152,"Reported",0.35,"Reported",0.7
+"Africa","Sub-Saharan Africa","LIC","Mozambique","MOZ","Oil","Mandatory",21,"Imputed",0.725,"Reported",0.389
+"Africa","Sub-Saharan Africa","LIC","Mozambique","MOZ","Rice","None",74,"Reported",0.93,"None",NA
+"Africa","Sub-Saharan Africa","LIC","Mozambique","MOZ","Salt","Mandatory",5.69,"Imputed",0.95,"Imputed",0.804916666666667
+"Africa","Sub-Saharan Africa","LIC","Mozambique","MOZ","Wheat flour","Mandatory",44,"Reported",1,"Reported",0.6
+"Africa","Sub-Saharan Africa","LIC","Niger","NER","Maize flour","None",5,"Reported",0.02,"None",NA
+"Africa","Sub-Saharan Africa","LIC","Niger","NER","Oil","Mandatory",14,"Imputed",0.725,"Imputed",0.405125
+"Africa","Sub-Saharan Africa","LIC","Niger","NER","Rice","None",118,"Reported",0.87,"None",NA
+"Africa","Sub-Saharan Africa","LIC","Niger","NER","Salt","Mandatory",7.42,"Imputed",0.95,"Imputed",0.804916666666667
+"Africa","Sub-Saharan Africa","LIC","Niger","NER","Wheat flour","Mandatory",7,"Reported",1,"Reported",0.8
+"Africa","Sub-Saharan Africa","LIC","Rwanda","RWA","Maize flour","Mandatory",64,"Reported",0.35,"Reported",0.4
+"Africa","Sub-Saharan Africa","LIC","Rwanda","RWA","Oil","Mandatory",11,"Imputed",0.725,"Imputed",0.405125
+"Africa","Sub-Saharan Africa","LIC","Rwanda","RWA","Rice","None",32,"Reported",0.74,"None",NA
+"Africa","Sub-Saharan Africa","LIC","Rwanda","RWA","Salt","Mandatory",4.07,"Imputed",0.95,"Imputed",0.804916666666667
+"Africa","Sub-Saharan Africa","LIC","Rwanda","RWA","Wheat flour","Mandatory",16,"Reported",0.6,"Reported",0.1
+"Africa","Sub-Saharan Africa","LMC","Sao Tome and Principe","STP","Maize flour","None",16,"None",NA,"None",NA
+"Africa","Sub-Saharan Africa","LMC","Sao Tome and Principe","STP","Oil","None",11,"None",NA,"None",NA
+"Africa","Sub-Saharan Africa","LMC","Sao Tome and Principe","STP","Rice","None",136,"Reported",1,"None",NA
+"Africa","Sub-Saharan Africa","LMC","Sao Tome and Principe","STP","Salt","Mandatory",6,"Imputed",0.95,"Imputed",0.804916666666667
+"Africa","Sub-Saharan Africa","LMC","Sao Tome and Principe","STP","Wheat flour","None",98,"Reported",1,"None",NA
+"Africa","Sub-Saharan Africa","LIC","Somalia","SOM","Maize flour","None",13,"Reported",1,"None",NA
+"Africa","Sub-Saharan Africa","LIC","Somalia","SOM","Rice","None",91,"Reported",1,"None",NA
+"Africa","Sub-Saharan Africa","LIC","Somalia","SOM","Salt","Mandatory",5.26,"Imputed",0.95,"Imputed",0.804916666666667
+"Africa","Sub-Saharan Africa","LIC","Somalia","SOM","Wheat flour","None",71,"Reported",1,"None",NA
+"Africa","Sub-Saharan Africa","LIC","South Sudan","SSD","Maize flour","None",56,"None",NA,"None",NA
+"Africa","Sub-Saharan Africa","LIC","South Sudan","SSD","Rice","None",8,"None",NA,"None",NA
+"Africa","Sub-Saharan Africa","LIC","South Sudan","SSD","Wheat flour","None",9,"Reported",1,"None",NA
+"Africa","Sub-Saharan Africa","LIC","Sudan","SDN","Maize flour","None",3,"Reported",0.75,"None",NA
+"Africa","Sub-Saharan Africa","LIC","Sudan","SDN","Oil","None",19,"Reported",0.8,"None",NA
+"Africa","Sub-Saharan Africa","LIC","Sudan","SDN","Rice","None",7,"Reported",0.84,"None",NA
+"Africa","Sub-Saharan Africa","LIC","Sudan","SDN","Salt","Mandatory",6.02,"Imputed",0.95,"Imputed",0.804916666666667
+"Africa","Sub-Saharan Africa","LIC","Sudan","SDN","Wheat flour","Voluntary",153,"Reported",0.8,"Reported",0.4
+"Africa","Sub-Saharan Africa","LIC","Togo","TGO","Maize flour","None",185,"Reported",0.1,"None",NA
+"Africa","Sub-Saharan Africa","LIC","Togo","TGO","Oil","Mandatory",28,"Imputed",0.725,"Imputed",0.405125
+"Africa","Sub-Saharan Africa","LIC","Togo","TGO","Rice","None",77,"Reported",0.76,"None",NA
+"Africa","Sub-Saharan Africa","LIC","Togo","TGO","Salt","Mandatory",7.07,"Imputed",0.95,"Imputed",0.804916666666667
+"Africa","Sub-Saharan Africa","LIC","Togo","TGO","Wheat flour","Mandatory",34,"Reported",1,"Reported",1
+"Africa","Sub-Saharan Africa","LIC","Uganda","UGA","Maize flour","Mandatory",117,"Reported",0.3,"Reported",0.03
+"Africa","Sub-Saharan Africa","LIC","Uganda","UGA","Oil","Mandatory",19,"Reported",0.9,"Reported",0.597
+"Africa","Sub-Saharan Africa","LIC","Uganda","UGA","Rice","None",34,"Reported",0.75,"None",NA
+"Africa","Sub-Saharan Africa","LIC","Uganda","UGA","Salt","Mandatory",5.36,"Imputed",0.95,"Reported",0.786
+"Africa","Sub-Saharan Africa","LIC","Uganda","UGA","Wheat flour","Mandatory",25,"Reported",1,"Reported",1
+"Africa","Middle East & North Africa","UMC","Algeria","DZA","Maize flour","None",33,"Reported",0.97,"None",NA
+"Africa","Middle East & North Africa","UMC","Algeria","DZA","Oil","None",54,"None",NA,"None",NA
+"Africa","Middle East & North Africa","UMC","Algeria","DZA","Rice","None",7,"Reported",1,"None",NA
+"Africa","Middle East & North Africa","UMC","Algeria","DZA","Salt","Mandatory",10.88,"Imputed",1,"Imputed",0.386
+"Africa","Middle East & North Africa","UMC","Algeria","DZA","Wheat flour","None",404,"Reported",1,"None",NA
+"Africa","Sub-Saharan Africa","LMC","Angola","AGO","Maize flour","None",113,"None",NA,"None",NA
+"Africa","Sub-Saharan Africa","LMC","Angola","AGO","Oil","None",31,"None",NA,"None",NA
+"Africa","Sub-Saharan Africa","LMC","Angola","AGO","Rice","None",36,"Reported",0.66,"None",NA
+"Africa","Sub-Saharan Africa","LMC","Angola","AGO","Salt","Mandatory",6.33,"Imputed",0.95,"Imputed",0.804916666666667
+"Africa","Sub-Saharan Africa","LMC","Angola","AGO","Wheat flour","None",41,"Reported",1,"None",NA
+"Africa","Sub-Saharan Africa","LMC","Benin","BEN","Maize flour","None",84,"None",NA,"None",NA
+"Africa","Sub-Saharan Africa","LMC","Benin","BEN","Oil","Mandatory",23,"Imputed",0.725,"Imputed",0.405125
+"Africa","Sub-Saharan Africa","LMC","Benin","BEN","Rice","None",156,"Reported",0.85,"None",NA
+"Africa","Sub-Saharan Africa","LMC","Benin","BEN","Salt","Mandatory",7.24,"Imputed",0.95,"Imputed",0.804916666666667
+"Africa","Sub-Saharan Africa","LMC","Benin","BEN","Wheat flour","Mandatory",28,"Reported",1,"Imputed",0.72
+"Africa","Sub-Saharan Africa","LMC","Cabo Verde","CPV","Maize flour","None",144,"Reported",1,"None",NA
+"Africa","Sub-Saharan Africa","LMC","Cabo Verde","CPV","Oil","None",8,"None",NA,"None",NA
+"Africa","Sub-Saharan Africa","LMC","Cabo Verde","CPV","Rice","None",119,"Reported",1,"None",NA
+"Africa","Sub-Saharan Africa","LMC","Cabo Verde","CPV","Salt","Mandatory",8.26,"Imputed",0.95,"Imputed",0.804916666666667
+"Africa","Sub-Saharan Africa","LMC","Cabo Verde","CPV","Wheat flour","Mandatory",69,"Reported",1,"Reported",0.98
+"Africa","Sub-Saharan Africa","LMC","Cameroon","CMR","Maize flour","None",104,"Reported",0.04,"None",NA
+"Africa","Sub-Saharan Africa","LMC","Cameroon","CMR","Oil","Mandatory",23,"Imputed",0.725,"Imputed",0.405125
+"Africa","Sub-Saharan Africa","LMC","Cameroon","CMR","Rice","None",96,"Reported",0.79,"None",NA
+"Africa","Sub-Saharan Africa","LMC","Cameroon","CMR","Salt","Mandatory",5.31,"Imputed",0.95,"Imputed",0.804916666666667
+"Africa","Sub-Saharan Africa","LMC","Cameroon","CMR","Wheat flour","Mandatory",57,"Reported",1,"Reported",1
+"Africa","Sub-Saharan Africa","LMC","Comoros","COM","Maize flour","None",42,"None",NA,"None",NA
+"Africa","Sub-Saharan Africa","LMC","Comoros","COM","Oil","None",12,"None",NA,"None",NA
+"Africa","Sub-Saharan Africa","LMC","Comoros","COM","Rice","None",196,"Reported",1,"None",NA
+"Africa","Sub-Saharan Africa","LMC","Comoros","COM","Salt","None",4.25,"None",NA,"None",NA
+"Africa","Sub-Saharan Africa","LMC","Comoros","COM","Wheat flour","None",38,"Reported",1,"None",NA
+"Africa","Sub-Saharan Africa","LMC","Congo","COG","Maize flour","None",8,"Reported",0.02,"None",NA
+"Africa","Sub-Saharan Africa","LMC","Congo","COG","Oil","None",22,"None",NA,"None",NA
+"Africa","Sub-Saharan Africa","LMC","Congo","COG","Rice","None",30,"Reported",0.88,"None",NA
+"Africa","Sub-Saharan Africa","LMC","Congo","COG","Salt","Mandatory",5.72,"Imputed",0.95,"Imputed",0.804916666666667
+"Africa","Sub-Saharan Africa","LMC","Congo","COG","Wheat flour","Mandatory",86,"Reported",1,"Reported",1
+"Africa","Sub-Saharan Africa","LMC","Cote d'Ivoire","CIV","Maize flour","None",64,"Reported",1,"None",NA
+"Africa","Sub-Saharan Africa","LMC","Cote d'Ivoire","CIV","Oil","Mandatory",29.01,"Imputed",0.725,"Imputed",0.405125
+"Africa","Sub-Saharan Africa","LMC","Cote d'Ivoire","CIV","Rice","None",200,"Reported",0.74,"None",NA
+"Africa","Sub-Saharan Africa","LMC","Cote d'Ivoire","CIV","Salt","Mandatory",7.12,"Imputed",0.95,"Imputed",0.804916666666667
+"Africa","Sub-Saharan Africa","LMC","Cote d'Ivoire","CIV","Wheat flour","Mandatory",29,"Reported",1,"Reported",0.99
+"Africa","Middle East & North Africa","LMC","Djibouti","DJI","Maize flour","None",1,"Reported",1,"None",NA
+"Africa","Middle East & North Africa","LMC","Djibouti","DJI","Oil","Mandatory",30,"Imputed",1,"Imputed",0.405125
+"Africa","Middle East & North Africa","LMC","Djibouti","DJI","Rice","None",144,"Reported",1,"None",NA
+"Africa","Middle East & North Africa","LMC","Djibouti","DJI","Salt","Mandatory",6,"Imputed",0.95,"Imputed",0.386
+"Africa","Middle East & North Africa","LMC","Djibouti","DJI","Wheat flour","Mandatory",216,"Reported",1,"Imputed",0.92
+"Africa","Middle East & North Africa","LMC","Egypt","EGY","Maize flour","None",109,"None",NA,"None",NA
+"Africa","Middle East & North Africa","LMC","Egypt","EGY","Oil","None",15,"None",NA,"None",NA
+"Africa","Middle East & North Africa","LMC","Egypt","EGY","Rice","None",89,"Reported",1,"None",NA
+"Africa","Middle East & North Africa","LMC","Egypt","EGY","Salt","Mandatory",9.35,"Imputed",0.95,"Imputed",0.386
+"Africa","Middle East & North Africa","LMC","Egypt","EGY","Wheat flour","None",299,"Reported",0.9,"None",NA
+"Africa","Sub-Saharan Africa","LMC","Eswatini","SWZ","Maize flour","None",199,"Reported",0.5,"None",NA
+"Africa","Sub-Saharan Africa","LMC","Eswatini","SWZ","Oil","None",14,"None",NA,"None",NA
+"Africa","Sub-Saharan Africa","LMC","Eswatini","SWZ","Rice","None",69,"Reported",1,"None",NA
+"Africa","Sub-Saharan Africa","LMC","Eswatini","SWZ","Salt","Mandatory",6.43,"Imputed",0.95,"Reported",0.647
+"Africa","Sub-Saharan Africa","LMC","Eswatini","SWZ","Wheat flour","Voluntary",46,"Reported",1,"Reported",0.71
+"Africa","Sub-Saharan Africa","LMC","Ghana","GHA","Maize flour","None",78,"None",NA,"None",NA
+"Africa","Sub-Saharan Africa","LMC","Ghana","GHA","Oil","Mandatory",12,"Imputed",0.725,"Imputed",0.405125
+"Africa","Sub-Saharan Africa","LMC","Ghana","GHA","Rice","None",86,"Reported",0.79,"None",NA
+"Africa","Sub-Saharan Africa","LMC","Ghana","GHA","Salt","Mandatory",5.97,"Imputed",0.95,"Imputed",0.804916666666667
+"Africa","Sub-Saharan Africa","LMC","Ghana","GHA","Wheat flour","Mandatory",50,"Reported",1,"Reported",1
+"Africa","Sub-Saharan Africa","LMC","Guinea","GIN","Maize flour","None",24,"None",NA,"None",NA
+"Africa","Sub-Saharan Africa","LMC","Guinea","GIN","Oil","None",45,"None",NA,"None",NA
+"Africa","Sub-Saharan Africa","LMC","Guinea","GIN","Rice","None",289,"Reported",0.59,"None",NA
+"Africa","Sub-Saharan Africa","LMC","Guinea","GIN","Salt","Mandatory",7.04,"Imputed",0.95,"Imputed",0.804916666666667
+"Africa","Sub-Saharan Africa","LMC","Guinea","GIN","Wheat flour","Mandatory",37,"Reported",1,"Imputed",0.72
+"Africa","Sub-Saharan Africa","LMC","Kenya","KEN","Maize flour","Mandatory",151,"Reported",0.4,"Reported",0.46
+"Africa","Sub-Saharan Africa","LMC","Kenya","KEN","Oil","Mandatory",5,"Imputed",0.725,"Imputed",0.405125
+"Africa","Sub-Saharan Africa","LMC","Kenya","KEN","Rice","None",35,"Reported",0.88,"None",NA
+"Africa","Sub-Saharan Africa","LMC","Kenya","KEN","Salt","Mandatory",3.76,"Imputed",0.95,"Reported",0.62
+"Africa","Sub-Saharan Africa","LMC","Kenya","KEN","Wheat flour","Mandatory",55,"Reported",1,"Reported",0.84
+"Africa","Sub-Saharan Africa","LMC","Lesotho","LSO","Maize flour","Mandatory",289,"Reported",0.71,"Reported",0
+"Africa","Sub-Saharan Africa","LMC","Lesotho","LSO","Oil","None",18,"None",NA,"None",NA
+"Africa","Sub-Saharan Africa","LMC","Lesotho","LSO","Rice","None",11,"Reported",1,"None",NA
+"Africa","Sub-Saharan Africa","LMC","Lesotho","LSO","Salt","Mandatory",6.66,"Imputed",0.95,"Imputed",0.804916666666667
+"Africa","Sub-Saharan Africa","LMC","Lesotho","LSO","Wheat flour","Mandatory",33,"Reported",1,"Reported",0.66
+"Africa","Sub-Saharan Africa","LMC","Mauritania","MRT","Maize flour","None",16,"Reported",0.11,"None",NA
+"Africa","Sub-Saharan Africa","LMC","Mauritania","MRT","Oil","Mandatory",35,"Imputed",0.725,"Imputed",0.405125
+"Africa","Sub-Saharan Africa","LMC","Mauritania","MRT","Rice","None",149,"Reported",0.17,"None",NA
+"Africa","Sub-Saharan Africa","LMC","Mauritania","MRT","Salt","Mandatory",7.55,"Imputed",0.95,"Imputed",0.804916666666667
+"Africa","Sub-Saharan Africa","LMC","Mauritania","MRT","Wheat flour","Mandatory",245,"Reported",0.95,"Reported",0.55
+"Africa","Middle East & North Africa","LMC","Morocco","MAR","Maize flour","None",84,"Reported",0.97,"None",NA
+"Africa","Middle East & North Africa","LMC","Morocco","MAR","Oil","Voluntary",22,"Imputed",1,"Imputed",0
+"Africa","Middle East & North Africa","LMC","Morocco","MAR","Rice","None",4,"Reported",0.91,"None",NA
+"Africa","Middle East & North Africa","LMC","Morocco","MAR","Salt","Mandatory",10.96,"Imputed",0.95,"Reported",0.045
+"Africa","Middle East & North Africa","LMC","Morocco","MAR","Wheat flour","Mandatory",394,"Reported",1,"Reported",0.72
+"Africa","Sub-Saharan Africa","LMC","Nigeria","NGA","Maize flour","Mandatory",83,"Reported",0.2,"Reported",0.8
+"Africa","Sub-Saharan Africa","LMC","Nigeria","NGA","Oil","Mandatory",26,"Imputed",0.725,"Reported",0.655
+"Africa","Sub-Saharan Africa","LMC","Nigeria","NGA","Rice","None",61,"Reported",0.58,"None",NA
+"Africa","Sub-Saharan Africa","LMC","Nigeria","NGA","Salt","Mandatory",7.17,"Imputed",0.95,"Reported",0.946
+"Africa","Sub-Saharan Africa","LMC","Nigeria","NGA","Wheat flour","Mandatory",56,"Reported",0.96,"Reported",0.65
+"Africa","Sub-Saharan Africa","LMC","Senegal","SEN","Maize flour","None",59,"Reported",0.01,"None",NA
+"Africa","Sub-Saharan Africa","LMC","Senegal","SEN","Oil","Mandatory",37,"Imputed",0.725,"Imputed",0.405125
+"Africa","Sub-Saharan Africa","LMC","Senegal","SEN","Rice","None",219,"Reported",0.51,"None",NA
+"Africa","Sub-Saharan Africa","LMC","Senegal","SEN","Salt","Mandatory",8.01,"Imputed",0.95,"Imputed",0.804916666666667
+"Africa","Sub-Saharan Africa","LMC","Senegal","SEN","Wheat flour","Mandatory",82,"Reported",0.72,"Reported",0.96
+"Africa","Sub-Saharan Africa","LMC","Tanzania","TZA","Maize flour","Mandatory",176,"Reported",0.13,"Reported",0.59
+"Africa","Sub-Saharan Africa","LMC","Tanzania","TZA","Oil","Mandatory",22,"Reported",0.6,"Reported",0.72
+"Africa","Sub-Saharan Africa","LMC","Tanzania","TZA","Rice","None",58,"Reported",0.15,"None",NA
+"Africa","Sub-Saharan Africa","LMC","Tanzania","TZA","Salt","Mandatory",6.99,"Imputed",0.95,"Reported",0.9
+"Africa","Sub-Saharan Africa","LMC","Tanzania","TZA","Wheat flour","Mandatory",21,"Reported",1,"Reported",0.86
+"Africa","Middle East & North Africa","LMC","Tunisia","TUN","Maize flour","None",0,"Reported",1,"None",NA
+"Africa","Middle East & North Africa","LMC","Tunisia","TUN","Oil","None",29,"None",NA,"None",NA
+"Africa","Middle East & North Africa","LMC","Tunisia","TUN","Rice","None",3,"Reported",1,"None",NA
+"Africa","Middle East & North Africa","LMC","Tunisia","TUN","Salt","Mandatory",11.26,"Imputed",0.95,"Reported",0.673
+"Africa","Middle East & North Africa","LMC","Tunisia","TUN","Wheat flour","None",420,"Reported",1,"None",NA
+"Africa","Sub-Saharan Africa","LMC","Zambia","ZMB","Maize flour","Voluntary",235,"Reported",0.35,"Imputed",0
+"Africa","Sub-Saharan Africa","LMC","Zambia","ZMB","Oil","None",21,"None",NA,"None",NA
+"Africa","Sub-Saharan Africa","LMC","Zambia","ZMB","Rice","None",7,"Reported",0.68,"None",NA
+"Africa","Sub-Saharan Africa","LMC","Zambia","ZMB","Salt","Mandatory",5.77,"Imputed",0.95,"Reported",0.89
+"Africa","Sub-Saharan Africa","LMC","Zambia","ZMB","Wheat flour","Voluntary",22,"Imputed",0.950217391304348,"Imputed",0
+"Africa","Sub-Saharan Africa","LMC","Zimbabwe","ZWE","Maize flour","Mandatory",170,"Reported",0.4,"Reported",0.05
+"Africa","Sub-Saharan Africa","LMC","Zimbabwe","ZWE","Oil","Mandatory",24,"Reported",0.6,"Imputed",0.405125
+"Africa","Sub-Saharan Africa","LMC","Zimbabwe","ZWE","Rice","None",25,"Reported",1,"None",NA
+"Africa","Sub-Saharan Africa","LMC","Zimbabwe","ZWE","Salt","Mandatory",7.88,"Imputed",0.95,"Reported",0.94
+"Africa","Sub-Saharan Africa","LMC","Zimbabwe","ZWE","Wheat flour","Mandatory",48,"Reported",0.44,"Reported",0.4
+"Africa","Sub-Saharan Africa","UMC","Botswana","BWA","Maize flour","None",151,"Reported",0.83,"None",NA
+"Africa","Sub-Saharan Africa","UMC","Botswana","BWA","Oil","None",29,"None",NA,"None",NA
+"Africa","Sub-Saharan Africa","UMC","Botswana","BWA","Rice","None",34,"Reported",0.95,"None",NA
+"Africa","Sub-Saharan Africa","UMC","Botswana","BWA","Salt","None",6.43,"None",NA,"None",NA
+"Africa","Sub-Saharan Africa","UMC","Botswana","BWA","Wheat flour","None",76,"Reported",1,"None",NA
+"Africa","Sub-Saharan Africa","UMC","Equatorial Guinea","GNQ","Maize flour","None",0,"Reported",1,"None",NA
+"Africa","Sub-Saharan Africa","UMC","Equatorial Guinea","GNQ","Rice","None",46,"Reported",1,"None",NA
+"Africa","Sub-Saharan Africa","UMC","Equatorial Guinea","GNQ","Salt","None",5.85,"None",NA,"None",NA
+"Africa","Sub-Saharan Africa","UMC","Equatorial Guinea","GNQ","Wheat flour","None",50,"Reported",1,"None",NA
+"Africa","Sub-Saharan Africa","UMC","Gabon","GAB","Maize flour","None",36,"Reported",1,"None",NA
+"Africa","Sub-Saharan Africa","UMC","Gabon","GAB","Oil","None",8,"None",NA,"None",NA
+"Africa","Sub-Saharan Africa","UMC","Gabon","GAB","Rice","None",99,"Reported",0.98,"None",NA
+"Africa","Sub-Saharan Africa","UMC","Gabon","GAB","Salt","Mandatory",5.11,"Imputed",1,"Imputed",0.804916666666667
+"Africa","Sub-Saharan Africa","UMC","Gabon","GAB","Wheat flour","None",104,"Reported",1,"None",NA
+"Africa","Middle East & North Africa","UMC","Libya","LBY","Maize flour","None",2,"None",NA,"None",NA
+"Africa","Middle East & North Africa","UMC","Libya","LBY","Oil","None",43,"None",NA,"None",NA
+"Africa","Middle East & North Africa","UMC","Libya","LBY","Rice","None",52,"Reported",1,"None",NA
+"Africa","Middle East & North Africa","UMC","Libya","LBY","Salt","None",10.78,"None",NA,"None",NA
+"Africa","Middle East & North Africa","UMC","Libya","LBY","Wheat flour","None",233,"Reported",1,"None",NA
+"Africa","Sub-Saharan Africa","UMC","Mauritius","MUS","Maize flour","None",7,"Reported",0.07,"None",NA
+"Africa","Sub-Saharan Africa","UMC","Mauritius","MUS","Oil","None",44,"None",NA,"None",NA
+"Africa","Sub-Saharan Africa","UMC","Mauritius","MUS","Rice","None",103,"Reported",1,"None",NA
+"Africa","Sub-Saharan Africa","UMC","Mauritius","MUS","Salt","None",7.9,"None",NA,"None",NA
+"Africa","Sub-Saharan Africa","UMC","Mauritius","MUS","Wheat flour","None",201,"Reported",1,"None",NA
+"Africa","Sub-Saharan Africa","UMC","Namibia","NAM","Maize flour","None",105,"Reported",0.85,"None",NA
+"Africa","Sub-Saharan Africa","UMC","Namibia","NAM","Oil","None",19,"None",NA,"None",NA
+"Africa","Sub-Saharan Africa","UMC","Namibia","NAM","Rice","None",18,"Reported",0.97,"None",NA
+"Africa","Sub-Saharan Africa","UMC","Namibia","NAM","Salt","Mandatory",6.71,"Imputed",1,"Imputed",0.804916666666667
+"Africa","Sub-Saharan Africa","UMC","Namibia","NAM","Wheat flour","None",82,"Reported",0.98,"None",NA
+"Africa","Sub-Saharan Africa","UMC","South Africa","ZAF","Maize flour","Mandatory",136,"Reported",0.75,"Reported",0.834
+"Africa","Sub-Saharan Africa","UMC","South Africa","ZAF","Oil","None",40,"None",NA,"None",NA
+"Africa","Sub-Saharan Africa","UMC","South Africa","ZAF","Rice","None",38,"Reported",0.99,"None",NA
+"Africa","Sub-Saharan Africa","UMC","South Africa","ZAF","Salt","Mandatory",6.3,"Imputed",1,"Imputed",0.804916666666667
+"Africa","Sub-Saharan Africa","UMC","South Africa","ZAF","Wheat flour","Mandatory",123,"Reported",1,"Reported",0.8
+"Americas","Latin America & Caribbean","HIC","Antigua and Barbuda","ATG","Maize flour","None",3,"Reported",1,"None",NA
+"Americas","Latin America & Caribbean","HIC","Antigua and Barbuda","ATG","Oil","None",11,"None",NA,"None",NA
+"Americas","Latin America & Caribbean","HIC","Antigua and Barbuda","ATG","Rice","None",31,"Reported",1,"None",NA
+"Americas","Latin America & Caribbean","HIC","Antigua and Barbuda","ATG","Salt","None",6.79,"None",NA,"None",NA
+"Americas","Latin America & Caribbean","HIC","Antigua and Barbuda","ATG","Wheat flour","Mandatory",82,"Reported",1,"Imputed",0.912105263157895
+"Americas","Latin America & Caribbean","HIC","Bahamas","BHS","Maize flour","None",18,"None",NA,"None",NA
+"Americas","Latin America & Caribbean","HIC","Bahamas","BHS","Oil","None",8,"None",NA,"None",NA
+"Americas","Latin America & Caribbean","HIC","Bahamas","BHS","Rice","None",49,"Reported",1,"None",NA
+"Americas","Latin America & Caribbean","HIC","Bahamas","BHS","Salt","None",7.6,"None",NA,"None",NA
+"Americas","Latin America & Caribbean","HIC","Bahamas","BHS","Wheat flour","Mandatory",39,"Reported",1,"Imputed",0.912105263157895
+"Americas","Latin America & Caribbean","HIC","Barbados","BRB","Maize flour","None",30,"Reported",1,"None",NA
+"Americas","Latin America & Caribbean","HIC","Barbados","BRB","Oil","None",19,"None",NA,"None",NA
+"Americas","Latin America & Caribbean","HIC","Barbados","BRB","Rice","None",45,"Reported",1,"None",NA
+"Americas","Latin America & Caribbean","HIC","Barbados","BRB","Salt","None",8.69,"None",NA,"None",NA
+"Americas","Latin America & Caribbean","HIC","Barbados","BRB","Wheat flour","Mandatory",98,"Reported",1,"Imputed",0.912105263157895
+"Americas","North America","HIC","Canada","CAN","Maize flour","None",45,"Reported",1,"None",NA
+"Americas","North America","HIC","Canada","CAN","Oil","None",42,"Reported",1,"None",NA
+"Americas","North America","HIC","Canada","CAN","Rice","Voluntary",25,"Reported",1,"Reported",0
+"Americas","North America","HIC","Canada","CAN","Salt","Mandatory",9.43,"Imputed",1,"Imputed",0.6774
+"Americas","North America","HIC","Canada","CAN","Wheat flour","Mandatory",137,"Reported",1,"Reported",0.95
+"Americas","Latin America & Caribbean","HIC","Chile","CHL","Maize flour","None",26,"Reported",0.01,"None",NA
+"Americas","Latin America & Caribbean","HIC","Chile","CHL","Oil","None",13,"None",NA,"None",NA
+"Americas","Latin America & Caribbean","HIC","Chile","CHL","Rice","None",23,"Reported",0.58,"None",NA
+"Americas","Latin America & Caribbean","HIC","Chile","CHL","Salt","Mandatory",7.12,"Imputed",1,"Imputed",0.6774
+"Americas","Latin America & Caribbean","HIC","Chile","CHL","Wheat flour","Mandatory",210,"Reported",1,"Reported",1
+"Americas","Latin America & Caribbean","HIC","Guyana","GUY","Maize flour","None",5,"None",NA,"None",NA
+"Americas","Latin America & Caribbean","HIC","Guyana","GUY","Oil","None",2,"None",NA,"None",NA
+"Americas","Latin America & Caribbean","HIC","Guyana","GUY","Rice","None",170,"None",NA,"None",NA
+"Americas","Latin America & Caribbean","HIC","Guyana","GUY","Salt","None",6.23,"None",NA,"None",NA
+"Americas","Latin America & Caribbean","HIC","Guyana","GUY","Wheat flour","Mandatory",95,"Reported",1,"Reported",1
+"Americas","Latin America & Caribbean","HIC","Panama","PAN","Maize flour","None",73,"Reported",0.01,"None",NA
+"Americas","Latin America & Caribbean","HIC","Panama","PAN","Oil","None",18,"None",NA,"None",NA
+"Americas","Latin America & Caribbean","HIC","Panama","PAN","Rice","Mandatory",153,"Reported",1,"Reported",1
+"Americas","Latin America & Caribbean","HIC","Panama","PAN","Salt","Mandatory",8.62,"Imputed",1,"Imputed",0.6774
+"Americas","Latin America & Caribbean","HIC","Panama","PAN","Wheat flour","Mandatory",47,"Reported",1,"Reported",1
+"Americas","Latin America & Caribbean","HIC","Saint Kitts and Nevis","KNA","Maize flour","None",1,"Reported",1,"None",NA
+"Americas","Latin America & Caribbean","HIC","Saint Kitts and Nevis","KNA","Oil","None",13,"None",NA,"None",NA
+"Americas","Latin America & Caribbean","HIC","Saint Kitts and Nevis","KNA","Rice","None",72,"Reported",1,"None",NA
+"Americas","Latin America & Caribbean","HIC","Saint Kitts and Nevis","KNA","Wheat flour","Mandatory",87,"Reported",1,"Imputed",0.912105263157895
+"Americas","Latin America & Caribbean","HIC","Trinidad and Tobago","TTO","Maize flour","None",51,"None",NA,"None",NA
+"Americas","Latin America & Caribbean","HIC","Trinidad and Tobago","TTO","Oil","None",23,"None",NA,"None",NA
+"Americas","Latin America & Caribbean","HIC","Trinidad and Tobago","TTO","Rice","None",50,"Reported",1,"None",NA
+"Americas","Latin America & Caribbean","HIC","Trinidad and Tobago","TTO","Salt","Voluntary",7.45,"Imputed",1,"Imputed",0
+"Americas","Latin America & Caribbean","HIC","Trinidad and Tobago","TTO","Wheat flour","Mandatory",173,"Reported",1,"Imputed",0.912105263157895
+"Americas","North America","HIC","United States of America","USA","Maize flour","Mandatory",22,"Imputed",1,"Imputed",0.796
+"Americas","North America","HIC","United States of America","USA","Oil","None",52,"None",NA,"None",NA
+"Americas","North America","HIC","United States of America","USA","Rice","Mandatory",22,"Imputed",1,"Reported",0.7
+"Americas","North America","HIC","United States of America","USA","Salt","Voluntary",9.15,"Imputed",1,"Imputed",0
+"Americas","North America","HIC","United States of America","USA","Wheat flour","Mandatory",156,"Reported",1,"Reported",0.9
+"Americas","Latin America & Caribbean","HIC","Uruguay","URY","Maize flour","None",59,"Reported",0.02,"None",NA
+"Americas","Latin America & Caribbean","HIC","Uruguay","URY","Oil","None",23,"None",NA,"None",NA
+"Americas","Latin America & Caribbean","HIC","Uruguay","URY","Rice","None",28,"Reported",0.4,"None",NA
+"Americas","Latin America & Caribbean","HIC","Uruguay","URY","Salt","Mandatory",6.94,"Imputed",1,"Imputed",0.6774
+"Americas","Latin America & Caribbean","HIC","Uruguay","URY","Wheat flour","Mandatory",174,"Reported",1,"Reported",0.28
+"Americas","Latin America & Caribbean","LMC","Bolivia","BOL","Maize flour","None",57,"None",NA,"None",NA
+"Americas","Latin America & Caribbean","LMC","Bolivia","BOL","Oil","Mandatory",10,"Imputed",1,"Imputed",0.8
+"Americas","Latin America & Caribbean","LMC","Bolivia","BOL","Rice","None",81,"None",NA,"None",NA
+"Americas","Latin America & Caribbean","LMC","Bolivia","BOL","Salt","Mandatory",9.13,"Imputed",0.95,"Imputed",0.6774
+"Americas","Latin America & Caribbean","LMC","Bolivia","BOL","Wheat flour","Mandatory",94,"Reported",1,"Imputed",0.912105263157895
+"Americas","Latin America & Caribbean","LMC","Haiti","HTI","Maize flour","None",41,"Reported",0.23,"None",NA
+"Americas","Latin America & Caribbean","LMC","Haiti","HTI","Oil","Mandatory",18,"Imputed",1,"Reported",0.8
+"Americas","Latin America & Caribbean","LMC","Haiti","HTI","Rice","None",143,"Reported",0.83,"None",NA
+"Americas","Latin America & Caribbean","LMC","Haiti","HTI","Salt","Mandatory",6.76,"Imputed",0.95,"Reported",0.17
+"Americas","Latin America & Caribbean","LMC","Haiti","HTI","Wheat flour","Mandatory",68,"Reported",1,"Reported",0.75
+"Americas","Latin America & Caribbean","LMC","Honduras","HND","Maize flour","None",212,"Reported",0.7,"None",NA
+"Americas","Latin America & Caribbean","LMC","Honduras","HND","Oil","None",42,"None",NA,"None",NA
+"Americas","Latin America & Caribbean","LMC","Honduras","HND","Rice","None",37,"Reported",0.08,"None",NA
+"Americas","Latin America & Caribbean","LMC","Honduras","HND","Salt","Mandatory",7.5,"Imputed",0.95,"Imputed",0.6774
+"Americas","Latin America & Caribbean","LMC","Honduras","HND","Wheat flour","Mandatory",55,"Reported",1,"Reported",0.87
+"Americas","Latin America & Caribbean","LMC","Nicaragua","NIC","Maize flour","None",162,"None",NA,"None",NA
+"Americas","Latin America & Caribbean","LMC","Nicaragua","NIC","Oil","None",17,"None",NA,"None",NA
+"Americas","Latin America & Caribbean","LMC","Nicaragua","NIC","Rice","Mandatory",142,"Imputed",0.796785714285714,"Imputed",0.666666666666667
+"Americas","Latin America & Caribbean","LMC","Nicaragua","NIC","Salt","Mandatory",8.19,"Imputed",0.95,"Imputed",0.6774
+"Americas","Latin America & Caribbean","LMC","Nicaragua","NIC","Wheat flour","Mandatory",40,"Reported",1,"Imputed",0.912105263157895
+"Americas","Latin America & Caribbean","UMC","Argentina","ARG","Maize flour","None",26,"Reported",1,"None",NA
+"Americas","Latin America & Caribbean","UMC","Argentina","ARG","Oil","None",40,"None",NA,"None",NA
+"Americas","Latin America & Caribbean","UMC","Argentina","ARG","Rice","None",34,"Reported",1,"None",NA
+"Americas","Latin America & Caribbean","UMC","Argentina","ARG","Salt","Mandatory",11.2,"Imputed",1,"Imputed",0.6774
+"Americas","Latin America & Caribbean","UMC","Argentina","ARG","Wheat flour","Mandatory",83,"Reported",1,"Reported",1
+"Americas","Latin America & Caribbean","UMC","Belize","BLZ","Maize flour","None",64,"None",NA,"None",NA
+"Americas","Latin America & Caribbean","UMC","Belize","BLZ","Oil","None",17,"None",NA,"None",NA
+"Americas","Latin America & Caribbean","UMC","Belize","BLZ","Rice","Voluntary",56,"Reported",1,"Reported",0
+"Americas","Latin America & Caribbean","UMC","Belize","BLZ","Salt","Mandatory",6.66,"Imputed",1,"Imputed",0.6774
+"Americas","Latin America & Caribbean","UMC","Belize","BLZ","Wheat flour","Mandatory",89,"Reported",1,"Reported",1
+"Americas","Latin America & Caribbean","UMC","Brazil","BRA","Maize flour","Mandatory",63,"Imputed",0.653684210526316,"Reported",0.33
+"Americas","Latin America & Caribbean","UMC","Brazil","BRA","Oil","None",52,"None",NA,"None",NA
+"Americas","Latin America & Caribbean","UMC","Brazil","BRA","Rice","None",74,"None",NA,"None",NA
+"Americas","Latin America & Caribbean","UMC","Brazil","BRA","Salt","Mandatory",10.45,"Imputed",1,"Imputed",0.6774
+"Americas","Latin America & Caribbean","UMC","Brazil","BRA","Wheat flour","Mandatory",106,"Reported",1,"Reported",0.81
+"Americas","Latin America & Caribbean","UMC","Colombia","COL","Maize flour","None",84,"None",NA,"None",NA
+"Americas","Latin America & Caribbean","UMC","Colombia","COL","Oil","None",35,"None",NA,"None",NA
+"Americas","Latin America & Caribbean","UMC","Colombia","COL","Rice","None",95,"Reported",0.8,"None",NA
+"Americas","Latin America & Caribbean","UMC","Colombia","COL","Salt","Mandatory",10.4,"Imputed",1,"Reported",0.947
+"Americas","Latin America & Caribbean","UMC","Colombia","COL","Wheat flour","Mandatory",66,"Reported",1,"Reported",0.813
+"Americas","Latin America & Caribbean","UMC","Costa Rica","CRI","Maize flour","Mandatory",47,"Reported",1,"Reported",1
+"Americas","Latin America & Caribbean","UMC","Costa Rica","CRI","Oil","None",45,"None",NA,"None",NA
+"Americas","Latin America & Caribbean","UMC","Costa Rica","CRI","Rice","Mandatory",117,"Reported",1,"Reported",1
+"Americas","Latin America & Caribbean","UMC","Costa Rica","CRI","Salt","Mandatory",8.08,"Imputed",1,"Reported",1
+"Americas","Latin America & Caribbean","UMC","Costa Rica","CRI","Wheat flour","Mandatory",98,"Reported",0.01,"Reported",1
+"Americas","Latin America & Caribbean","UMC","Cuba","CUB","Maize flour","None",79,"None",NA,"None",NA
+"Americas","Latin America & Caribbean","UMC","Cuba","CUB","Oil","None",24,"None",NA,"None",NA
+"Americas","Latin America & Caribbean","UMC","Cuba","CUB","Rice","None",166,"Reported",1,"None",NA
+"Americas","Latin America & Caribbean","UMC","Cuba","CUB","Salt","None",6.71,"None",NA,"None",NA
+"Americas","Latin America & Caribbean","UMC","Cuba","CUB","Wheat flour","Mandatory",105,"Reported",1,"Imputed",0.912105263157895
+"Americas","Latin America & Caribbean","UMC","Dominica","DMA","Maize flour","None",14,"Reported",1,"None",NA
+"Americas","Latin America & Caribbean","UMC","Dominica","DMA","Oil","None",9,"None",NA,"None",NA
+"Americas","Latin America & Caribbean","UMC","Dominica","DMA","Rice","None",18,"Reported",1,"None",NA
+"Americas","Latin America & Caribbean","UMC","Dominica","DMA","Salt","None",6.84,"None",NA,"None",NA
+"Americas","Latin America & Caribbean","UMC","Dominica","DMA","Wheat flour","Mandatory",64,"Reported",1,"Imputed",0.912105263157895
+"Americas","Latin America & Caribbean","UMC","Dominican Republic","DOM","Maize flour","Voluntary",5,"Imputed",0.653684210526316,"Reported",0
+"Americas","Latin America & Caribbean","UMC","Dominican Republic","DOM","Oil","None",46,"None",NA,"None",NA
+"Americas","Latin America & Caribbean","UMC","Dominican Republic","DOM","Rice","None",136,"Reported",0.05,"None",NA
+"Americas","Latin America & Caribbean","UMC","Dominican Republic","DOM","Salt","Mandatory",6.61,"Imputed",1,"Imputed",0.6774
+"Americas","Latin America & Caribbean","UMC","Dominican Republic","DOM","Wheat flour","Mandatory",76,"Reported",1,"Reported",1
+"Americas","Latin America & Caribbean","UMC","Ecuador","ECU","Maize flour","None",105,"None",NA,"None",NA
+"Americas","Latin America & Caribbean","UMC","Ecuador","ECU","Oil","None",42,"None",NA,"None",NA
+"Americas","Latin America & Caribbean","UMC","Ecuador","ECU","Rice","None",102,"Reported",1,"None",NA
+"Americas","Latin America & Caribbean","UMC","Ecuador","ECU","Salt","Mandatory",7.7,"Imputed",1,"Imputed",0.6774
+"Americas","Latin America & Caribbean","UMC","Ecuador","ECU","Wheat flour","Mandatory",98,"Reported",1,"Reported",1
+"Americas","Latin America & Caribbean","UMC","El Salvador","SLV","Maize flour","Mandatory",191,"Reported",1,"Reported",1
+"Americas","Latin America & Caribbean","UMC","El Salvador","SLV","Oil","None",5,"None",NA,"None",NA
+"Americas","Latin America & Caribbean","UMC","El Salvador","SLV","Rice","None",27,"Reported",1,"None",NA
+"Americas","Latin America & Caribbean","UMC","El Salvador","SLV","Salt","Mandatory",8.11,"Imputed",1,"Imputed",0.6774
+"Americas","Latin America & Caribbean","UMC","El Salvador","SLV","Wheat flour","Mandatory",74,"Reported",1,"Reported",1
+"Americas","Latin America & Caribbean","UMC","Grenada","GRD","Maize flour","None",10,"Reported",1,"None",NA
+"Americas","Latin America & Caribbean","UMC","Grenada","GRD","Oil","None",14,"None",NA,"None",NA
+"Americas","Latin America & Caribbean","UMC","Grenada","GRD","Rice","None",26,"Reported",1,"None",NA
+"Americas","Latin America & Caribbean","UMC","Grenada","GRD","Salt","None",6.63,"None",NA,"None",NA
+"Americas","Latin America & Caribbean","UMC","Grenada","GRD","Wheat flour","Mandatory",58,"Reported",1,"Imputed",0.912105263157895
+"Americas","Latin America & Caribbean","UMC","Guatemala","GTM","Maize flour","Mandatory",226,"Reported",0.01,"Reported",1
+"Americas","Latin America & Caribbean","UMC","Guatemala","GTM","Oil","None",20,"None",NA,"None",NA
+"Americas","Latin America & Caribbean","UMC","Guatemala","GTM","Rice","None",14,"Reported",0.14,"None",NA
+"Americas","Latin America & Caribbean","UMC","Guatemala","GTM","Salt","Mandatory",7.47,"Imputed",1,"Imputed",0.6774
+"Americas","Latin America & Caribbean","UMC","Guatemala","GTM","Wheat flour","Mandatory",59,"Reported",1,"Reported",1
+"Americas","Latin America & Caribbean","UMC","Jamaica","JAM","Maize flour","None",28,"Reported",0.95,"None",NA
+"Americas","Latin America & Caribbean","UMC","Jamaica","JAM","Oil","None",10,"None",NA,"None",NA
+"Americas","Latin America & Caribbean","UMC","Jamaica","JAM","Rice","None",72,"Reported",1,"None",NA
+"Americas","Latin America & Caribbean","UMC","Jamaica","JAM","Salt","None",4.88,"None",NA,"None",NA
+"Americas","Latin America & Caribbean","UMC","Jamaica","JAM","Wheat flour","Mandatory",139,"Reported",1,"Imputed",0.912105263157895
+"Americas","Latin America & Caribbean","UMC","Mexico","MEX","Maize flour","Mandatory",288,"Reported",0.42,"Reported",0.65
+"Americas","Latin America & Caribbean","UMC","Mexico","MEX","Oil","None",27,"None",NA,"None",NA
+"Americas","Latin America & Caribbean","UMC","Mexico","MEX","Rice","None",14,"Reported",0.12,"None",NA
+"Americas","Latin America & Caribbean","UMC","Mexico","MEX","Salt","Mandatory",7.02,"Imputed",1,"Reported",0.68
+"Americas","Latin America & Caribbean","UMC","Mexico","MEX","Wheat flour","Mandatory",66,"Reported",1,"Reported",0.875
+"Americas","Latin America & Caribbean","UMC","Paraguay","PRY","Maize flour","None",221,"None",NA,"None",NA
+"Americas","Latin America & Caribbean","UMC","Paraguay","PRY","Oil","None",44,"None",NA,"None",NA
+"Americas","Latin America & Caribbean","UMC","Paraguay","PRY","Rice","None",20,"Reported",1,"None",NA
+"Americas","Latin America & Caribbean","UMC","Paraguay","PRY","Salt","Mandatory",10.96,"Imputed",1,"Imputed",0.6774
+"Americas","Latin America & Caribbean","UMC","Paraguay","PRY","Wheat flour","Mandatory",71,"Reported",1,"Reported",1
+"Americas","Latin America & Caribbean","UMC","Peru","PER","Maize flour","None",22,"Reported",0.07,"None",NA
+"Americas","Latin America & Caribbean","UMC","Peru","PER","Oil","None",18,"None",NA,"None",NA
+"Americas","Latin America & Caribbean","UMC","Peru","PER","Rice","Mandatory",129,"Reported",0.31,"Reported",0
+"Americas","Latin America & Caribbean","UMC","Peru","PER","Salt","Mandatory",7.8,"Imputed",1,"Reported",0.59
+"Americas","Latin America & Caribbean","UMC","Peru","PER","Wheat flour","Mandatory",12,"Reported",0.11,"Reported",0.932
+"Americas","Latin America & Caribbean","UMC","Saint Lucia","LCA","Maize flour","None",20,"Reported",1,"None",NA
+"Americas","Latin America & Caribbean","UMC","Saint Lucia","LCA","Oil","None",1,"None",NA,"None",NA
+"Americas","Latin America & Caribbean","UMC","Saint Lucia","LCA","Rice","None",41,"Reported",1,"None",NA
+"Americas","Latin America & Caribbean","UMC","Saint Lucia","LCA","Salt","None",7.45,"None",NA,"None",NA
+"Americas","Latin America & Caribbean","UMC","Saint Lucia","LCA","Wheat flour","Mandatory",152,"Reported",1,"Imputed",0.912105263157895
+"Americas","Latin America & Caribbean","UMC","Saint Vincent and the Grenadines","VCT","Maize flour","None",18,"None",NA,"None",NA
+"Americas","Latin America & Caribbean","UMC","Saint Vincent and the Grenadines","VCT","Oil","None",14,"None",NA,"None",NA
+"Americas","Latin America & Caribbean","UMC","Saint Vincent and the Grenadines","VCT","Rice","None",16,"Reported",1,"None",NA
+"Americas","Latin America & Caribbean","UMC","Saint Vincent and the Grenadines","VCT","Salt","None",7.17,"None",NA,"None",NA
+"Americas","Latin America & Caribbean","UMC","Saint Vincent and the Grenadines","VCT","Wheat flour","Mandatory",113,"Reported",1,"Imputed",0.912105263157895
+"Americas","Latin America & Caribbean","UMC","Suriname","SUR","Maize flour","None",1,"Reported",1,"None",NA
+"Americas","Latin America & Caribbean","UMC","Suriname","SUR","Oil","None",32,"None",NA,"None",NA
+"Americas","Latin America & Caribbean","UMC","Suriname","SUR","Rice","None",171,"None",NA,"None",NA
+"Americas","Latin America & Caribbean","UMC","Suriname","SUR","Salt","None",7.35,"None",NA,"None",NA
+"Americas","Latin America & Caribbean","UMC","Suriname","SUR","Wheat flour","Mandatory",88,"Reported",1,"Imputed",0.912105263157895
+"Americas","Latin America & Caribbean","INX","Venezuela","VEN","Maize flour","Mandatory",75,"Imputed",0.653684210526316,"Imputed",0.796
+"Americas","Latin America & Caribbean","INX","Venezuela","VEN","Oil","None",41,"None",NA,"None",NA
+"Americas","Latin America & Caribbean","INX","Venezuela","VEN","Rice","Voluntary",97,"Reported",1,"Reported",0
+"Americas","Latin America & Caribbean","INX","Venezuela","VEN","Salt","Mandatory",9.02,"Imputed",0.95,"Imputed",0.6774
+"Americas","Latin America & Caribbean","INX","Venezuela","VEN","Wheat flour","Mandatory",41,"Reported",1,"Reported",1
+"Asia","Middle East & North Africa","HIC","Bahrain","BHR","Maize flour","None",18,"Reported",1,"None",NA
+"Asia","Middle East & North Africa","HIC","Bahrain","BHR","Rice","Voluntary",133,"Reported",1,"Imputed",0
+"Asia","Middle East & North Africa","HIC","Bahrain","BHR","Salt","Mandatory",13.68,"Imputed",1,"Imputed",0.386
+"Asia","Middle East & North Africa","HIC","Bahrain","BHR","Wheat flour","Mandatory",121,"Reported",1,"Reported",0.9
+"Asia","East Asia & Pacific","HIC","Brunei Darussalam","BRN","Maize flour","None",125,"Reported",1,"None",NA
+"Asia","East Asia & Pacific","HIC","Brunei Darussalam","BRN","Oil","None",26.5,"None",NA,"None",NA
+"Asia","East Asia & Pacific","HIC","Brunei Darussalam","BRN","Rice","None",198,"Reported",0.91,"None",NA
+"Asia","East Asia & Pacific","HIC","Brunei Darussalam","BRN","Salt","Voluntary",11.24,"Imputed",1,"Imputed",0
+"Asia","East Asia & Pacific","HIC","Brunei Darussalam","BRN","Wheat flour","None",106,"Reported",1,"None",NA
+"Asia","Europe & Central Asia","HIC","Cyprus","CYP","Maize flour","None",6,"Reported",1,"None",NA
+"Asia","Europe & Central Asia","HIC","Cyprus","CYP","Oil","None",36,"None",NA,"None",NA
+"Asia","Europe & Central Asia","HIC","Cyprus","CYP","Rice","None",14,"Reported",1,"None",NA
+"Asia","Europe & Central Asia","HIC","Cyprus","CYP","Salt","None",10.32,"None",NA,"None",NA
+"Asia","Europe & Central Asia","HIC","Cyprus","CYP","Wheat flour","None",172,"Reported",1,"None",NA
+"Asia","Middle East & North Africa","HIC","Israel","ISR","Maize flour","None",12,"Reported",0.75,"None",NA
+"Asia","Middle East & North Africa","HIC","Israel","ISR","Oil","None",51,"None",NA,"None",NA
+"Asia","Middle East & North Africa","HIC","Israel","ISR","Rice","None",46,"Reported",1,"None",NA
+"Asia","Middle East & North Africa","HIC","Israel","ISR","Salt","None",9.63,"None",NA,"None",NA
+"Asia","Middle East & North Africa","HIC","Israel","ISR","Wheat flour","None",173,"Reported",1,"None",NA
+"Asia","East Asia & Pacific","HIC","Japan","JPN","Maize flour","None",2,"Reported",1,"None",NA
+"Asia","East Asia & Pacific","HIC","Japan","JPN","Oil","None",32,"None",NA,"None",NA
+"Asia","East Asia & Pacific","HIC","Japan","JPN","Rice","None",159,"None",NA,"None",NA
+"Asia","East Asia & Pacific","HIC","Japan","JPN","Salt","None",10.4,"None",NA,"None",NA
+"Asia","East Asia & Pacific","HIC","Japan","JPN","Wheat flour","None",85,"Reported",1,"None",NA
+"Asia","Middle East & North Africa","HIC","Kuwait","KWT","Maize flour","None",9,"None",NA,"None",NA
+"Asia","Middle East & North Africa","HIC","Kuwait","KWT","Oil","None",43,"Reported",1,"None",NA
+"Asia","Middle East & North Africa","HIC","Kuwait","KWT","Rice","None",145,"Reported",1,"None",NA
+"Asia","Middle East & North Africa","HIC","Kuwait","KWT","Salt","Mandatory",9.86,"Imputed",1,"Imputed",0.386
+"Asia","Middle East & North Africa","HIC","Kuwait","KWT","Wheat flour","Voluntary",179,"Reported",1,"Reported",1
+"Asia","Middle East & North Africa","HIC","Oman","OMN","Maize flour","None",41,"Reported",0.01,"None",NA
+"Asia","Middle East & North Africa","HIC","Oman","OMN","Oil","Mandatory",28,"Imputed",1,"Imputed",0.51175
+"Asia","Middle East & North Africa","HIC","Oman","OMN","Rice","None",123,"Reported",1,"None",NA
+"Asia","Middle East & North Africa","HIC","Oman","OMN","Salt","Mandatory",9.61,"Imputed",1,"Imputed",0.386
+"Asia","Middle East & North Africa","HIC","Oman","OMN","Wheat flour","Mandatory",29,"Reported",1,"Reported",0.89
+"Asia","Middle East & North Africa","HIC","Qatar","QAT","Maize flour","None",5,"None",NA,"None",NA
+"Asia","Middle East & North Africa","HIC","Qatar","QAT","Rice","None",184,"Reported",1,"None",NA
+"Asia","Middle East & North Africa","HIC","Qatar","QAT","Salt","Mandatory",10.7,"Imputed",1,"Imputed",0.386
+"Asia","Middle East & North Africa","HIC","Qatar","QAT","Wheat flour","Voluntary",157,"Reported",1,"Reported",0.9
+"Asia","Middle East & North Africa","HIC","Saudi Arabia","SAU","Maize flour","None",60,"Reported",1,"None",NA
+"Asia","Middle East & North Africa","HIC","Saudi Arabia","SAU","Oil","None",43,"None",NA,"None",NA
+"Asia","Middle East & North Africa","HIC","Saudi Arabia","SAU","Rice","None",103,"Reported",1,"None",NA
+"Asia","Middle East & North Africa","HIC","Saudi Arabia","SAU","Salt","Mandatory",8.13,"Imputed",1,"Imputed",0.386
+"Asia","Middle East & North Africa","HIC","Saudi Arabia","SAU","Wheat flour","Voluntary",220,"Reported",1,"Reported",1
+"Asia","East Asia & Pacific","HIC","Singapore","SGP","Maize flour","None",3,"Reported",1,"None",NA
+"Asia","East Asia & Pacific","HIC","Singapore","SGP","Rice","None",109,"Reported",1,"None",NA
+"Asia","East Asia & Pacific","HIC","Singapore","SGP","Salt","Voluntary",13.07,"Imputed",1,"Imputed",0
+"Asia","East Asia & Pacific","HIC","Singapore","SGP","Wheat flour","None",85,"Reported",1,"None",NA
+"Asia","East Asia & Pacific","HIC","South Korea","KOR","Maize flour","None",6,"Reported",1,"None",NA
+"Asia","East Asia & Pacific","HIC","South Korea","KOR","Oil","None",52,"None",NA,"None",NA
+"Asia","East Asia & Pacific","HIC","South Korea","KOR","Rice","None",167,"Reported",0.95,"None",NA
+"Asia","East Asia & Pacific","HIC","South Korea","KOR","Salt","None",11.6,"None",NA,"None",NA
+"Asia","East Asia & Pacific","HIC","South Korea","KOR","Wheat flour","None",105,"Reported",1,"None",NA
+"Asia","Middle East & North Africa","HIC","United Arab Emirates","ARE","Maize flour","None",6,"Reported",0.9,"None",NA
+"Asia","Middle East & North Africa","HIC","United Arab Emirates","ARE","Oil","None",23,"None",NA,"None",NA
+"Asia","Middle East & North Africa","HIC","United Arab Emirates","ARE","Rice","None",70,"Reported",1,"None",NA
+"Asia","Middle East & North Africa","HIC","United Arab Emirates","ARE","Salt","Mandatory",9.33,"Imputed",1,"Imputed",0.386
+"Asia","Middle East & North Africa","HIC","United Arab Emirates","ARE","Wheat flour","Voluntary",208,"Reported",1,"Reported",0.9
+"Asia","South Asia","LIC","Afghanistan","AFG","Maize flour","None",11,"None",NA,"None",NA
+"Asia","South Asia","LIC","Afghanistan","AFG","Oil","Mandatory",17,"Imputed",0.685,"Reported",0.326
+"Asia","South Asia","LIC","Afghanistan","AFG","Rice","None",41,"Reported",0.55,"None",NA
+"Asia","South Asia","LIC","Afghanistan","AFG","Salt","Mandatory",8.62,"Imputed",0.95,"Reported",0.696
+"Asia","South Asia","LIC","Afghanistan","AFG","Wheat flour","Mandatory",362,"Reported",0.81,"Reported",0.712
+"Asia","East Asia & Pacific","LIC","North Korea","PRK","Maize flour","None",110,"None",NA,"None",NA
+"Asia","East Asia & Pacific","LIC","North Korea","PRK","Oil","None",16,"None",NA,"None",NA
+"Asia","East Asia & Pacific","LIC","North Korea","PRK","Rice","None",162,"None",NA,"None",NA
+"Asia","East Asia & Pacific","LIC","North Korea","PRK","Salt","None",9.63,"None",NA,"None",NA
+"Asia","East Asia & Pacific","LIC","North Korea","PRK","Wheat flour","None",8,"None",NA,"None",NA
+"Asia","Middle East & North Africa","LIC","Syria","SYR","Maize flour","None",1,"None",NA,"None",NA
+"Asia","Middle East & North Africa","LIC","Syria","SYR","Oil","None",27,"None",NA,"None",NA
+"Asia","Middle East & North Africa","LIC","Syria","SYR","Rice","None",16,"Reported",1,"None",NA
+"Asia","Middle East & North Africa","LIC","Syria","SYR","Salt","None",10.63,"None",NA,"None",NA
+"Asia","Middle East & North Africa","LIC","Syria","SYR","Wheat flour","None",313,"Reported",0.82,"None",NA
+"Asia","Middle East & North Africa","LIC","Yemen","YEM","Maize flour","None",30,"Reported",0.03,"None",NA
+"Asia","Middle East & North Africa","LIC","Yemen","YEM","Oil","Mandatory",15,"Imputed",1,"Imputed",0.51175
+"Asia","Middle East & North Africa","LIC","Yemen","YEM","Rice","None",53,"Reported",1,"None",NA
+"Asia","Middle East & North Africa","LIC","Yemen","YEM","Salt","Mandatory",8.57,"Imputed",0.95,"Imputed",0.386
+"Asia","Middle East & North Africa","LIC","Yemen","YEM","Wheat flour","Mandatory",273,"Reported",1,"Reported",1
+"Asia","South Asia","LMC","Bangladesh","BGD","Maize flour","None",0,"None",NA,"None",NA
+"Asia","South Asia","LMC","Bangladesh","BGD","Oil","Mandatory",19,"Reported",0.52,"Reported",0.606
+"Asia","South Asia","LMC","Bangladesh","BGD","Rice","Voluntary",480,"Reported",0.28,"Reported",0
+"Asia","South Asia","LMC","Bangladesh","BGD","Salt","Mandatory",9,"Imputed",0.95,"Reported",0.966
+"Asia","South Asia","LMC","Bangladesh","BGD","Wheat flour","Voluntary",44,"Reported",0.78,"Reported",0
+"Asia","South Asia","LMC","Bhutan","BTN","Maize flour","None",22,"None",NA,"None",NA
+"Asia","South Asia","LMC","Bhutan","BTN","Rice","None",330,"Reported",0.88,"None",NA
+"Asia","South Asia","LMC","Bhutan","BTN","Salt","None",9.25,"None",NA,"None",NA
+"Asia","South Asia","LMC","Bhutan","BTN","Wheat flour","None",35,"None",NA,"None",NA
+"Asia","East Asia & Pacific","LMC","Cambodia","KHM","Maize flour","None",0,"Reported",0.01,"None",NA
+"Asia","East Asia & Pacific","LMC","Cambodia","KHM","Oil","None",10,"None",NA,"None",NA
+"Asia","East Asia & Pacific","LMC","Cambodia","KHM","Rice","None",424,"Reported",0.35,"None",NA
+"Asia","East Asia & Pacific","LMC","Cambodia","KHM","Salt","Mandatory",11.21,"Imputed",0.95,"Reported",0.66
+"Asia","East Asia & Pacific","LMC","Cambodia","KHM","Wheat flour","None",5,"Reported",1,"None",NA
+"Asia","South Asia","LMC","India","IND","Maize flour","None",11,"None",NA,"None",NA
+"Asia","South Asia","LMC","India","IND","Oil","Voluntary",24,"Imputed",0.685,"Imputed",0
+"Asia","South Asia","LMC","India","IND","Rice","Voluntary",191,"Imputed",0.658571428571429,"Reported",0.26
+"Asia","South Asia","LMC","India","IND","Salt","Mandatory",9.46,"Imputed",0.95,"Imputed",0.856333333333333
+"Asia","South Asia","LMC","India","IND","Wheat flour","Voluntary",157,"Reported",0.3,"Reported",0.01
+"Asia","East Asia & Pacific","UMC","Indonesia","IDN","Maize flour","None",2,"None",NA,"None",NA
+"Asia","East Asia & Pacific","UMC","Indonesia","IDN","Oil","Mandatory",23,"Reported",0.95,"Reported",0.43
+"Asia","East Asia & Pacific","UMC","Indonesia","IDN","Rice","None",312,"Reported",0.06,"None",NA
+"Asia","East Asia & Pacific","UMC","Indonesia","IDN","Salt","Mandatory",8.54,"Imputed",1,"Reported",0.7654
+"Asia","East Asia & Pacific","UMC","Indonesia","IDN","Wheat flour","Mandatory",76,"Reported",1,"Reported",0.87
+"Asia","Middle East & North Africa","UMC","Iran","IRN","Maize flour","None",8,"None",NA,"None",NA
+"Asia","Middle East & North Africa","UMC","Iran","IRN","Oil","None",33,"None",NA,"None",NA
+"Asia","Middle East & North Africa","UMC","Iran","IRN","Rice","None",65,"Reported",0.85,"None",NA
+"Asia","Middle East & North Africa","UMC","Iran","IRN","Salt","Mandatory",10.22,"Imputed",1,"Imputed",0.386
+"Asia","Middle East & North Africa","UMC","Iran","IRN","Wheat flour","Mandatory",335,"Reported",1,"Reported",1
+"Asia","Middle East & North Africa","LMC","Jordan","JOR","Maize flour","None",2,"Reported",1,"None",NA
+"Asia","Middle East & North Africa","LMC","Jordan","JOR","Oil","None",44,"None",NA,"None",NA
+"Asia","Middle East & North Africa","LMC","Jordan","JOR","Rice","None",44,"Reported",1,"None",NA
+"Asia","Middle East & North Africa","LMC","Jordan","JOR","Salt","Mandatory",10.5,"Imputed",0.95,"Imputed",0.386
+"Asia","Middle East & North Africa","LMC","Jordan","JOR","Wheat flour","Mandatory",141,"Reported",1,"Reported",0.93
+"Asia","Europe & Central Asia","LMC","Kyrgyzstan","KGZ","Maize flour","None",58,"Reported",1,"None",NA
+"Asia","Europe & Central Asia","LMC","Kyrgyzstan","KGZ","Oil","None",12,"None",NA,"None",NA
+"Asia","Europe & Central Asia","LMC","Kyrgyzstan","KGZ","Rice","None",16,"Reported",1,"None",NA
+"Asia","Europe & Central Asia","LMC","Kyrgyzstan","KGZ","Salt","Mandatory",13.68,"Imputed",0.95,"Imputed",0.794
+"Asia","Europe & Central Asia","LMC","Kyrgyzstan","KGZ","Wheat flour","Mandatory",193,"Reported",1,"Imputed",0.375666666666667
+"Asia","East Asia & Pacific","LMC","Lao PDR","LAO","Maize flour","None",27,"None",NA,"None",NA
+"Asia","East Asia & Pacific","LMC","Lao PDR","LAO","Oil","None",7,"None",NA,"None",NA
+"Asia","East Asia & Pacific","LMC","Lao PDR","LAO","Rice","None",397,"Reported",0.21,"None",NA
+"Asia","East Asia & Pacific","LMC","Lao PDR","LAO","Salt","Mandatory",11.31,"Imputed",0.95,"Reported",0.483
+"Asia","East Asia & Pacific","LMC","Lao PDR","LAO","Wheat flour","None",1,"Reported",1,"None",NA
+"Asia","Middle East & North Africa","LMC","Lebanon","LBN","Maize flour","None",5,"None",NA,"None",NA
+"Asia","Middle East & North Africa","LMC","Lebanon","LBN","Oil","None",35,"None",NA,"None",NA
+"Asia","Middle East & North Africa","LMC","Lebanon","LBN","Rice","None",29,"Reported",1,"None",NA
+"Asia","Middle East & North Africa","LMC","Lebanon","LBN","Salt","Mandatory",7.96,"Imputed",0.95,"Reported",0.44
+"Asia","Middle East & North Africa","LMC","Lebanon","LBN","Wheat flour","None",233,"Reported",1,"None",NA
+"Asia","East Asia & Pacific","UMC","Mongolia","MNG","Maize flour","None",0,"Reported",1,"None",NA
+"Asia","East Asia & Pacific","UMC","Mongolia","MNG","Oil","None",13,"None",NA,"None",NA
+"Asia","East Asia & Pacific","UMC","Mongolia","MNG","Rice","None",33,"Reported",1,"None",NA
+"Asia","East Asia & Pacific","UMC","Mongolia","MNG","Salt","Mandatory",11,"Imputed",1,"Imputed",0.72908
+"Asia","East Asia & Pacific","UMC","Mongolia","MNG","Wheat flour","Mandatory",164,"Reported",1,"Reported",0
+"Asia","East Asia & Pacific","LMC","Myanmar","MMR","Maize flour","None",7,"None",NA,"None",NA
+"Asia","East Asia & Pacific","LMC","Myanmar","MMR","Oil","None",15,"None",NA,"None",NA
+"Asia","East Asia & Pacific","LMC","Myanmar","MMR","Rice","Voluntary",463,"Reported",0.99,"Reported",0
+"Asia","East Asia & Pacific","LMC","Myanmar","MMR","Salt","Mandatory",11.41,"Imputed",0.95,"Imputed",0.72908
+"Asia","East Asia & Pacific","LMC","Myanmar","MMR","Wheat flour","None",19,"Reported",0.88,"None",NA
+"Asia","South Asia","LMC","Nepal","NPL","Maize flour","None",86,"None",NA,"None",NA
+"Asia","South Asia","LMC","Nepal","NPL","Oil","None",26,"None",NA,"None",NA
+"Asia","South Asia","LMC","Nepal","NPL","Rice","None",242,"Reported",0.58,"None",NA
+"Asia","South Asia","LMC","Nepal","NPL","Salt","Mandatory",9.89,"Imputed",0.95,"Reported",0.907
+"Asia","South Asia","LMC","Nepal","NPL","Wheat flour","Mandatory",114,"Imputed",0.701666666666667,"Reported",0.368
+"Asia","South Asia","LMC","Pakistan","PAK","Maize flour","None",28,"None",NA,"None",NA
+"Asia","South Asia","LMC","Pakistan","PAK","Oil","Mandatory",15,"Reported",0.85,"Reported",0.685
+"Asia","South Asia","LMC","Pakistan","PAK","Rice","None",36,"Reported",0.9,"None",NA
+"Asia","South Asia","LMC","Pakistan","PAK","Salt","Voluntary",9.94,"Imputed",0.95,"Reported",0.867
+"Asia","South Asia","LMC","Pakistan","PAK","Wheat flour","None",256,"Reported",0.32,"None",NA
+"Asia","Middle East & North Africa","LMC","Palestine","PSE","Maize flour","None",24,"Reported",1,"None",NA
+"Asia","Middle East & North Africa","LMC","Palestine","PSE","Rice","None",20,"Reported",1,"None",NA
+"Asia","Middle East & North Africa","LMC","Palestine","PSE","Salt","Mandatory",9.81,"Imputed",0.95,"Imputed",0.386
+"Asia","Middle East & North Africa","LMC","Palestine","PSE","Wheat flour","Mandatory",95,"Reported",1,"Reported",1
+"Asia","East Asia & Pacific","LMC","Philippines","PHL","Maize flour","None",58,"None",NA,"None",NA
+"Asia","East Asia & Pacific","LMC","Philippines","PHL","Oil","Mandatory",6,"Imputed",0.975,"Imputed",0.43
+"Asia","East Asia & Pacific","LMC","Philippines","PHL","Rice","Mandatory",341,"Reported",0.2,"Imputed",0.88
+"Asia","East Asia & Pacific","LMC","Philippines","PHL","Salt","Mandatory",10.91,"Imputed",0.95,"Imputed",0.72908
+"Asia","East Asia & Pacific","LMC","Philippines","PHL","Wheat flour","Mandatory",76,"Reported",1,"Imputed",0.6094
+"Asia","South Asia","LMC","Sri Lanka","LKA","Maize flour","None",27,"None",NA,"None",NA
+"Asia","South Asia","LMC","Sri Lanka","LKA","Oil","None",5,"None",NA,"None",NA
+"Asia","South Asia","LMC","Sri Lanka","LKA","Rice","None",347,"Reported",0.42,"None",NA
+"Asia","South Asia","LMC","Sri Lanka","LKA","Salt","Mandatory",9.84,"Imputed",0.95,"Imputed",0.856333333333333
+"Asia","South Asia","LMC","Sri Lanka","LKA","Wheat flour","Mandatory",105,"Reported",1,"Imputed",0.54
+"Asia","Europe & Central Asia","LMC","Tajikistan","TJK","Maize flour","None",2,"Reported",1,"None",NA
+"Asia","Europe & Central Asia","LMC","Tajikistan","TJK","Oil","None",26,"None",NA,"None",NA
+"Asia","Europe & Central Asia","LMC","Tajikistan","TJK","Rice","None",21,"Reported",1,"None",NA
+"Asia","Europe & Central Asia","LMC","Tajikistan","TJK","Salt","Mandatory",13.73,"Imputed",0.95,"Reported",0.74
+"Asia","Europe & Central Asia","LMC","Tajikistan","TJK","Wheat flour","Mandatory",303,"Reported",0.75,"Reported",0
+"Asia","East Asia & Pacific","LMC","Timor-Leste","TLS","Maize flour","None",105,"None",NA,"None",NA
+"Asia","East Asia & Pacific","LMC","Timor-Leste","TLS","Oil","None",21,"None",NA,"None",NA
+"Asia","East Asia & Pacific","LMC","Timor-Leste","TLS","Rice","None",236,"Reported",0.74,"None",NA
+"Asia","East Asia & Pacific","LMC","Timor-Leste","TLS","Salt","None",11.36,"None",NA,"None",NA
+"Asia","East Asia & Pacific","LMC","Timor-Leste","TLS","Wheat flour","None",31,"Reported",1,"None",NA
+"Asia","Europe & Central Asia","LMC","Uzbekistan","UZB","Maize flour","None",16,"Reported",1,"None",NA
+"Asia","Europe & Central Asia","LMC","Uzbekistan","UZB","Oil","None",24,"None",NA,"None",NA
+"Asia","Europe & Central Asia","LMC","Uzbekistan","UZB","Rice","None",17,"Reported",1,"None",NA
+"Asia","Europe & Central Asia","LMC","Uzbekistan","UZB","Salt","Mandatory",14.31,"Imputed",0.95,"Reported",0.6
+"Asia","Europe & Central Asia","LMC","Uzbekistan","UZB","Wheat flour","Mandatory",340,"Reported",0.8,"Reported",0.01
+"Asia","East Asia & Pacific","LMC","Viet Nam","VNM","Maize flour","None",40,"None",NA,"None",NA
+"Asia","East Asia & Pacific","LMC","Viet Nam","VNM","Oil","Mandatory",9,"Imputed",0.975,"Imputed",0.43
+"Asia","East Asia & Pacific","LMC","Viet Nam","VNM","Rice","None",401,"Reported",0.2,"None",NA
+"Asia","East Asia & Pacific","LMC","Viet Nam","VNM","Salt","Mandatory",11.67,"Imputed",0.95,"Imputed",0.72908
+"Asia","East Asia & Pacific","LMC","Viet Nam","VNM","Wheat flour","Mandatory",25,"Reported",0.98,"Imputed",0.6094
+"Asia","Europe & Central Asia","UMC","Armenia","ARM","Maize flour","None",18,"Reported",1,"None",NA
+"Asia","Europe & Central Asia","UMC","Armenia","ARM","Oil","None",22,"None",NA,"None",NA
+"Asia","Europe & Central Asia","UMC","Armenia","ARM","Rice","None",9,"Reported",1,"None",NA
+"Asia","Europe & Central Asia","UMC","Armenia","ARM","Salt","Mandatory",12.51,"Imputed",1,"Imputed",0.794
+"Asia","Europe & Central Asia","UMC","Armenia","ARM","Wheat flour","None",260,"Reported",0.81,"None",NA
+"Asia","Europe & Central Asia","UMC","Azerbaijan","AZE","Maize flour","None",28,"Reported",1,"None",NA
+"Asia","Europe & Central Asia","UMC","Azerbaijan","AZE","Oil","None",4,"None",NA,"None",NA
+"Asia","Europe & Central Asia","UMC","Azerbaijan","AZE","Rice","None",14,"Reported",1,"None",NA
+"Asia","Europe & Central Asia","UMC","Azerbaijan","AZE","Salt","Mandatory",12.86,"Imputed",1,"Imputed",0.794
+"Asia","Europe & Central Asia","UMC","Azerbaijan","AZE","Wheat flour","None",379,"Reported",1,"None",NA
+"Asia","East Asia & Pacific","UMC","China","CHN","Maize flour","None",18,"None",NA,"None",NA
+"Asia","East Asia & Pacific","UMC","China","CHN","Oil","Voluntary",20.85,"Imputed",0.975,"Imputed",0
+"Asia","East Asia & Pacific","UMC","China","CHN","Rice","None",233,"Reported",1,"None",NA
+"Asia","East Asia & Pacific","UMC","China","CHN","Salt","Mandatory",12.28,"Imputed",1,"Imputed",0.72908
+"Asia","East Asia & Pacific","UMC","China","CHN","Wheat flour","Voluntary",145,"Reported",1,"Reported",0.01
+"Asia","Europe & Central Asia","UMC","Georgia","GEO","Maize flour","None",52,"Reported",1,"None",NA
+"Asia","Europe & Central Asia","UMC","Georgia","GEO","Oil","None",16,"None",NA,"None",NA
+"Asia","Europe & Central Asia","UMC","Georgia","GEO","Rice","None",7,"Reported",1,"None",NA
+"Asia","Europe & Central Asia","UMC","Georgia","GEO","Salt","Mandatory",13.47,"Imputed",1,"Reported",0.956
+"Asia","Europe & Central Asia","UMC","Georgia","GEO","Wheat flour","None",285,"Reported",1,"None",NA
+"Asia","Middle East & North Africa","UMC","Iraq","IRQ","Maize flour","None",4,"Reported",0.03,"None",NA
+"Asia","Middle East & North Africa","UMC","Iraq","IRQ","Oil","None",35,"None",NA,"None",NA
+"Asia","Middle East & North Africa","UMC","Iraq","IRQ","Rice","None",107,"Reported",0.96,"None",NA
+"Asia","Middle East & North Africa","UMC","Iraq","IRQ","Salt","None",9.56,"None",NA,"None",NA
+"Asia","Middle East & North Africa","UMC","Iraq","IRQ","Wheat flour","Voluntary",289,"Reported",1,"Reported",0
+"Asia","Europe & Central Asia","UMC","Kazakhstan","KAZ","Maize flour","None",2,"Reported",1,"None",NA
+"Asia","Europe & Central Asia","UMC","Kazakhstan","KAZ","Oil","Voluntary",46,"Imputed",0.95,"Imputed",0
+"Asia","Europe & Central Asia","UMC","Kazakhstan","KAZ","Rice","None",28,"Reported",1,"None",NA
+"Asia","Europe & Central Asia","UMC","Kazakhstan","KAZ","Salt","Mandatory",12.51,"Imputed",1,"Reported",1
+"Asia","Europe & Central Asia","UMC","Kazakhstan","KAZ","Wheat flour","Mandatory",175,"Reported",1,"Reported",0.41
+"Asia","East Asia & Pacific","UMC","Malaysia","MYS","Maize flour","None",21,"None",NA,"None",NA
+"Asia","East Asia & Pacific","UMC","Malaysia","MYS","Oil","None",29,"None",NA,"None",NA
+"Asia","East Asia & Pacific","UMC","Malaysia","MYS","Rice","None",206,"None",NA,"None",NA
+"Asia","East Asia & Pacific","UMC","Malaysia","MYS","Salt","Mandatory",9.07,"Imputed",1,"Imputed",0.72908
+"Asia","East Asia & Pacific","UMC","Malaysia","MYS","Wheat flour","Voluntary",64,"Reported",0.98,"Reported",0.05
+"Asia","South Asia","UMC","Maldives","MDV","Maize flour","None",2,"Reported",1,"None",NA
+"Asia","South Asia","UMC","Maldives","MDV","Oil","None",3,"None",NA,"None",NA
+"Asia","South Asia","UMC","Maldives","MDV","Rice","None",147,"Reported",1,"None",NA
+"Asia","South Asia","UMC","Maldives","MDV","Salt","None",8.41,"None",NA,"None",NA
+"Asia","South Asia","UMC","Maldives","MDV","Wheat flour","None",119,"Reported",1,"None",NA
+"Asia","East Asia & Pacific","UMC","Thailand","THA","Maize flour","None",14,"None",NA,"None",NA
+"Asia","East Asia & Pacific","UMC","Thailand","THA","Oil","None",28,"None",NA,"None",NA
+"Asia","East Asia & Pacific","UMC","Thailand","THA","Rice","Voluntary",295,"Imputed",0.831153846153846,"Imputed",0
+"Asia","East Asia & Pacific","UMC","Thailand","THA","Salt","Mandatory",13.5,"Imputed",1,"Reported",0.877
+"Asia","East Asia & Pacific","UMC","Thailand","THA","Wheat flour","None",25,"Reported",1,"None",NA
+"Asia","Europe & Central Asia","UMC","Turkey","TUR","Maize flour","None",41,"Reported",1,"None",NA
+"Asia","Europe & Central Asia","UMC","Turkey","TUR","Oil","None",31,"None",NA,"None",NA
+"Asia","Europe & Central Asia","UMC","Turkey","TUR","Rice","None",22,"Reported",1,"None",NA
+"Asia","Europe & Central Asia","UMC","Turkey","TUR","Salt","Mandatory",15,"Imputed",1,"Imputed",0.794
+"Asia","Europe & Central Asia","UMC","Turkey","TUR","Wheat flour","None",344,"Reported",1,"None",NA
+"Asia","Europe & Central Asia","UMC","Turkmenistan","TKM","Maize flour","None",0,"Reported",1,"None",NA
+"Asia","Europe & Central Asia","UMC","Turkmenistan","TKM","Oil","None",17,"None",NA,"None",NA
+"Asia","Europe & Central Asia","UMC","Turkmenistan","TKM","Rice","None",19,"Reported",1,"None",NA
+"Asia","Europe & Central Asia","UMC","Turkmenistan","TKM","Salt","Mandatory",13.8,"Imputed",1,"Imputed",0.794
+"Asia","Europe & Central Asia","UMC","Turkmenistan","TKM","Wheat flour","Mandatory",372,"Reported",1,"Reported",0.928
+"Europe","Europe & Central Asia","HIC","Andorra","AND","Maize flour","None",3,"Reported",1,"None",NA
+"Europe","Europe & Central Asia","HIC","Andorra","AND","Rice","None",16,"Reported",1,"None",NA
+"Europe","Europe & Central Asia","HIC","Andorra","AND","Salt","None",9.69,"None",NA,"None",NA
+"Europe","Europe & Central Asia","HIC","Andorra","AND","Wheat flour","None",42,"Reported",1,"None",NA
+"Europe","Europe & Central Asia","HIC","Austria","AUT","Maize flour","None",26,"Reported",1,"None",NA
+"Europe","Europe & Central Asia","HIC","Austria","AUT","Oil","None",36,"None",NA,"None",NA
+"Europe","Europe & Central Asia","HIC","Austria","AUT","Rice","None",8,"Reported",1,"None",NA
+"Europe","Europe & Central Asia","HIC","Austria","AUT","Salt","Mandatory",8.7,"Imputed",1,"Imputed",0.794
+"Europe","Europe & Central Asia","HIC","Austria","AUT","Wheat flour","None",171,"Reported",1,"None",NA
+"Europe","Europe & Central Asia","HIC","Belgium","BEL","Maize flour","None",2,"Reported",1,"None",NA
+"Europe","Europe & Central Asia","HIC","Belgium","BEL","Oil","None",22,"None",NA,"None",NA
+"Europe","Europe & Central Asia","HIC","Belgium","BEL","Rice","None",4,"Reported",1,"None",NA
+"Europe","Europe & Central Asia","HIC","Belgium","BEL","Salt","Voluntary",8.77,"Imputed",1,"Imputed",0
+"Europe","Europe & Central Asia","HIC","Belgium","BEL","Wheat flour","None",152,"Reported",1,"None",NA
+"Europe","Europe & Central Asia","HIC","Croatia","HRV","Maize flour","None",19,"Reported",1,"None",NA
+"Europe","Europe & Central Asia","HIC","Croatia","HRV","Oil","None",19,"None",NA,"None",NA
+"Europe","Europe & Central Asia","HIC","Croatia","HRV","Rice","None",7,"Reported",1,"None",NA
+"Europe","Europe & Central Asia","HIC","Croatia","HRV","Salt","Mandatory",9.43,"Imputed",1,"Imputed",0.794
+"Europe","Europe & Central Asia","HIC","Croatia","HRV","Wheat flour","None",158,"Reported",1,"None",NA
+"Europe","Europe & Central Asia","HIC","Czech Republic","CZE","Maize flour","None",0,"Reported",1,"None",NA
+"Europe","Europe & Central Asia","HIC","Czech Republic","CZE","Oil","None",47,"None",NA,"None",NA
+"Europe","Europe & Central Asia","HIC","Czech Republic","CZE","Rice","None",11,"Reported",1,"None",NA
+"Europe","Europe & Central Asia","HIC","Czech Republic","CZE","Salt","Voluntary",10.12,"Imputed",1,"Imputed",0
+"Europe","Europe & Central Asia","HIC","Czech Republic","CZE","Wheat flour","None",158,"Reported",1,"None",NA
+"Europe","Europe & Central Asia","HIC","Denmark","DNK","Maize flour","None",7,"Reported",1,"None",NA
+"Europe","Europe & Central Asia","HIC","Denmark","DNK","Oil","None",0,"None",NA,"None",NA
+"Europe","Europe & Central Asia","HIC","Denmark","DNK","Rice","None",14,"Reported",1,"None",NA
+"Europe","Europe & Central Asia","HIC","Denmark","DNK","Salt","Mandatory",8.31,"Imputed",1,"Imputed",0.794
+"Europe","Europe & Central Asia","HIC","Denmark","DNK","Wheat flour","None",122,"Reported",1,"None",NA
+"Europe","Europe & Central Asia","HIC","Estonia","EST","Maize flour","None",17,"Reported",1,"None",NA
+"Europe","Europe & Central Asia","HIC","Estonia","EST","Oil","None",20,"None",NA,"None",NA
+"Europe","Europe & Central Asia","HIC","Estonia","EST","Rice","None",8,"Reported",1,"None",NA
+"Europe","Europe & Central Asia","HIC","Estonia","EST","Salt","None",10.04,"None",NA,"None",NA
+"Europe","Europe & Central Asia","HIC","Estonia","EST","Wheat flour","None",47,"Reported",1,"None",NA
+"Europe","Europe & Central Asia","HIC","Finland","FIN","Maize flour","None",0,"Reported",1,"None",NA
+"Europe","Europe & Central Asia","HIC","Finland","FIN","Oil","None",3,"None",NA,"None",NA
+"Europe","Europe & Central Asia","HIC","Finland","FIN","Rice","None",14,"Reported",1,"None",NA
+"Europe","Europe & Central Asia","HIC","Finland","FIN","Salt","Voluntary",9,"Imputed",1,"Imputed",0
+"Europe","Europe & Central Asia","HIC","Finland","FIN","Wheat flour","None",93,"Reported",1,"None",NA
+"Europe","Europe & Central Asia","HIC","France","FRA","Maize flour","None",24,"Reported",1,"None",NA
+"Europe","Europe & Central Asia","HIC","France","FRA","Oil","None",38,"None",NA,"None",NA
+"Europe","Europe & Central Asia","HIC","France","FRA","Rice","None",18,"Reported",1,"None",NA
+"Europe","Europe & Central Asia","HIC","France","FRA","Salt","Voluntary",9.58,"Imputed",1,"Imputed",0
+"Europe","Europe & Central Asia","HIC","France","FRA","Wheat flour","None",192,"Reported",1,"None",NA
+"Europe","Europe & Central Asia","HIC","Germany","DEU","Maize flour","None",12,"Reported",1,"None",NA
+"Europe","Europe & Central Asia","HIC","Germany","DEU","Oil","None",41,"None",NA,"None",NA
+"Europe","Europe & Central Asia","HIC","Germany","DEU","Rice","None",5,"Reported",1,"None",NA
+"Europe","Europe & Central Asia","HIC","Germany","DEU","Salt","Voluntary",9,"Imputed",1,"Reported",0.3
+"Europe","Europe & Central Asia","HIC","Germany","DEU","Wheat flour","None",144,"Reported",1,"None",NA
+"Europe","Europe & Central Asia","HIC","Greece","GRC","Maize flour","None",3,"Reported",1,"None",NA
+"Europe","Europe & Central Asia","HIC","Greece","GRC","Oil","None",24,"None",NA,"None",NA
+"Europe","Europe & Central Asia","HIC","Greece","GRC","Rice","None",13,"Reported",1,"None",NA
+"Europe","Europe & Central Asia","HIC","Greece","GRC","Salt","Voluntary",9.58,"Imputed",1,"Imputed",0
+"Europe","Europe & Central Asia","HIC","Greece","GRC","Wheat flour","None",172,"Reported",1,"None",NA
+"Europe","Europe & Central Asia","HIC","Hungary","HUN","Maize flour","None",0,"Reported",1,"None",NA
+"Europe","Europe & Central Asia","HIC","Hungary","HUN","Oil","None",28,"None",NA,"None",NA
+"Europe","Europe & Central Asia","HIC","Hungary","HUN","Rice","None",10,"Reported",1,"None",NA
+"Europe","Europe & Central Asia","HIC","Hungary","HUN","Salt","Mandatory",10.75,"Imputed",1,"Imputed",0.794
+"Europe","Europe & Central Asia","HIC","Hungary","HUN","Wheat flour","None",220,"Reported",1,"None",NA
+"Europe","Europe & Central Asia","HIC","Iceland","ISL","Maize flour","None",0,"Reported",1,"None",NA
+"Europe","Europe & Central Asia","HIC","Iceland","ISL","Oil","None",17,"None",NA,"None",NA
+"Europe","Europe & Central Asia","HIC","Iceland","ISL","Rice","None",10,"Reported",1,"None",NA
+"Europe","Europe & Central Asia","HIC","Iceland","ISL","Salt","None",9.1,"None",NA,"None",NA
+"Europe","Europe & Central Asia","HIC","Iceland","ISL","Wheat flour","None",54,"Reported",1,"None",NA
+"Europe","Europe & Central Asia","HIC","Ireland","IRL","Maize flour","None",20,"Reported",1,"None",NA
+"Europe","Europe & Central Asia","HIC","Ireland","IRL","Oil","None",29,"None",NA,"None",NA
+"Europe","Europe & Central Asia","HIC","Ireland","IRL","Rice","None",10,"Reported",1,"None",NA
+"Europe","Europe & Central Asia","HIC","Ireland","IRL","Salt","None",9.51,"None",NA,"None",NA
+"Europe","Europe & Central Asia","HIC","Ireland","IRL","Wheat flour","None",135,"Reported",1,"None",NA
+"Europe","Europe & Central Asia","HIC","Italy","ITA","Maize flour","None",7,"Reported",1,"None",NA
+"Europe","Europe & Central Asia","HIC","Italy","ITA","Oil","None",41,"None",NA,"None",NA
+"Europe","Europe & Central Asia","HIC","Italy","ITA","Rice","None",16,"Reported",1,"None",NA
+"Europe","Europe & Central Asia","HIC","Italy","ITA","Salt","Mandatory",11.24,"Imputed",1,"Imputed",0.794
+"Europe","Europe & Central Asia","HIC","Italy","ITA","Wheat flour","None",278,"Reported",1,"None",NA
+"Europe","Europe & Central Asia","HIC","Latvia","LVA","Maize flour","None",2,"Reported",1,"None",NA
+"Europe","Europe & Central Asia","HIC","Latvia","LVA","Oil","None",32,"None",NA,"None",NA
+"Europe","Europe & Central Asia","HIC","Latvia","LVA","Rice","None",7,"Reported",1,"None",NA
+"Europe","Europe & Central Asia","HIC","Latvia","LVA","Salt","Voluntary",10.65,"Imputed",1,"Imputed",0
+"Europe","Europe & Central Asia","HIC","Latvia","LVA","Wheat flour","None",114,"Reported",1,"None",NA
+"Europe","Europe & Central Asia","HIC","Lithuania","LTU","Maize flour","None",6,"Reported",1,"None",NA
+"Europe","Europe & Central Asia","HIC","Lithuania","LTU","Oil","None",17,"None",NA,"None",NA
+"Europe","Europe & Central Asia","HIC","Lithuania","LTU","Rice","None",9,"Reported",1,"None",NA
+"Europe","Europe & Central Asia","HIC","Lithuania","LTU","Salt","Mandatory",10.35,"Imputed",1,"Imputed",0.794
+"Europe","Europe & Central Asia","HIC","Lithuania","LTU","Wheat flour","None",209,"Reported",1,"None",NA
+"Europe","Europe & Central Asia","HIC","Luxembourg","LUX","Maize flour","None",1,"Reported",1,"None",NA
+"Europe","Europe & Central Asia","HIC","Luxembourg","LUX","Oil","None",11,"None",NA,"None",NA
+"Europe","Europe & Central Asia","HIC","Luxembourg","LUX","Rice","None",15,"Reported",1,"None",NA
+"Europe","Europe & Central Asia","HIC","Luxembourg","LUX","Salt","None",10.35,"None",NA,"None",NA
+"Europe","Europe & Central Asia","HIC","Luxembourg","LUX","Wheat flour","None",96,"Reported",1,"None",NA
+"Europe","Middle East & North Africa","HIC","Malta","MLT","Maize flour","None",37,"Reported",1,"None",NA
+"Europe","Middle East & North Africa","HIC","Malta","MLT","Oil","None",16,"None",NA,"None",NA
+"Europe","Middle East & North Africa","HIC","Malta","MLT","Rice","None",16,"Reported",1,"None",NA
+"Europe","Middle East & North Africa","HIC","Malta","MLT","Salt","None",10.42,"None",NA,"None",NA
+"Europe","Middle East & North Africa","HIC","Malta","MLT","Wheat flour","None",166,"Reported",1,"None",NA
+"Europe","Europe & Central Asia","HIC","Netherlands","NLD","Maize flour","None",5,"Reported",1,"None",NA
+"Europe","Europe & Central Asia","HIC","Netherlands","NLD","Oil","Voluntary",27,"Imputed",0.95,"Imputed",0
+"Europe","Europe & Central Asia","HIC","Netherlands","NLD","Rice","None",0,"Reported",1,"None",NA
+"Europe","Europe & Central Asia","HIC","Netherlands","NLD","Salt","Voluntary",8.44,"Imputed",1,"Imputed",0
+"Europe","Europe & Central Asia","HIC","Netherlands","NLD","Wheat flour","None",140,"Reported",1,"None",NA
+"Europe","Europe & Central Asia","HIC","Norway","NOR","Maize flour","None",0,"Reported",1,"None",NA
+"Europe","Europe & Central Asia","HIC","Norway","NOR","Oil","None",9,"None",NA,"None",NA
+"Europe","Europe & Central Asia","HIC","Norway","NOR","Rice","None",13,"Reported",1,"None",NA
+"Europe","Europe & Central Asia","HIC","Norway","NOR","Salt","Voluntary",9.66,"Imputed",1,"Imputed",0
+"Europe","Europe & Central Asia","HIC","Norway","NOR","Wheat flour","None",156,"Reported",1,"None",NA
+"Europe","Europe & Central Asia","HIC","Poland","POL","Maize flour","None",0,"Reported",1,"None",NA
+"Europe","Europe & Central Asia","HIC","Poland","POL","Oil","None",18,"None",NA,"None",NA
+"Europe","Europe & Central Asia","HIC","Poland","POL","Rice","None",7,"Reported",1,"None",NA
+"Europe","Europe & Central Asia","HIC","Poland","POL","Salt","Mandatory",9.76,"Imputed",1,"Imputed",0.794
+"Europe","Europe & Central Asia","HIC","Poland","POL","Wheat flour","None",219,"Reported",1,"None",NA
+"Europe","Europe & Central Asia","HIC","Portugal","PRT","Maize flour","None",39,"Reported",1,"None",NA
+"Europe","Europe & Central Asia","HIC","Portugal","PRT","Oil","None",25,"None",NA,"None",NA
+"Europe","Europe & Central Asia","HIC","Portugal","PRT","Rice","None",10,"Reported",1,"None",NA
+"Europe","Europe & Central Asia","HIC","Portugal","PRT","Salt","Voluntary",10.7,"Imputed",1,"Imputed",0
+"Europe","Europe & Central Asia","HIC","Portugal","PRT","Wheat flour","None",163,"Reported",1,"None",NA
+"Europe","Europe & Central Asia","HIC","Romania","ROU","Maize flour","None",69,"Reported",0.8,"None",NA
+"Europe","Europe & Central Asia","HIC","Romania","ROU","Oil","None",33,"None",NA,"None",NA
+"Europe","Europe & Central Asia","HIC","Romania","ROU","Rice","None",7,"Reported",1,"None",NA
+"Europe","Europe & Central Asia","HIC","Romania","ROU","Salt","Mandatory",10.47,"Imputed",1,"Reported",0.32
+"Europe","Europe & Central Asia","HIC","Romania","ROU","Wheat flour","None",256,"Reported",0.76,"None",NA
+"Europe","Europe & Central Asia","HIC","Slovakia","SVK","Maize flour","None",0,"Reported",1,"None",NA
+"Europe","Europe & Central Asia","HIC","Slovakia","SVK","Oil","None",27,"None",NA,"None",NA
+"Europe","Europe & Central Asia","HIC","Slovakia","SVK","Rice","None",5,"Reported",1,"None",NA
+"Europe","Europe & Central Asia","HIC","Slovakia","SVK","Salt","Mandatory",10.75,"Imputed",1,"Imputed",0.794
+"Europe","Europe & Central Asia","HIC","Slovakia","SVK","Wheat flour","None",146,"Reported",1,"None",NA
+"Europe","Europe & Central Asia","HIC","Slovenia","SVN","Maize flour","None",70,"Reported",1,"None",NA
+"Europe","Europe & Central Asia","HIC","Slovenia","SVN","Oil","None",18,"None",NA,"None",NA
+"Europe","Europe & Central Asia","HIC","Slovenia","SVN","Rice","None",7,"Reported",1,"None",NA
+"Europe","Europe & Central Asia","HIC","Slovenia","SVN","Salt","Mandatory",11.3,"Imputed",1,"Reported",0.959
+"Europe","Europe & Central Asia","HIC","Slovenia","SVN","Wheat flour","None",157,"Reported",1,"None",NA
+"Europe","Europe & Central Asia","HIC","Spain","ESP","Maize flour","None",5,"Reported",0,"None",NA
+"Europe","Europe & Central Asia","HIC","Spain","ESP","Oil","None",48,"None",NA,"None",NA
+"Europe","Europe & Central Asia","HIC","Spain","ESP","Rice","None",19,"Reported",1,"None",NA
+"Europe","Europe & Central Asia","HIC","Spain","ESP","Salt","Voluntary",10.22,"Imputed",1,"Imputed",0
+"Europe","Europe & Central Asia","HIC","Spain","ESP","Wheat flour","None",186,"Reported",1,"None",NA
+"Europe","Europe & Central Asia","HIC","Sweden","SWE","Maize flour","None",3,"Reported",1,"None",NA
+"Europe","Europe & Central Asia","HIC","Sweden","SWE","Oil","None",13,"None",NA,"None",NA
+"Europe","Europe & Central Asia","HIC","Sweden","SWE","Rice","None",14,"Reported",1,"None",NA
+"Europe","Europe & Central Asia","HIC","Sweden","SWE","Salt","Voluntary",9.28,"Imputed",1,"Reported",0.23
+"Europe","Europe & Central Asia","HIC","Sweden","SWE","Wheat flour","None",167,"Reported",1,"None",NA
+"Europe","Europe & Central Asia","HIC","Switzerland","CHE","Maize flour","None",1,"Reported",1,"None",NA
+"Europe","Europe & Central Asia","HIC","Switzerland","CHE","Oil","None",34,"Reported",0.95,"None",NA
+"Europe","Europe & Central Asia","HIC","Switzerland","CHE","Rice","None",7,"Reported",1,"None",NA
+"Europe","Europe & Central Asia","HIC","Switzerland","CHE","Salt","Voluntary",9.1,"Imputed",1,"Imputed",0
+"Europe","Europe & Central Asia","HIC","Switzerland","CHE","Wheat flour","None",139,"Reported",1,"None",NA
+"Europe","Europe & Central Asia","HIC","United Kingdom","GBR","Maize flour","None",12,"Reported",1,"None",NA
+"Europe","Europe & Central Asia","HIC","United Kingdom","GBR","Oil","None",33,"None",NA,"None",NA
+"Europe","Europe & Central Asia","HIC","United Kingdom","GBR","Rice","None",10,"Reported",1,"None",NA
+"Europe","Europe & Central Asia","HIC","United Kingdom","GBR","Salt","None",8.1,"None",NA,"None",NA
+"Europe","Europe & Central Asia","HIC","United Kingdom","GBR","Wheat flour","Mandatory",210,"Reported",1,"Reported",0.9
+"Europe","Europe & Central Asia","HIC","Vatican City","VAT","Wheat flour","None",65,"Reported",1,"None",NA
+"Europe","Europe & Central Asia","UMC","Ukraine","UKR","Maize flour","None",40,"Reported",1,"None",NA
+"Europe","Europe & Central Asia","UMC","Ukraine","UKR","Oil","None",16,"None",NA,"None",NA
+"Europe","Europe & Central Asia","UMC","Ukraine","UKR","Rice","None",6,"Reported",0.6,"None",NA
+"Europe","Europe & Central Asia","UMC","Ukraine","UKR","Salt","Voluntary",10.65,"Imputed",1,"Imputed",0
+"Europe","Europe & Central Asia","UMC","Ukraine","UKR","Wheat flour","None",177,"Reported",0.9,"None",NA
+"Europe","Europe & Central Asia","UMC","Albania","ALB","Maize flour","None",5,"Reported",1,"None",NA
+"Europe","Europe & Central Asia","UMC","Albania","ALB","Oil","None",16,"None",NA,"None",NA
+"Europe","Europe & Central Asia","UMC","Albania","ALB","Rice","None",17,"Reported",1,"None",NA
+"Europe","Europe & Central Asia","UMC","Albania","ALB","Salt","Mandatory",9.33,"Imputed",1,"Imputed",0.794
+"Europe","Europe & Central Asia","UMC","Albania","ALB","Wheat flour","None",220,"Reported",1,"None",NA
+"Europe","Europe & Central Asia","UMC","Belarus","BLR","Maize flour","None",2,"Reported",1,"None",NA
+"Europe","Europe & Central Asia","UMC","Belarus","BLR","Oil","Voluntary",41,"Imputed",0.95,"Imputed",0
+"Europe","Europe & Central Asia","UMC","Belarus","BLR","Rice","None",8,"Reported",1,"None",NA
+"Europe","Europe & Central Asia","UMC","Belarus","BLR","Salt","Mandatory",11.06,"Imputed",1,"Imputed",0.794
+"Europe","Europe & Central Asia","UMC","Belarus","BLR","Wheat flour","None",77,"Reported",1,"None",NA
+"Europe","Europe & Central Asia","UMC","Bosnia and Herzegovina","BIH","Maize flour","None",57,"Reported",1,"None",NA
+"Europe","Europe & Central Asia","UMC","Bosnia and Herzegovina","BIH","Oil","None",19,"None",NA,"None",NA
+"Europe","Europe & Central Asia","UMC","Bosnia and Herzegovina","BIH","Rice","None",6,"Reported",1,"None",NA
+"Europe","Europe & Central Asia","UMC","Bosnia and Herzegovina","BIH","Salt","Mandatory",8.8,"Imputed",1,"Reported",0.777
+"Europe","Europe & Central Asia","UMC","Bosnia and Herzegovina","BIH","Wheat flour","None",265,"Reported",1,"None",NA
+"Europe","Europe & Central Asia","HIC","Bulgaria","BGR","Maize flour","None",46,"Reported",1,"None",NA
+"Europe","Europe & Central Asia","HIC","Bulgaria","BGR","Oil","None",39,"None",NA,"None",NA
+"Europe","Europe & Central Asia","HIC","Bulgaria","BGR","Rice","None",4,"Reported",1,"None",NA
+"Europe","Europe & Central Asia","HIC","Bulgaria","BGR","Salt","Mandatory",9.2,"Imputed",1,"Imputed",0.794
+"Europe","Europe & Central Asia","HIC","Bulgaria","BGR","Wheat flour","None",218,"Reported",1,"None",NA
+"Europe","Europe & Central Asia","UMC","Macedonia","MKD","Maize flour","None",27,"Reported",1,"None",NA
+"Europe","Europe & Central Asia","UMC","Macedonia","MKD","Oil","None",39,"None",NA,"None",NA
+"Europe","Europe & Central Asia","UMC","Macedonia","MKD","Rice","None",6,"Reported",1,"None",NA
+"Europe","Europe & Central Asia","UMC","Macedonia","MKD","Salt","Mandatory",9.94,"Imputed",1,"Reported",1
+"Europe","Europe & Central Asia","UMC","Macedonia","MKD","Wheat flour","None",172,"Reported",1,"None",NA
+"Europe","Europe & Central Asia","UMC","Moldova","MDA","Maize flour","None",31,"Reported",1,"None",NA
+"Europe","Europe & Central Asia","UMC","Moldova","MDA","Oil","None",24,"None",NA,"None",NA
+"Europe","Europe & Central Asia","UMC","Moldova","MDA","Rice","None",10,"Reported",1,"None",NA
+"Europe","Europe & Central Asia","UMC","Moldova","MDA","Salt","Mandatory",10.04,"Imputed",1,"Imputed",0.794
+"Europe","Europe & Central Asia","UMC","Moldova","MDA","Wheat flour","Mandatory",66,"Reported",1,"Reported",0.006
+"Europe","Europe & Central Asia","UMC","Montenegro","MNE","Maize flour","None",8,"Reported",1,"None",NA
+"Europe","Europe & Central Asia","UMC","Montenegro","MNE","Oil","None",18,"None",NA,"None",NA
+"Europe","Europe & Central Asia","UMC","Montenegro","MNE","Rice","None",6,"Reported",1,"None",NA
+"Europe","Europe & Central Asia","UMC","Montenegro","MNE","Salt","None",9.35,"None",NA,"None",NA
+"Europe","Europe & Central Asia","UMC","Montenegro","MNE","Wheat flour","None",231,"Reported",1,"None",NA
+"Europe","Europe & Central Asia","HIC","Russia","RUS","Maize flour","None",2,"Reported",1,"None",NA
+"Europe","Europe & Central Asia","HIC","Russia","RUS","Oil","None",30,"None",NA,"None",NA
+"Europe","Europe & Central Asia","HIC","Russia","RUS","Rice","None",14,"Reported",1,"None",NA
+"Europe","Europe & Central Asia","HIC","Russia","RUS","Salt","Voluntary",10.6,"Imputed",1,"Imputed",0
+"Europe","Europe & Central Asia","HIC","Russia","RUS","Wheat flour","None",294,"Reported",1,"None",NA
+"Europe","Europe & Central Asia","UMC","Serbia","SRB","Maize flour","None",36,"Reported",1,"None",NA
+"Europe","Europe & Central Asia","UMC","Serbia","SRB","Oil","None",7,"None",NA,"None",NA
+"Europe","Europe & Central Asia","UMC","Serbia","SRB","Rice","None",4,"Reported",1,"None",NA
+"Europe","Europe & Central Asia","UMC","Serbia","SRB","Salt","Mandatory",9.33,"Imputed",1,"Imputed",0.794
+"Europe","Europe & Central Asia","UMC","Serbia","SRB","Wheat flour","None",394,"Reported",0.65,"None",NA
+"Oceania","East Asia & Pacific","HIC","Australia","AUS","Maize flour","None",8,"Reported",1,"None",NA
+"Oceania","East Asia & Pacific","HIC","Australia","AUS","Oil","None",41,"None",NA,"None",NA
+"Oceania","East Asia & Pacific","HIC","Australia","AUS","Rice","None",22,"Reported",1,"None",NA
+"Oceania","East Asia & Pacific","HIC","Australia","AUS","Salt","Mandatory",8.9,"Imputed",1,"Imputed",0.72908
+"Oceania","East Asia & Pacific","HIC","Australia","AUS","Wheat flour","Mandatory",127,"Reported",1,"Reported",0.8
+"Oceania","East Asia & Pacific","HIC","Nauru","NRU","Maize flour","None",0,"Reported",1,"None",NA
+"Oceania","East Asia & Pacific","HIC","Nauru","NRU","Rice","None",53,"Reported",1,"None",NA
+"Oceania","East Asia & Pacific","HIC","Nauru","NRU","Wheat flour","None",68,"Reported",1,"None",NA
+"Oceania","East Asia & Pacific","HIC","New Zealand","NZL","Maize flour","None",12,"None",NA,"None",NA
+"Oceania","East Asia & Pacific","HIC","New Zealand","NZL","Oil","Voluntary",15,"Imputed",0.975,"Imputed",0
+"Oceania","East Asia & Pacific","HIC","New Zealand","NZL","Rice","None",27,"Reported",1,"None",NA
+"Oceania","East Asia & Pacific","HIC","New Zealand","NZL","Salt","Mandatory",8.57,"Imputed",1,"Imputed",0.72908
+"Oceania","East Asia & Pacific","HIC","New Zealand","NZL","Wheat flour","Mandatory",170,"Imputed",0.958928571428571,"Reported",0.377
+"Oceania","East Asia & Pacific","LMC","Federated States of Micronesia","FSM","Maize flour","None",0,"Reported",1,"None",NA
+"Oceania","East Asia & Pacific","LMC","Federated States of Micronesia","FSM","Rice","None",144,"Reported",1,"None",NA
+"Oceania","East Asia & Pacific","LMC","Federated States of Micronesia","FSM","Salt","None",6.51,"None",NA,"None",NA
+"Oceania","East Asia & Pacific","LMC","Federated States of Micronesia","FSM","Wheat flour","None",12,"Reported",1,"None",NA
+"Oceania","East Asia & Pacific","LMC","Kiribati","KIR","Maize flour","None",0,"Reported",1,"None",NA
+"Oceania","East Asia & Pacific","LMC","Kiribati","KIR","Oil","None",0,"None",NA,"None",NA
+"Oceania","East Asia & Pacific","LMC","Kiribati","KIR","Rice","None",169,"Reported",1,"None",NA
+"Oceania","East Asia & Pacific","LMC","Kiribati","KIR","Salt","Mandatory",5.64,"Imputed",0.95,"Imputed",0.72908
+"Oceania","East Asia & Pacific","LMC","Kiribati","KIR","Wheat flour","Mandatory",58,"Reported",1,"Imputed",0.6094
+"Oceania","East Asia & Pacific","LMC","Papua New Guinea","PNG","Maize flour","None",3,"None",NA,"None",NA
+"Oceania","East Asia & Pacific","LMC","Papua New Guinea","PNG","Oil","None",17,"None",NA,"None",NA
+"Oceania","East Asia & Pacific","LMC","Papua New Guinea","PNG","Rice","Mandatory",75,"Reported",1,"Reported",0.76
+"Oceania","East Asia & Pacific","LMC","Papua New Guinea","PNG","Salt","Mandatory",6.23,"Imputed",0.95,"Reported",0.86
+"Oceania","East Asia & Pacific","LMC","Papua New Guinea","PNG","Wheat flour","None",72,"Reported",1,"None",NA
+"Oceania","East Asia & Pacific","LMC","Samoa","WSM","Maize flour","None",6,"Reported",1,"None",NA
+"Oceania","East Asia & Pacific","LMC","Samoa","WSM","Oil","None",6,"None",NA,"None",NA
+"Oceania","East Asia & Pacific","LMC","Samoa","WSM","Rice","Voluntary",100,"Reported",1,"Imputed",0
+"Oceania","East Asia & Pacific","LMC","Samoa","WSM","Salt","Mandatory",5.26,"Imputed",0.95,"Imputed",0.72908
+"Oceania","East Asia & Pacific","LMC","Samoa","WSM","Wheat flour","Mandatory",126,"Reported",1,"Imputed",0.6094
+"Oceania","East Asia & Pacific","LMC","Solomon Islands","SLB","Maize flour","None",0,"Reported",1,"None",NA
+"Oceania","East Asia & Pacific","LMC","Solomon Islands","SLB","Oil","None",11,"Reported",1,"None",NA
+"Oceania","East Asia & Pacific","LMC","Solomon Islands","SLB","Rice","Mandatory",155,"Reported",1,"Reported",1
+"Oceania","East Asia & Pacific","LMC","Solomon Islands","SLB","Salt","Mandatory",5.92,"Imputed",0.95,"Imputed",0.72908
+"Oceania","East Asia & Pacific","LMC","Solomon Islands","SLB","Wheat flour","Mandatory",51,"Reported",0.01,"Imputed",0.6094
+"Oceania","East Asia & Pacific","LMC","Vanuatu","VUT","Maize flour","None",0,"Reported",0.02,"None",NA
+"Oceania","East Asia & Pacific","LMC","Vanuatu","VUT","Oil","None",0,"None",NA,"None",NA
+"Oceania","East Asia & Pacific","LMC","Vanuatu","VUT","Rice","None",163,"Reported",1,"None",NA
+"Oceania","East Asia & Pacific","LMC","Vanuatu","VUT","Salt","None",5.69,"None",NA,"None",NA
+"Oceania","East Asia & Pacific","LMC","Vanuatu","VUT","Wheat flour","None",73,"Reported",1,"None",NA
+"Oceania","East Asia & Pacific","UMC","Fiji","FJI","Maize flour","None",5,"Reported",0.37,"None",NA
+"Oceania","East Asia & Pacific","UMC","Fiji","FJI","Oil","None",22,"None",NA,"None",NA
+"Oceania","East Asia & Pacific","UMC","Fiji","FJI","Rice","None",111,"Reported",1,"None",NA
+"Oceania","East Asia & Pacific","UMC","Fiji","FJI","Salt","Mandatory",7.3,"Imputed",1,"Imputed",0.72908
+"Oceania","East Asia & Pacific","UMC","Fiji","FJI","Wheat flour","Mandatory",103,"Reported",1,"Reported",1
+"Oceania","East Asia & Pacific","UMC","Marshall Islands","MHL","Maize flour","None",647,"Reported",1,"None",NA
+"Oceania","East Asia & Pacific","UMC","Marshall Islands","MHL","Rice","None",81,"Reported",1,"None",NA
+"Oceania","East Asia & Pacific","UMC","Marshall Islands","MHL","Salt","None",6.48,"None",NA,"None",NA
+"Oceania","East Asia & Pacific","UMC","Marshall Islands","MHL","Wheat flour","None",49,"Reported",1,"None",NA
+"Oceania","East Asia & Pacific","HIC","Palau","PLW","Maize flour","None",9,"Reported",1,"None",NA
+"Oceania","East Asia & Pacific","HIC","Palau","PLW","Rice","None",41,"Reported",1,"None",NA
+"Oceania","East Asia & Pacific","HIC","Palau","PLW","Wheat flour","None",25,"Reported",1,"None",NA
+"Oceania","East Asia & Pacific","UMC","Tonga","TON","Maize flour","None",1,"Reported",1,"None",NA
+"Oceania","East Asia & Pacific","UMC","Tonga","TON","Rice","None",14,"Reported",1,"None",NA
+"Oceania","East Asia & Pacific","UMC","Tonga","TON","Salt","None",6.94,"None",NA,"None",NA
+"Oceania","East Asia & Pacific","UMC","Tonga","TON","Wheat flour","None",135,"Reported",1,"None",NA
+"Oceania","East Asia & Pacific","UMC","Tuvalu","TUV","Maize flour","None",0,"None",NA,"None",NA
+"Oceania","East Asia & Pacific","UMC","Tuvalu","TUV","Rice","None",152,"Reported",1,"None",NA
+"Oceania","East Asia & Pacific","UMC","Tuvalu","TUV","Wheat flour","None",78,"Reported",1,"None",NA

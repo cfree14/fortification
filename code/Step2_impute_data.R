@@ -132,3 +132,5 @@ freeR::complete(data_simple)
 # Export data
 saveRDS(data, file=file.path(outdir, "gfdx_data_imputed_full.Rds"))
 saveRDS(data_simple, file=file.path(outdir, "gfdx_data_imputed_simple.Rds"))
+write.csv(data_simple, file=file.path(outdir, "gfdx_data_imputed_simple.csv"), row.names=F)
+
