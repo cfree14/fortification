@@ -271,9 +271,9 @@ freeR::which_duplicated(cntry_key$iso3)
 
 
 # Nutrient key (not sure what this tells me yet)
-# nurt_key <- data %>% 
-#   count(nutrient, compound)
-# freeR::which_duplicated(nurt_key$compound)
+nutr_key1 <- data %>%
+  count(nutrient, compound)
+freeR::which_duplicated(nurt_key$compound)
 
 # Export data
 saveRDS(data, file=file.path(outdir, "GFDX_1940_2024_compound_levels.Rds"))
