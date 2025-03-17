@@ -18,11 +18,26 @@ datadir <- "data/gfdx/processed"
 
 # Read data
 data_orig <- readRDS(file.path(outdir, "gfdx_data_imputed_simple.Rds"))
+nutrients_orig <- readRDS(file.path(outdir, "gfdx_nutrient_data.Rds"))
+
 
 # Read world data
 world_lg <- readRDS(file=file.path(gisdir, "world_large.Rds"))
 world_sm <- readRDS(file=file.path(gisdir, "world_small.Rds")) %>% sf::st_as_sf()
 world_centers <- readRDS(file=file.path(gisdir, "world_centroids.Rds"))
+
+
+
+# Build data
+################################################################################
+
+nutrients_orig %>% 
+  filter(food_vehicle=="Salt" & nutrient=="Fluoride") %>% 
+  pull(fort_status) %>% table()
+
+nutrients_orig %>% 
+  filter(nutrient=="Vitamin D" & fort_status!="None") %>% 
+  count(food_vehicle)
 
 
 # Build data

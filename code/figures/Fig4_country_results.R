@@ -33,23 +33,27 @@ stats <- data %>%
             ndeficient1=sum(ndeficient1, na.rm = T),
             ndeficient2=sum(ndeficient2, na.rm = T),
             ndeficient3=sum(ndeficient3, na.rm = T),
-            ndeficient4=sum(ndeficient4, na.rm = T)) %>% 
+            ndeficient4=sum(ndeficient4, na.rm = T),
+            ndeficient5=sum(ndeficient5, na.rm = T)) %>% 
   ungroup() %>% 
   # Percent deficient by country-nutrient in each scenario
   mutate(pdeficient0=ndeficient0/npeople,
          pdeficient1=ndeficient1/npeople,
          pdeficient2=ndeficient2/npeople,
          pdeficient3=ndeficient3/npeople,
-         pdeficient4=ndeficient4/npeople) %>% 
+         pdeficient4=ndeficient4/npeople,
+         pdeficient5=ndeficient5/npeople) %>% 
   # Spread
-  select(nutrient_type, nutrient, iso3, country, npeople, pdeficient0, pdeficient1, pdeficient2, pdeficient3, pdeficient4) %>% 
+  select(nutrient_type, nutrient, iso3, country, npeople, pdeficient0, 
+         pdeficient1, pdeficient2, pdeficient3, pdeficient4, pdeficient5) %>% 
   gather(6:ncol(.), key="scenario", value="pdeficient") %>% 
   mutate(scenario=recode_factor(scenario,
                                 "pdeficient0"="No fortification", 
                                 "pdeficient1"="Current fortification",
                                 "pdeficient2"="Improved compliance",
                                 "pdeficient3"="Aligned standards",
-                                "pdeficient4"="Aligned and improved")) %>% 
+                                "pdeficient4"="Aligned and improved",
+                                "pdeficient5"="Aligned, improved, expanded")) %>% 
   # Add number deficient
   mutate(ndeficient=npeople*pdeficient) %>% 
   # Calculate difference from no fortificaiton
@@ -90,9 +94,9 @@ my_theme <-  theme(axis.text=element_text(size=8),
 stats1 <- stats %>% 
   filter(scenario!="No fortification" & pdeficient_diff_no!=0)
 order1 <- stats1 %>% 
-  filter(scenario=="Current fortification") %>% 
+  # filter(scenario=="Current fortification") %>% 
   group_by(nutrient) %>% 
-  summarize(median=median(pdeficient_diff_no)) %>% 
+  summarize(median=mean(pdeficient_diff_no)) %>% 
   arrange(desc(median))
 
 # Plot data
@@ -100,14 +104,14 @@ g1 <- ggplot(stats1 ,
        aes(x=factor(nutrient, order1$nutrient), y=pdeficient_diff_no, fill=scenario)) +
   geom_boxplot(outlier.shape=21, size=0.2, outlier.stroke = 0.1) +
   # Markers
-  geom_vline(xintercept=1:12+0.5, linetype="dashed", color="grey70", size=0.3) +
+  geom_vline(xintercept=1:12+0.5, linetype="dashed", color="grey70", linewidth=0.3) +
   # Labels
   labs(y="% of population",
        title="Percent of population with inadequate intakes prevented by fortification",
        x="", tag="A") +
   scale_y_continuous(labels=scales::percent_format()) +
   # Legend
-  scale_fill_manual(name="", values=c("grey40", "white", "lightblue", "deepskyblue3")) +
+  scale_fill_manual(name="", values=c("grey40", "white", "lightblue", "deepskyblue3", "navy")) +
   # Theme
   theme_bw() + my_theme +
   theme(legend.position="top")
@@ -118,10 +122,10 @@ stats2 <- stats %>%
   filter(!scenario %in% c("No fortification", "Current fortification")) %>% 
   filter(pdeficient_diff_curr!=0)
 order2 <- stats2 %>% 
-  filter(scenario=="Aligned and improved") %>% 
+  filter(scenario=="Aligned, improved, expanded") %>% 
   group_by(nutrient) %>% 
-  summarize(median=median(pdeficient_diff_curr)) %>% 
-  arrange(desc(median))
+  summarize(mean=mean(pdeficient_diff_curr)) %>% 
+  arrange(desc(mean))
 labels2 <- tibble(label=c("Prevented inadequate intakes", "Added inadequate intakes"),
                 y=range(stats2$pdeficient_diff_curr) %>% rev())
 
@@ -130,17 +134,17 @@ g2 <- ggplot(stats2,
        aes(x=factor(nutrient, levels=order2$nutrient), y=pdeficient_diff_curr, fill=scenario)) +
   geom_boxplot(outlier.shape=21, size=0.2, outlier.stroke = 0.1) +
   # Markers
-  geom_vline(xintercept=1:12+0.5, linetype="dashed", color="grey70", size=0.3) +
+  geom_vline(xintercept=1:12+0.5, linetype="dashed", color="grey70", linewidth=0.3) +
   # Reference line
-  geom_hline(yintercept=0) +
+  # geom_hline(yintercept=0) +
   # Labels
-  geom_text(data=labels2, mapping=aes(x=0.5, y=y, label=label), inherit.aes = F, hjust=0, color="grey20", size=2.2) +
+  # geom_text(data=labels2, mapping=aes(x=0.5, y=y, label=label), inherit.aes = F, hjust=0, color="grey20", size=2.2) +
   # Labels
   # labs(y="Δ in  of population\nwith inadequate intakes\nrelative to current fortification", x="", tag="B") +
   labs(y="% of population", x="", tag="B", title="Change in percent of population with inadequate intakes relative to current fortification") +
   scale_y_continuous(labels=scales::percent_format()) +
   # Legend
-  scale_fill_manual(name="", values=c("red", "grey40", "white", "lightblue", "deepskyblue3"), drop=F) +
+  scale_fill_manual(name="", values=c("red", "grey40", "white", "lightblue", "deepskyblue3", "navy"), drop=F) +
   # Theme
   theme_bw() + my_theme +
   theme(legend.position="none")

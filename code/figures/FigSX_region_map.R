@@ -45,6 +45,7 @@ my_theme <-  theme(axis.text=element_blank(),
                    axis.title=element_blank(),
                    legend.text=element_text(size=8),
                    legend.title=element_text(size=9),
+                   plot.tag=element_text(size=9),
                    # Gridlines
                    panel.grid.major = element_blank(), 
                    panel.grid.minor = element_blank(),
@@ -58,6 +59,7 @@ my_theme <-  theme(axis.text=element_blank(),
 # Region
 g1 <- ggplot(world, aes(fill=region)) +
   geom_sf() +
+  labs(tag="A") +
   # Legend
   scale_fill_discrete(name="Region", na.value="grey80") +
   # Crop
@@ -69,6 +71,7 @@ g1 <- ggplot(world, aes(fill=region)) +
 # Continent
 g2 <- ggplot(world, aes(fill=continent)) +
   geom_sf() +
+  labs(tag="B") +
   # Legend
   scale_fill_discrete(name="Continent              ", na.value="grey80") +
   # Crop
@@ -80,6 +83,7 @@ g2 <- ggplot(world, aes(fill=continent)) +
 # Income group
 g3 <- ggplot(world, aes(fill=income)) +
   geom_sf() +
+  labs(tag="C") +
   # Legend
   scale_fill_discrete(name="Income group            ", na.value="grey80") +
   # Crop

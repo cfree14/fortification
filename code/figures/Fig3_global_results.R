@@ -33,23 +33,27 @@ stats <- data %>%
             ndeficient1=sum(ndeficient1, na.rm = T),
             ndeficient2=sum(ndeficient2, na.rm = T),
             ndeficient3=sum(ndeficient3, na.rm = T),
-            ndeficient4=sum(ndeficient4, na.rm = T)) %>% 
+            ndeficient4=sum(ndeficient4, na.rm = T),
+            ndeficient5=sum(ndeficient5, na.rm = T)) %>% 
   ungroup() %>% 
   # Percent deficient by country-nutrient in each scenario
   mutate(pdeficient0=ndeficient0/npeople,
          pdeficient1=ndeficient1/npeople,
          pdeficient2=ndeficient2/npeople,
          pdeficient3=ndeficient3/npeople,
-         pdeficient4=ndeficient4/npeople) %>% 
+         pdeficient4=ndeficient4/npeople,
+         pdeficient5=ndeficient5/npeople) %>% 
   # Spread
-  select(nutrient_type, nutrient, iso3, country, npeople, pdeficient0, pdeficient1, pdeficient2, pdeficient3, pdeficient4) %>% 
+  select(nutrient_type, nutrient, iso3, country, npeople, pdeficient0, pdeficient1,
+         pdeficient2, pdeficient3, pdeficient4, pdeficient5) %>% 
   gather(6:ncol(.), key="scenario", value="pdeficient") %>% 
   mutate(scenario=recode_factor(scenario,
                                 "pdeficient0"="No fortification", 
                                 "pdeficient1"="Current fortification",
                                 "pdeficient2"="Improved compliance",
                                 "pdeficient3"="Aligned standards",
-                                "pdeficient4"="Aligned and improved")) %>% 
+                                "pdeficient4"="Aligned and improved",
+                                "pdeficient5"="Aligned, improved, expanded")) %>% 
   # Add number deficient
   mutate(ndeficient=npeople*pdeficient)
 
@@ -179,7 +183,7 @@ g1 <- ggplot(gstats, aes(y=factor(nutrient, levels=nutr_order1$nutrient),
   # Labels
   labs(x="Billions of inadequate intakes", y="", tag="A") +
   # Legend
-  scale_fill_manual(name="", values=c("red", "grey40", "white", "lightblue", "deepskyblue3")) +
+  scale_fill_manual(name="", values=c("red", "grey40", "white", "lightblue", "deepskyblue3", "navy")) +
   guides(fill = guide_legend(nrow = 2, byrow=T)) +
   # Theme
   theme_bw() + my_theme +
@@ -200,7 +204,7 @@ g1a <- ggplot(gstats1, aes(x=reorder(scenario, desc(ndeficient)),
   # Labels
   labs(y="Billions of\ninadequate intakes", x=" ", tag=" ", title=" \n ") +
   # Legend
-  scale_fill_manual(name="", values=c("red", "grey40", "white", "lightblue", "deepskyblue3")) +
+  scale_fill_manual(name="", values=c("red", "grey40", "white", "lightblue", "deepskyblue3", "navy")) +
   # Theme
   theme_bw() + inset_theme
 g1a 
@@ -220,7 +224,7 @@ g2 <- ggplot(gstats %>% filter(scenario!="No fortification") ,
   # Labels
   labs(x="Billions of prevented inadequate intakes", y="", tag="B") +
   # scale_fill_manual(name="", values=c("red", "black", RColorBrewer::brewer.pal(3, "Blues")), drop=F) +
-  scale_fill_manual(name="", values=c("red", "grey40", "white", "lightblue", "deepskyblue3"), drop=F) +
+  scale_fill_manual(name="", values=c("red", "grey40", "white", "lightblue", "deepskyblue3", "navy"), drop=F) +
   # Theme
   theme_bw() + my_theme +
   theme(legend.position = "none")
@@ -237,14 +241,14 @@ g2a <- ggplot(gstats2, aes(x=reorder(scenario, desc(prevented)), y=prevented/1e9
   # Labels
   labs(y="Billions of prevented\ninadequate intakes", x=" ", tag=" ") +
   # Legend
-  scale_fill_manual(name="", values=c("red", "grey40", "white", "lightblue", "deepskyblue3"), drop=F) +
+  scale_fill_manual(name="", values=c("red", "grey40", "white", "lightblue", "deepskyblue3", "navy"), drop=F) +
   # Theme
   theme_bw() + inset_theme
 g2a 
 
 # Order
 nutr_order3 <- gstats %>% 
-  filter(scenario=="Aligned and improved") %>% 
+  filter(scenario=="Aligned, improved, expanded") %>% 
   arrange(benefits)
 
 # Prevented
@@ -253,16 +257,16 @@ g3 <- ggplot(gstats %>% filter(!scenario %in% c("No fortification", "Current for
                  x=benefits/1e9,
                  fill=scenario)) +
   # Reference line
-  geom_vline(xintercept=0, linetype="dashed", color="grey40") +
-  annotate(geom="text", y="Vitamin A", x=0, hjust=-0.45, vjust=0.5, label="Prevented", size=2) +
-  annotate(geom="text", y="Vitamin A", x=0, hjust=1.2, vjust=0.5, label="Added", size=2) +
+  # geom_vline(xintercept=0, linetype="dashed", color="grey40") +
+  # annotate(geom="text", y="Vitamin A", x=0, hjust=-0.45, vjust=0.5, label="Prevented", size=2) +
+  # annotate(geom="text", y="Vitamin A", x=0, hjust=1.2, vjust=0.5, label="Added", size=2) +
   # Data
   # geom_point(pch=21, size=2) +
   geom_jitter(pch=21, size=2.5, height = 0.2, width=0, alpha=0.8) +
   # Labels
-  labs(x="Billions of inadequate intakes\nrelative to current fortification", y="", tag="C") +
+  labs(x="Billions of prevented inadequate intakes\nrelative to current fortification", y="", tag="C") +
   # scale_fill_manual(name="", values=c("red", "black", RColorBrewer::brewer.pal(3, "Blues")), drop=F) +
-  scale_fill_manual(name="", values=c("red", "grey40", "white", "lightblue", "deepskyblue3"), drop=F) +
+  scale_fill_manual(name="", values=c("red", "grey40", "white", "lightblue", "deepskyblue3", "navy"), drop=F) +
   # Theme
   theme_bw() + my_theme +
   theme(legend.position="none")
@@ -277,9 +281,9 @@ gstats3 <- gstats %>%
 g3a <- ggplot(gstats3, aes(x=reorder(scenario, desc(benefits)), y=benefits/1e9, fill=scenario)) +
   geom_bar(stat="identity", color="black", lwd=0.2) +
   # Labels
-  labs(y="Billions of inadequate intakes\nrelative to current fortification", x=" \n ", tag=" ") +
+  labs(y="Billions of prevented inadequate intakes\nrelative to current fortification", x=" \n ", tag=" ") +
   # Legend
-  scale_fill_manual(name="", values=c("red", "grey40", "white", "lightblue", "deepskyblue3"), drop=F) +
+  scale_fill_manual(name="", values=c("red", "grey40", "white", "lightblue", "deepskyblue3", "navy"), drop=F) +
   # Theme
   theme_bw() + inset_theme
 g3a 
@@ -313,16 +317,18 @@ gstats1 <- gstats %>%
                                 "Current fortification"="current",
                                 "Improved compliance"="improved",
                                 "Aligned standards"="aligned",
-                                "Aligned and improved"="aligned_plus")) %>% 
+                                "Aligned and improved"="aligned_plus",
+                                "Aligned, improved, expanded"="expanded")) %>% 
   # Spread
   spread(key="scenario", value="ndeficient") %>% 
   # Calculate prevented
   mutate(prevented1=none-current,
          prevented2=none-improved,
          prevented3=none-aligned,
-         prevented4=none-aligned_plus) %>% 
+         prevented4=none-aligned_plus,
+         prevented5=none-expanded) %>% 
   # Convert to billions
-  mutate_at(vars(none:prevented4), function(x){x/1e9}) %>% 
+  mutate_at(vars(none:prevented5), function(x){x/1e9}) %>% 
   # Arrange
   arrange(desc(prevented1))
 
