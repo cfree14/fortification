@@ -64,7 +64,7 @@ calc_aligned_standard <- function(fv, nutr, intake_g_d){
   # Oil
   if(fv=="Oil"){
     if(nutr=="Vitamin A"){std <- 18}
-    if(nutr=="Vitamin E"){std <- 105}
+    # if(nutr=="Vitamin E"){std <- 105}
   }
   
   # Rice

@@ -143,6 +143,7 @@ table(data0$units)
 table(data0$ar_units)
 freeR::uniq(data0$age_group)
 
+
 # AR and UL units same? Must be 0
 sum(data0$ar_units!=data0$ul_units, na.rm=T)
 
@@ -159,19 +160,21 @@ subs <- scen_data %>%
                                          food_vehicle=="Oil" & daily_intake_g_avg>=10 ~ T,
                                          T ~ F), 
          future_on=ifelse(now_on==1 | (sev>=0.20 & enough_consumed_yn & processed_prop >=0.50), 1, 0)) %>% 
+  # Mark whether subsidy is reduced because of bioavailability
+  mutate(bioavail_scalar=ifelse(nutrient!="Iron", 1, iron_abs/0.1)) %>% 
   # Calculate Scenario 1 (currnet) subsidy
-  mutate(subsidy_mg1=now_on*daily_intake_kg*processed_prop*fortified_prop*standard_mg_kg) %>% 
+  mutate(subsidy_mg1=now_on*daily_intake_kg*processed_prop*fortified_prop*standard_mg_kg/bioavail_scalar) %>% 
   # Calculate Scenario 2 (improved compliance) subsidy
   mutate(fortified_prop2=pmax(fortified_prop, 0.9)) %>% 
-  mutate(subsidy_mg2=now_on*daily_intake_kg*processed_prop*fortified_prop2*standard_mg_kg) %>% 
+  mutate(subsidy_mg2=now_on*daily_intake_kg*processed_prop*fortified_prop2*standard_mg_kg/bioavail_scalar) %>% 
   # Calculate aligned standard to use
   mutate(aligned_standard_mg_kg_use=pmax(aligned_standard_mg_kg, standard_mg_kg)) %>% 
   # Calculate Scenario 3 (aligned std, current compliance) subsidy
-  mutate(subsidy_mg3=now_on*daily_intake_kg*processed_prop*fortified_prop*aligned_standard_mg_kg_use) %>% 
+  mutate(subsidy_mg3=now_on*daily_intake_kg*processed_prop*fortified_prop*aligned_standard_mg_kg_use/bioavail_scalar) %>% 
   # Calculate Scenario 4 (aligned std, improved compliance) subsidy
-  mutate(subsidy_mg4=now_on*daily_intake_kg*processed_prop*fortified_prop2*aligned_standard_mg_kg_use) %>% 
+  mutate(subsidy_mg4=now_on*daily_intake_kg*processed_prop*fortified_prop2*aligned_standard_mg_kg_use/bioavail_scalar) %>% 
   # Calculate Scenario 5 (aligned std, improved compliance) subsidy for more countries
-  mutate(subsidy_mg5=future_on*daily_intake_kg*processed_prop*fortified_prop2*aligned_standard_mg_kg_use) %>% 
+  mutate(subsidy_mg5=future_on*daily_intake_kg*processed_prop*fortified_prop2*aligned_standard_mg_kg_use/bioavail_scalar) %>% 
   # Summarize subsidies across fortified food vehicles
   group_by(iso3, sex, age_group, nutrient) %>% 
   summarize(subsidy_mg1=sum(subsidy_mg1),

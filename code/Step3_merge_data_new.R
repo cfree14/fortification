@@ -30,7 +30,7 @@ source("code/calc_aligned_standard.R")
 
 # Format SEVs
 sevs <- sevs_orig %>% 
-  group_by(nutrient, iso3, ) %>% 
+  group_by(nutrient, iso3, iron_abs) %>% 
   summarize(npeople=sum(npeople, na.rm=T),
             ndeficient=sum(ndeficient, na.rm=T),
             sev_avg=mean(sev, na.rm = T)/100) %>% 
@@ -39,6 +39,12 @@ sevs <- sevs_orig %>%
   mutate(sev=ifelse(!is.na(sev), sev, sev_avg)) %>% 
   mutate(nutrient=recode(nutrient,
                          "Vitamin A (RAE)"="Vitamin A"))
+
+# Iron key
+iron_key <- sevs_orig %>% 
+  select(iso3, iron_abs) %>% 
+  unique() %>% 
+  mutate(iron_abs=iron_abs/100)
 
 
 # Build standards
@@ -81,8 +87,10 @@ data1 <- iso3_fv_nutr_grid %>%
   mutate(aligned_standard_mg_kg=ifelse(is.na(aligned_standard_mg_kg), standard_mg_kg, aligned_standard_mg_kg)) %>% 
   # Add current SEV for nutrient
   left_join(sevs %>% select(iso3, nutrient, sev), by=c("iso3", "nutrient")) %>% 
+  # Add iron absorption
+  left_join(iron_key, by="iso3") %>% 
   # Arrange
-  select(continent, region, income, country, iso3, 
+  select(continent, region, income, country, iso3, iron_abs,
          food_vehicle, fort_status, daily_intake_type:fortified_prop, 
          nutrient_type, nutrient, fort_status_nutr, standard_mg_kg, aligned_standard_mg_kg, sev)
 
