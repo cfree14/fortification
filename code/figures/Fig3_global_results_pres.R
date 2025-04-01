@@ -31,29 +31,20 @@ stats <- data %>%
   summarize(npeople=sum(npeople, na.rm = T),
             ndeficient0=sum(ndeficient0, na.rm = T), 
             ndeficient1=sum(ndeficient1, na.rm = T),
-            ndeficient2=sum(ndeficient2, na.rm = T),
-            ndeficient3=sum(ndeficient3, na.rm = T),
-            ndeficient4=sum(ndeficient4, na.rm = T),
-            ndeficient5=sum(ndeficient5, na.rm = T)) %>% 
+            ndeficient2=sum(ndeficient2, na.rm = T)) %>% 
   ungroup() %>% 
   # Percent deficient by country-nutrient in each scenario
   mutate(pdeficient0=ndeficient0/npeople,
          pdeficient1=ndeficient1/npeople,
-         pdeficient2=ndeficient2/npeople,
-         pdeficient3=ndeficient3/npeople,
-         pdeficient4=ndeficient4/npeople,
-         pdeficient5=ndeficient5/npeople) %>% 
+         pdeficient2=ndeficient2/npeople) %>% 
   # Spread
   select(nutrient_type, nutrient, iso3, country, npeople, pdeficient0, pdeficient1,
-         pdeficient2, pdeficient3, pdeficient4, pdeficient5) %>% 
+         pdeficient2) %>% 
   gather(6:ncol(.), key="scenario", value="pdeficient") %>% 
   mutate(scenario=recode_factor(scenario,
                                 "pdeficient0"="No fortification", 
                                 "pdeficient1"="Current fortification",
-                                "pdeficient2"="Improved compliance",
-                                "pdeficient3"="Aligned standards",
-                                "pdeficient4"="Aligned and improved",
-                                "pdeficient5"="Aligned, improved, expanded")) %>% 
+                                "pdeficient2"="Improved compliance")) %>% 
   # Add number deficient
   mutate(ndeficient=npeople*pdeficient)
 
@@ -183,8 +174,7 @@ g1 <- ggplot(gstats, aes(y=factor(nutrient, levels=nutr_order1$nutrient),
   # Labels
   labs(x="Billions of inadequate intakes", y="", tag="A") +
   # Legend
-  scale_fill_manual(name="", values=c("red", "grey40", "white", "lightblue", "deepskyblue3", "navy")) +
-  guides(fill = guide_legend(nrow = 2, byrow=T)) +
+  scale_fill_manual(name="", values=c("red", "grey40", "lightblue")) +
   # Theme
   theme_bw() + my_theme +
   theme(legend.position = "top",
@@ -204,7 +194,7 @@ g1a <- ggplot(gstats1, aes(x=reorder(scenario, desc(ndeficient)),
   # Labels
   labs(y="Billions of\ninadequate intakes", x=" ", tag=" ", title=" \n ") +
   # Legend
-  scale_fill_manual(name="", values=c("red", "grey40", "white", "lightblue", "deepskyblue3", "navy")) +
+  scale_fill_manual(name="", values=c("red", "grey40", "lightblue")) +
   # Theme
   theme_bw() + inset_theme
 g1a 
@@ -224,7 +214,7 @@ g2 <- ggplot(gstats %>% filter(scenario!="No fortification") ,
   # Labels
   labs(x="Billions of prevented inadequate intakes\nrelative to no fortification", y="", tag="B") +
   # scale_fill_manual(name="", values=c("red", "black", RColorBrewer::brewer.pal(3, "Blues")), drop=F) +
-  scale_fill_manual(name="", values=c("red", "grey40", "white", "lightblue", "deepskyblue3", "navy"), drop=F) +
+  scale_fill_manual(name="", values=c("red", "grey40", "lightblue"), drop=F) +
   # Theme
   theme_bw() + my_theme +
   theme(legend.position = "none")
@@ -241,14 +231,14 @@ g2a <- ggplot(gstats2, aes(x=reorder(scenario, desc(prevented)), y=prevented/1e9
   # Labels
   labs(y="Billions of prevented\ninadequate intakes", x=" ", tag=" ") +
   # Legend
-  scale_fill_manual(name="", values=c("red", "grey40", "white", "lightblue", "deepskyblue3", "navy"), drop=F) +
+  scale_fill_manual(name="", values=c("red", "grey40",  "lightblue"), drop=F) +
   # Theme
   theme_bw() + inset_theme
 g2a 
 
 # Order
 nutr_order3 <- gstats %>% 
-  filter(scenario=="Aligned, improved, expanded") %>% 
+  filter(scenario=="Improved compliance") %>% 
   arrange(benefits)
 
 # Prevented
@@ -266,7 +256,7 @@ g3 <- ggplot(gstats %>% filter(!scenario %in% c("No fortification", "Current for
   # Labels
   labs(x="Billions of prevented inadequate intakes\nrelative to current fortification", y="", tag="C") +
   # scale_fill_manual(name="", values=c("red", "black", RColorBrewer::brewer.pal(3, "Blues")), drop=F) +
-  scale_fill_manual(name="", values=c("red", "grey40", "white", "lightblue", "deepskyblue3", "navy"), drop=F) +
+  scale_fill_manual(name="", values=c("red", "grey40", "lightblue"), drop=F) +
   # Theme
   theme_bw() + my_theme +
   theme(legend.position="none")
@@ -283,7 +273,7 @@ g3a <- ggplot(gstats3, aes(x=reorder(scenario, desc(benefits)), y=benefits/1e9, 
   # Labels
   labs(y="Billions of prevented inadequate intakes\nrelative to current fortification", x=" \n ", tag=" ") +
   # Legend
-  scale_fill_manual(name="", values=c("red", "grey40", "white", "lightblue", "deepskyblue3", "navy"), drop=F) +
+  scale_fill_manual(name="", values=c("red", "grey40", "lightblue"), drop=F) +
   # Theme
   theme_bw() + inset_theme
 g3a 
@@ -298,7 +288,7 @@ g <- gridExtra::grid.arrange(g1, g1a,
                              heights=c(x, (1-x)/2, (1-x)/2))
 
 # Export
-ggsave(g, filename=file.path(plotdir, "Fig3_global_results.png"), 
+ggsave(g, filename=file.path(plotdir, "Fig3_global_results_pres.png"), 
        width=6.5, height=7, units="in", dpi=600)
 
 
@@ -306,33 +296,62 @@ ggsave(g, filename=file.path(plotdir, "Fig3_global_results.png"),
 # Prepare table
 ################################################################################
 
-# Selenium and Iodine don't match Passerrelli
-
 gstats1 <- gstats %>% 
-  # Simplify
-  select(nutrient, scenario, ndeficient) %>% 
-  # Format scenario
-  mutate(scenario=recode_factor(scenario,
-                                "No fortification"="none",
-                                "Current fortification"="current",
-                                "Improved compliance"="improved",
-                                "Aligned standards"="aligned",
-                                "Aligned and improved"="aligned_plus",
-                                "Aligned, improved, expanded"="expanded")) %>% 
-  # Spread
-  spread(key="scenario", value="ndeficient") %>% 
-  # Calculate prevented
-  mutate(prevented1=none-current,
-         prevented2=none-improved,
-         prevented3=none-aligned,
-         prevented4=none-aligned_plus,
-         prevented5=none-expanded) %>% 
-  # Convert to billions
-  mutate_at(vars(none:prevented5), function(x){x/1e9}) %>% 
-  # Arrange
-  arrange(desc(prevented1))
+  filter(scenario!="No fortification") %>% 
+  group_by(nutrient) %>% 
+  mutate(prevented=ifelse(scenario=="Improved compliance", prevented-prevented[scenario=="Current fortification"], prevented))
 
-# EXport
-write.csv(gstats1, file.path(tabledir, "TableSX_global_results.csv"), row.names=F)
+# Setup theme
+my_theme <-  theme(axis.text=element_text(size=8),
+                   axis.title=element_text(size=9),
+                   legend.text=element_text(size=8),
+                   legend.title=element_text(size=9),
+                   strip.text=element_text(size=8),
+                   plot.title=element_text(size=9),
+                   plot.tag=element_text(size=9, face="bold"),
+                   plot.tag.position = c(0,0.98),
+                   # Gridlines
+                   panel.grid.major.x = element_blank(), 
+                   panel.grid.minor = element_blank(),
+                   panel.background = element_blank(), 
+                   axis.line = element_line(colour = "black"),
+                   # Legend
+                   legend.position = "top",
+                   legend.key.size = unit(0.5, "cm"),
+                   legend.key = element_rect(fill = NA, color=NA),
+                   legend.margin = margin(t=-2, b=-2),
+                   legend.background = element_rect(fill=alpha('blue', 0)))
+
+
+g <- ggplot(gstats1, aes(x=prevented/1e9, 
+                    y=factor(nutrient, levels=rev(nutr_order2$nutrient)), 
+                    fill=forcats::fct_rev(scenario))) +
+  geom_bar(stat="identity") + 
+  # Labels
+  labs(x="Billions of people with\nprevented inadequate intakes", y="") +
+  # Legend
+  scale_fill_manual(name="", values=c("lightblue", "grey40"), guide = guide_legend(reverse = TRUE)) +
+  # Theme
+  theme_bw() + my_theme
+g
+
+ggsave(g, filename=file.path(plotdir, "prevented_inaqequate_intakes2.png"), 
+       width=4.5, height=3, units="in", dpi=600)
+
+
+g <- ggplot(gstats1 %>% filter(scenario=="Current fortification"), aes(x=prevented/1e9, 
+                         y=factor(nutrient, levels=rev(nutr_order2$nutrient)), 
+                         fill=forcats::fct_rev(scenario))) +
+  geom_bar(stat="identity") + 
+  # Labels
+  labs(x="Billions of people with\nprevented inadequate intakes", y="") +
+  # Legend
+  scale_fill_manual(name="", values=c("grey40"), guide = guide_legend(reverse = TRUE)) +
+  # Theme
+  theme_bw() + my_theme
+g
+
+ggsave(g, filename=file.path(plotdir, "prevented_inaqequate_intakes1.png"), 
+       width=4.5, height=3, units="in", dpi=600)
 
 

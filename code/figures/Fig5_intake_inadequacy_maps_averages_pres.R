@@ -68,11 +68,13 @@ data <- data_orig %>%
   # Compute difference relative to no fortification
   group_by(country, iso3) %>% 
   mutate(pdeficient_avg_diff=pdeficient_avg[scenario=="No fortification"]-pdeficient_avg) %>% 
-  ungroup()
+  ungroup() %>% 
+  # Filter to interest
+  filter(scenario %in% c("No fortification", "Current fortification", "Improved compliance"))
 
 
 # Add to spatial data
-scenarios <- levels(data$scenario)
+scenarios <- unique(data$scenario)
 x <- scenarios[1]
 data_sf <- purrr::map_df(scenarios, function(x){
   out <- world_sm %>%
@@ -181,8 +183,8 @@ g <- gridExtra::grid.arrange(g1, g2, ncol=2)
 
 
 # Export
-ggsave(g, filename=file.path(plotdir, "Fig5_intake_inadequacy_maps_avg.png"),
-       width=4.5, height=6.5, units="in", dpi=600) # 6 in when double line legend
+ggsave(g, filename=file.path(plotdir, "Fig5_intake_inadequacy_maps_avg_pres.png"),
+       width=4.5, height=3.5, units="in", dpi=600) # 6 in when double line legend
 
 
 
