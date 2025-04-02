@@ -294,7 +294,7 @@ g <- ggplot(cstats, aes(y=p_over_ul, x=p_inadequate, fill=scenario))  +
   geom_hline(yintercept=0, linetype="dotted", color="grey70") +
   geom_vline(xintercept=0, linetype="dotted", color="grey70") +
   # Reference labels
-  geom_text(data=quad_key, mapping=aes(x=x, y=y, label=label), inherit.aes=F, size=2.8, color="black") +
+  # geom_text(data=quad_key, mapping=aes(x=x, y=y, label=label), inherit.aes=F, size=2.8, color="black") +
   # Data
   geom_point(pch=21) +
   # Labels
@@ -309,8 +309,8 @@ g <- ggplot(cstats, aes(y=p_over_ul, x=p_inadequate, fill=scenario))  +
   theme_bw() + my_theme
 g
 
-ggsave(g, filename=file.path(plotdir, "Fig6_tradeoffs_country.png"), 
-       width=6.5, height=4.25, units="in", dpi=600)
+# ggsave(g, filename=file.path(plotdir, "Fig8_tradeoffs_country.png"), 
+#        width=6.5, height=4.25, units="in", dpi=600)
 
 
 
