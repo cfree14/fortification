@@ -18,6 +18,9 @@ outdir <- "output"
 data_orig <- readRDS(file.path(outdir, "gfdx_data.Rds"))
 nutrients_orig <- readRDS(file.path(outdir, "gfdx_nutrient_data.Rds"))
 
+# Read global intake inadequacies
+sevs_orig <- readRDS("data/global_intake_inadequacies/2018_subnational_nutrient_intake_inadequacy_estimates_full.Rds")
+
 # Download country data from the World Bank, including income classifications
 wb_data <- wbstats::wb_countries() %>%
   select(iso3c, income_level_iso3c) %>% 
@@ -30,16 +33,35 @@ wb_data <- wbstats::wb_countries() %>%
 # Read data
 ################################################################################
 
-# Build data
-data <- data_orig %>%
-  # Remove original region (b/c not verified)
-  select(-c(region, income)) %>% 
+# Country key
+cntry_key <- data_orig %>% 
+  # Contries
+  select(country, iso3) %>% 
+  unique() %>% 
   # Add World Bank continent and region
   mutate(continent=countrycode(country, "country.name", "continent"),
          region=countrycode(country, "country.name", "region")) %>% 
   # Add income
   left_join(wb_data, by=c("iso3"="iso3c")) %>% 
-  mutate(income=ifelse(country=="Vatican City", "HIC", income)) %>% 
+  mutate(income=ifelse(country=="Vatican City", "HIC", income)) 
+
+# ISO3-FV grid
+iso3_fv_grid <- expand.grid(iso3=sort(unique(data_orig$iso3)),
+                            food_vehicle=sort(unique(data_orig$food_vehicle)))
+  
+# Full country / food vehicle grid
+data <-  iso3_fv_grid %>% 
+  # Add country info
+  left_join(cntry_key, by="iso3") %>% 
+  # Add food info
+  left_join(data_orig %>% select(-c(region, income, country)), by=c("iso3", "food_vehicle")) %>% 
+  # Assume no fortification if blank
+  mutate(fort_status=ifelse(is.na(fort_status), "None", fort_status)) %>% 
+  # RECORD IMPUTATION TYPE
+  # Daily intake
+  mutate(daily_intake_type=case_when(!is.na(daily_intake_g) ~ "Reported", 
+                                 is.na(daily_intake_g) ~ "Imputed",
+                                 T ~ NA)) %>% 
   # Add processing prop source (reported, imputed, non)
   mutate(processed_prop_type=case_when(!is.na(processed_prop) ~ "Reported", 
                                        is.na(processed_prop) ~ "Imputed",
@@ -49,14 +71,20 @@ data <- data_orig %>%
                                        is.na(fortified_prop) & fort_status!="None" ~ "Imputed",
                                        fort_status=="None" ~ "None",
                                        T ~ NA)) %>% 
+  # CALCULATE AVERAGES
   # Calculate average % processed by region
   group_by(region, food_vehicle) %>% 
-  mutate(processed_prop_region=mean(processed_prop, na.rm=T)) %>% 
+  mutate(daily_intake_g_region=mean(daily_intake_g, na.rm=T),
+         processed_prop_region=mean(processed_prop, na.rm=T)) %>% 
   ungroup() %>% 
   # Calculate average % processed by continent
   group_by(continent, food_vehicle) %>% 
-  mutate(processed_prop_continent=mean(processed_prop, na.rm=T)) %>% 
+  mutate(daily_intake_g_continent=mean(daily_intake_g, na.rm=T),
+         processed_prop_continent=mean(processed_prop, na.rm=T)) %>% 
   ungroup() %>% 
+  # SELCECT BEST
+  # Pick best daily intake based on hierarchy
+  mutate(daily_intake_g_use=ifelse(!is.na(daily_intake_g), daily_intake_g, daily_intake_g_region)) %>% 
   # Pick best % processed based on hierarchy
   mutate(processed_prop_use=case_when(processed_prop_type == "Imputed" & !is.na(processed_prop_region) ~ processed_prop_region,  
                                       processed_prop_type == "Imputed" & is.na(processed_prop_region) ~ processed_prop_continent, 
@@ -67,6 +95,7 @@ data <- data_orig %>%
                                       processed_prop_type=="Imputed" & food_vehicle=="Salt" & income %in% c("HIC", "UMC") ~ 0.95,
                                       T ~ processed_prop_use)) %>% 
   ## PERCENT FORTIFIED
+  mutate(fortified_prop=ifelse(fort_status=="None", 0, fortified_prop)) %>% 
   # Calculate % fortified by region/legal status
   group_by(region, fort_status, food_vehicle) %>% 
   mutate(fortified_prop_region=mean(fortified_prop, na.rm=T)) %>% 
@@ -89,7 +118,8 @@ data <- data_orig %>%
   # Arrange
   select(continent, region, income, country, iso3,
          food_vehicle, fort_status,
-         year_supply, daily_intake_g, 
+         year_supply, 
+         daily_intake_type, daily_intake_g_use, daily_intake_g, daily_intake_g_region, daily_intake_g_continent, 
          processed_prop_type, year_processed, 
          processed_prop_use, processed_prop, processed_prop_region, processed_prop_continent, 
          fortified_prop_type, year_pfort, 
@@ -98,27 +128,22 @@ data <- data_orig %>%
 
 # Inspect
 freeR::complete(data)
-table(data$processed_prop_type)
 
 
-# Subset to rows with fort programs
-data_fort <- data %>% 
-  filter(fort_status!="None")
-
-# Check - these should all be complete for important values
-freeR::complete(data_fort)
-
-# Simple data
+# Simplify data
 ################################################################################
 
 # Simple data
 data_simple <- data %>% 
   # Simplify
-  select(-c(year_supply,
-            year_processed , processed_prop, processed_prop_region, processed_prop_continent, 
-            year_pfort, fortified_prop, fortified_prop_region, fortified_prop_continent, fortified_prop_income)) %>% 
+  select(continent, region, income, country, iso3,
+         food_vehicle, fort_status, 
+         daily_intake_type, daily_intake_g_use,
+         processed_prop_type, processed_prop_use,
+         fortified_prop_type, fortified_prop_use) %>% 
   # Rename
-  rename(processed_prop=processed_prop_use,
+  rename(daily_intake_g=daily_intake_g_use,
+         processed_prop=processed_prop_use,
          fortified_prop=fortified_prop_use) 
 
 # Inspect

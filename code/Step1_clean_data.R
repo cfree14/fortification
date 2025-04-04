@@ -52,7 +52,7 @@ table(nutrients$fort_status)
 # Format fortification compliance
 fortified <- fortified_orig %>% 
   # Simplify
-  select(country, iso3, food_vehicle, year, fortified_prop) %>% 
+  select(country, iso3, food_vehicle, year, fortified_prop, data_type) %>% 
   filter(!is.na(fortified_prop)) %>% 
   # Reduce to most recent year
   arrange(country, iso3, food_vehicle, desc(year)) %>% 
@@ -61,6 +61,8 @@ fortified <- fortified_orig %>%
   ungroup() %>% 
   # Rename year
   rename(year_pfort=year)
+
+table(fortified$data_type)
   
 # Format supply data
 supply <- supply_orig  %>% 
@@ -111,7 +113,9 @@ data <- supply %>%
   left_join(fortified) %>% 
   # Convert proportions
   mutate(processed_prop=processed_prop/100,
-         fortified_prop=fortified_prop/100)
+         fortified_prop=fortified_prop/100) %>% 
+  # Rename
+  rename(fortified_prop_type=data_type)
   
 # Inspect
 freeR::complete(data)
