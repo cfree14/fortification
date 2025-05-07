@@ -61,9 +61,9 @@ base_theme <- theme(axis.text=element_text(size=6),
 # Panel A
 g1 <- ggplot(data1, aes(y=scenario, x=cost_usd2021_billions)) +
   geom_bar(stat="identity") +
-  geom_text(mapping=aes(label=cost_usd2021_billions), hjust=0, nudge_x = 0.2, size=1.8) +
+  geom_text(mapping=aes(label=cost_usd2021_billions), hjust=0, nudge_x = 0.2, size=2) +
   # Labels
-  labs(x="Fortification costs (2021USD billions)", y="", tag="A") +
+  labs(x="Fortification costs\n(billions of 2021 USD)", y="", tag="A") +
   lims(x=c(0, 25)) +
   # Theme
   theme_bw() + base_theme
@@ -73,7 +73,7 @@ g1
 g2 <- ggplot(data2, aes(y=scenario, x=percent, fill=vehicle)) +
   geom_bar(stat="identity", position = position_fill(reverse = TRUE), color="grey30", lwd=0.2) +
   # Labels
-  labs(x="Percent of fortification costs", y="", tag="B") +
+  labs(x="Percent of fortification costs\n ", y="", tag="B") +
   scale_x_continuous(labels=scales::percent_format()) +
   # Legend
   scale_fill_manual(name="Food vehicle",
