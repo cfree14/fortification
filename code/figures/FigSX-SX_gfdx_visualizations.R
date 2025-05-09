@@ -136,28 +136,36 @@ my_theme <-  theme(axis.text=element_blank(),
                    legend.position = "top",
                    legend.title.position = "top",
                    legend.key = element_rect(fill = NA, color=NA),
-                   legend.key.size = unit(0.3, "cm"),
+                   legend.key.size = unit(0.4, "cm"),
                    legend.background = element_rect(fill=alpha('blue', 0)))
 
 # Plot data
 g0 <- ggplot(data_sf, aes(fill=fort_status)) +
   facet_wrap(~food_vehicle, ncol=1, strip.position="left") +
   geom_sf(color="grey30", lwd=0.1) +
+  # Labels
+  labs()
   # Legend
-  scale_fill_ordinal(name="\nFortification", na.value = "white",na.translate = F) +
+  scale_fill_ordinal(name="\nFortification", na.value = "white", na.translate = F) +
   # Crop
   coord_sf(ylim=c(-52, 78)) +
   # Theme
   theme_bw() + my_theme
 g0
 
+# Build layer for what countries SHOULD have data
+data_sf_wfort <- data_sf %>% 
+  filter(!is.na(fort_status))
+
 # Plot data
 g1 <- ggplot(data_sf, aes(fill=daily_intake_g)) +
   facet_wrap(~food_vehicle, ncol=1, strip.position="left") +
+  geom_sf(data=data_sf_wfort, fill="grey80", color=NA, inherit.aes = F) +
   geom_sf(color="grey30", lwd=0.1) +
   # Legend
-  scale_fill_gradientn(name="Daily intake (g)", na.value = "white",
-                       colors=RColorBrewer::brewer.pal(9, "Spectral") %>% rev()) +
+  scale_fill_gradientn(name="Daily intake (g)", 
+                       na.value = NA,
+                       colors=RColorBrewer::brewer.pal(9, "Spectral")) + # %>% rev()) +
   guides(fill = guide_colorbar(ticks.colour = "black", frame.colour = "black", frame.linewidth = 0.2)) +
   # Crop
   coord_sf(ylim=c(-52, 78)) +
@@ -170,11 +178,13 @@ g1
 # Plot data
 g2 <- ggplot(data_sf, aes(fill=processed_prop)) +
   facet_wrap(~food_vehicle, ncol=1) +
+  geom_sf(data=data_sf_wfort, fill="grey80", color=NA, inherit.aes = F) +
   geom_sf(color="grey30", lwd=0.1) +
   # Legend
-  scale_fill_gradientn(name="Industrially processed (%)", na.value = "white",
+  scale_fill_gradientn(name="Industrially processed (%)", 
                        labels=scales::percent_format(),
-                       colors=RColorBrewer::brewer.pal(9, "Spectral") %>% rev()) +
+                       colors=RColorBrewer::brewer.pal(9, "Spectral"), # %>% rev()) +
+                       na.value=NA) +
   guides(fill = guide_colorbar(ticks.colour = "black", frame.colour = "black", frame.linewidth = 0.2)) +
   # Crop
   coord_sf(ylim=c(-52, 78)) +
@@ -187,11 +197,13 @@ g2
 # Plot data
 g3 <- ggplot(data_sf, aes(fill=fortified_prop)) +
   facet_wrap(~food_vehicle, ncol=1) +
+  geom_sf(data=data_sf_wfort, fill="grey80", color=NA, inherit.aes = F) +
   geom_sf(color="grey30", lwd=0.1) +
   # Legend
-  scale_fill_gradientn(name="Fortification compiance (%)", na.value = "white",
+  scale_fill_gradientn(name="Fortification compiance (%)", 
+                       na.value = NA,
                        labels=scales::percent_format(),
-                       colors=RColorBrewer::brewer.pal(9, "Spectral") %>% rev()) +
+                       colors=RColorBrewer::brewer.pal(9, "Spectral")) + # %>% rev()) +
   guides(fill = guide_colorbar(ticks.colour = "black", frame.colour = "black", frame.linewidth = 0.2)) +
   # Crop
   coord_sf(ylim=c(-52, 78)) +
@@ -208,7 +220,9 @@ g <- gridExtra::grid.arrange(g0, g1, g2, g3,
 g
 
 # Export plot
-ggsave(g, filename=file.path(plotdir, "FigSX_gfdx_data.png"), 
+# ggsave(g, filename=file.path(plotdir, "FigSX_gfdx_data.png"), 
+#        width=6.5, height=3.8, units="in", dpi=600)
+ggsave(g, filename=file.path(plotdir, "FigSX_gfdx_data_rev.png"), 
        width=6.5, height=3.8, units="in", dpi=600)
 
 
@@ -346,7 +360,8 @@ g <- ggplot(nutrients, aes(y=food_vehicle, x=standard_mg_kg, fill=food_vehicle))
   lims(x=c(0,NA)) +
   # Theme
   theme_bw() + base_theme +
-  theme(legend.position = "none")
+  theme(legend.position = "none",
+        axis.text.x = element_text(angle = 45, vjust = 1, hjust=1))
 g
 
 # Export figure

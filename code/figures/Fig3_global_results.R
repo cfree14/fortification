@@ -206,7 +206,9 @@ g1a <- ggplot(gstats1, aes(x=reorder(scenario, desc(ndeficient)),
   # Legend
   scale_fill_manual(name="", values=c("red", "grey40", "white", "lightblue", "deepskyblue3", "navy")) +
   # Theme
-  theme_bw() + inset_theme
+  theme_bw() + inset_theme +
+  theme(panel.background = element_rect(fill='transparent'), #transparent panel bg
+        plot.background = element_rect(fill='transparent', color=NA))
 g1a 
 
 # Order
@@ -227,7 +229,7 @@ g2 <- ggplot(gstats %>% filter(scenario!="No fortification") ,
   scale_fill_manual(name="", values=c("red", "grey40", "white", "lightblue", "deepskyblue3", "navy"), drop=F) +
   # Theme
   theme_bw() + my_theme +
-  theme(legend.position = "none")
+  theme(legend.position = "none") 
 g2
 
 # Totals
