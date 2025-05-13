@@ -18,7 +18,7 @@ datadir <- "data/gfdx/processed"
 tabledir <- "tables"
 
 # Read data
-data <- readRDS(file.path(outdir, "fortification_scenario_output.Rds"))
+data <- readRDS(file.path(outdir, "fortification_scenario_output_final.Rds"))
 
 
 # Country-level results
@@ -301,6 +301,8 @@ g <- gridExtra::grid.arrange(g1, g1a,
 
 # Export
 ggsave(g, filename=file.path(plotdir, "Fig3_global_results.png"), 
+       width=6.5, height=7, units="in", dpi=600)
+ggsave(g, filename=file.path(plotdir, "Fig3_global_results.pdf"), 
        width=6.5, height=7, units="in", dpi=600)
 
 

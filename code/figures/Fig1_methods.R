@@ -199,4 +199,6 @@ g
 # Export
 ggsave(g, filename=file.path(plotdir, "Fig1_methods_illustation.png"), 
        width=4.5, height=3.5, units="in", dpi=600)
+ggsave(g, filename=file.path(plotdir, "Fig1_methods_illustation.pdf"), 
+       width=4.5, height=3.5, units="in", dpi=600)
 

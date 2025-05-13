@@ -208,7 +208,8 @@ g <- gridExtra::grid.arrange(g1, g2, g3, g4, layout_matrix=layout_matrix)
 # Export
 ggsave(g, filename=file.path(plotdir, "Fig2_gfdx_data.png"), 
        width=6.5, height=6, units="in", dpi=600)
-  
+ggsave(g, filename=file.path(plotdir, "Fig2_gfdx_data.pdf"), 
+       width=6.5, height=6, units="in", dpi=600)
   
   
 

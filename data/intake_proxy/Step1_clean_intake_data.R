@@ -18,8 +18,6 @@ plotdir <- "figures"
 data_orig <- readxl::read_excel(file.path(indir, "food_proxy_FBS_age_sex_040124.xlsx"))
 
 
-
-
 # Build country key
 ################################################################################
 
@@ -230,7 +228,7 @@ g <- gridExtra::grid.arrange(g1, g2, ncol=1, heights=c(0.55, 0.45))
 
 
 # Export plot
-ggsave(g, filename=file.path(plotdir, "FigSX_calorie_intake_by_country_sex_age.png"), 
+ggsave(g, filename=file.path(plotdir, "FigS12_calorie_intake_by_country_sex_age.png"), 
        width=6.5, height=5, units="in", dpi=600)
 
 

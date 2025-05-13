@@ -17,7 +17,7 @@ gisdir <- "data/world/processed"
 plotdir <- "figures"
 
 # Read data
-data_orig <- readRDS(file.path(outdir, "fortification_scenario_output.Rds"))
+data_orig <- readRDS(file.path(outdir, "fortification_scenario_output_final.Rds"))
 
 # Read world data
 world_lg <- readRDS(file=file.path(gisdir, "world_large.Rds"))
