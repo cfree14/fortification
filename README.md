@@ -14,10 +14,10 @@ The repository is organized using the following structure:
 * output........... folder containing output generated in the analysis
 * tables........... folder containing tables for the manuscript
 
-The data files containing the final XXXXX are located here:
+The data files containing the final output (i.e., prevalence of inadequate intakes by country-sex-age group under different fortification scenarios) are located here:
 
-* output/XXXXX.csv (for anyone)
-* output/XXXXX.Rds (for R progammers)
+* output/fortification_scenario_output_final.csv (for anyone)
+* output/fortification_scenario_output_final.Rds (for R progammers)
 
 Please email Valerie Friesen (vfriesen@gainhealth.org) if you have any questions about the paper and Chris Free (cfree14@gmail.com) if you have any questions about the data, code, and/or repository.
 
