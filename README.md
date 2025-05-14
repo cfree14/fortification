@@ -21,6 +21,19 @@ The data files containing the final output (i.e., prevalence of inadequate intak
 
 Please email Valerie Friesen (vfriesen@gainhealth.org) if you have any questions about the paper and Chris Free (cfree14@gmail.com) if you have any questions about the data, code, and/or repository.
 
+## Analysis
+
+The analysis is performed by the following scripts in the code folder:
+
+* **Step1_clean_data.R:** This script cleans the GFDx data.
+* **Step2_impute_data_sens.R:** This scripts imputes missing values within the GFDx data.
+* **Step3_merge_data.R:** This script merges the intake distributions from Passarelli et al. (2024) and the GFDx data and sets up the fortification scenarios.
+* **Step4_calculate_inadequacies.R:** This script derives the prevalence of inadeqauete intakes under the fortification scenarios.
+* **Step4a_calculate_inadequacies_sens_calcium.R:** This script derives the prevalence of inadeqauete intakes under the fortification scenarios when excluding fortified calcium from wheat flour.
+* **Step4b_calculate_inadequacies_sens_imputation.R:** This script derives the prevalence of inadeqauete intakes under the fortification scenarios when ignoring proxy values in the GFDx imputation.
+* **Step5_calculate_inadequacies_iron.R:** This script rederives the prevalence of inadeqauete intakes **for iron** under the fortification scenarios to use a log-normal requirement distribution. Although we only use the log-normal requirement distirbution for reproductive age women, this does this for all age groups and the relevant groups are parsed in the next step.
+* **Step6_merge_inadequate_intakes.R:** This script replaces the iron distributions from Step 4 with the appropriate iron distributions derived in Step 5.
+
 ## Related resources
 
 The paper leans heaviliy on data and code developed by Passarelli et al. (2021), Passarelli et al. (2024), and the associated nutriR R package. Links to these papers, the nutriR package, and the nutriR package vignette are provided below:
