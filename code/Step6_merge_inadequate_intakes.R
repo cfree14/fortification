@@ -46,5 +46,6 @@ nrow(data) == nrow(data_all)
 
 # Export data
 saveRDS(data, file=file.path(outdir, "fortification_scenario_output_final.Rds"))
+write.csv(data, file=file.path(outdir, "fortification_scenario_output_final.csv"), row.names=F)
 
 
