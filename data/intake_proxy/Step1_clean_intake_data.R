@@ -176,6 +176,7 @@ stats <- data %>%
   left_join(cntry_key %>% select(iso3, region), by="iso3")
 
 saveRDS(stats, file=file.path(outdir, "intake_data_use.Rds"))
+write.csv(stats, file=file.path(outdir, "intake_data_use.csv"), row.names=F)
 
 
 

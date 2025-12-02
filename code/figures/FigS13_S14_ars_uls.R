@@ -24,6 +24,9 @@ data_orig <- readRDS(file.path(outdir, "fortification_scenario_output.Rds"))
 # Build data
 ################################################################################
 
+# Which have different ARs for men and womens
+nutr_w_diff_ars <- c("Niacin", "Thiamin", "Vitamin A", "Vitamin B6")
+
 # Build data
 data <- data_orig %>% 
   # Build data
@@ -47,7 +50,11 @@ data_long <- data %>%
   # Format NRV
   mutate(nrv=recode(nrv,
                     "ar"="Average requirement",
-                    "ul"="Upper limit"))
+                    "ul"="Upper limit")) %>% 
+  # Change sex for ones that are same
+  mutate(sex=ifelse(!(nutrient %in% nutr_w_diff_ars) | nrv=="Upper limit", "Both sexes", sex)) %>% 
+  # Make unique
+  unique()
 
 
 # Plot data
@@ -80,8 +87,9 @@ g <- ggplot(data_long, aes(x=age_group, y=value, color=sex, linetype=nrv, group=
   lims(y=c(0, NA)) +
   # Labels
   labs(x="Age group (yrs)", y="Nutrient reference value (NRV)") +
+  scale_y_continuous(trans="log10") +
   # Legend
-  scale_color_discrete(name="Sex") +
+  scale_color_manual(name="Sex", values=c("purple", "red", "blue")) +
   scale_linetype_discrete(name="NRV") +
   # Theme
   theme_bw() + my_theme
@@ -89,7 +97,7 @@ g
 
 # Export
 ggsave(g, filename=file.path(plotdir, "FigS13_ars_uls_most.png"), 
-       width=6.5, height=5, units="in", dpi=600)
+       width=6.5, height=5.5, units="in", dpi=600)
 
 
 
