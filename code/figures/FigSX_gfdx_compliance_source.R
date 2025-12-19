@@ -42,15 +42,44 @@ data <- data_orig %>%
   mutate(fortified_prop_type=factor(fortified_prop_type,
                                levels=type_levels))
 
+
 # Plot data
-ggplot(data, aes(y=food_vehicle, x=perc, fill=fortified_prop_type)) +
+################################################################################
+
+# Theme
+my_theme <-  theme(axis.text=element_text(size=7),
+                   axis.title=element_text(size=8),
+                   legend.text=element_text(size=6),
+                   legend.title=element_text(size=7),
+                   strip.text=element_text(size=7),
+                   plot.title=element_text(size=8),
+                   # Gridlines
+                   panel.grid.major = element_blank(), 
+                   panel.grid.minor = element_blank(),
+                   panel.background = element_blank(), 
+                   axis.line = element_line(colour = "black"),
+                   # Legend
+                   legend.key.size = unit(0.3, "cm"),
+                   legend.key = element_rect(fill = NA, color=NA),
+                   legend.background = element_rect(fill=alpha('blue', 0)))
+
+# Plot data
+g <- ggplot(data, aes(y=food_vehicle, x=perc, fill=fortified_prop_type)) +
   facet_wrap(~fort_status) +
-  geom_bar(stat="identity") +
+  geom_bar(stat="identity", position = position_fill(reverse = TRUE)) +
   # Labels
   labs(x="Percent of programs", y="") +
+  scale_x_continuous(labels=scales::percent_format()) +
   # Legend
   scale_fill_ordinal(name="% compliance source") +
-  sc
   # Theme
-  theme_bw()
+  theme_bw() + my_theme +
+  theme(legend.position="bottom", 
+        legend.direction = "vertical",
+        legend.margin = margin(t=-5))
+g
+
+# Export plot
+ggsave(g, filename=file.path(plotdir, "FigSX_gfdx_compliance_source.png"), 
+       width=6.5, height=3.5, units="in", dpi=600)
 
