@@ -162,9 +162,13 @@ my_theme <-  theme(axis.text=element_text(size=8),
                    legend.background = element_rect(fill="white"))
 
 # Plot
-g1 <- ggplot(gstats, aes(y=factor(nutrient, gstats_order$nutrient), x=p_over_ul, fill=scenario)) +
+legend_order <- levels(gstats$scenario)  # or a character vector you define
+g1 <- ggplot(gstats, aes(y=factor(nutrient, gstats_order$nutrient), 
+                         x=p_over_ul,
+                         fill=scenario)) +
   # Data
-  geom_bar(stat="identity", position="dodge") +
+  # geom_bar(stat="identity", position="dodge") + # original
+  geom_bar(stat="identity", position=position_dodge(reverse=T)) + # response to reviewer
   # Markers
   geom_hline(yintercept=1:7+0.5, linetype="dashed", color="grey70", size=0.3) +
   # Labels
@@ -181,7 +185,7 @@ g1
 # Plot
 g2 <- ggplot(cstats, aes(y=factor(nutrient, gstats_order$nutrient), x=p_over_ul, fill=scenario)) +
   # Data
-  geom_boxplot(outlier.shape = 21, outlier.stroke = 0.1, size=0.2) +
+  geom_boxplot(outlier.shape = 21, outlier.stroke = 0.1, size=0.2,  position=position_dodge(reverse=T)) +
   # Markers
   geom_hline(yintercept=1:7+0.5, linetype="dashed", color="grey70", size=0.3) +
   # Labels
