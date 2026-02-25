@@ -181,6 +181,8 @@ g <- gridExtra::grid.arrange(g1, g2, ncol=2)
 # Export
 ggsave(g, filename=file.path(plotdir, "FigS15_intake_inadequacy_maps_avg.png"),
        width=4.5, height=6.5, units="in", dpi=600) # 6 in when double line legend
+ggsave(g, filename=file.path(plotdir, "FigS15_intake_inadequacy_maps_avg.pdf"),
+       width=4.5, height=6.5, units="in", dpi=600) # 6 in when double line legend
 
 
 
