@@ -15,8 +15,8 @@ plotdir <- "figures"
 datadir <- "data/costs"
 
 # Read data
-data1_orig <- readxl::read_excel(file.path(datadir, "cost_estimates.xlsx"), sheet=1) 
-data2_orig <- readxl::read_excel(file.path(datadir, "cost_estimates.xlsx"), sheet=2)
+data1_orig <- readxl::read_excel(file.path(datadir, "cost_estimates_new.xlsx"), sheet=1) 
+data2_orig <- readxl::read_excel(file.path(datadir, "cost_estimates_new.xlsx"), sheet=2)
 
 # Scenarios
 scenarios <- c("Current fortification", "Improved compliance", "Aligned standards", "Aligned and improved", "Aligned, improved, and expanded")
@@ -61,10 +61,10 @@ base_theme <- theme(axis.text=element_text(size=6),
 # Panel A
 g1 <- ggplot(data1, aes(y=scenario, x=cost_usd2021_billions)) +
   geom_bar(stat="identity") +
-  geom_text(mapping=aes(label=cost_usd2021_billions), hjust=0, nudge_x = 0.2, size=2) +
+  geom_text(mapping=aes(label=round(cost_usd2021_billions,2)), hjust=0, nudge_x = 0.2, size=2) +
   # Labels
   labs(x="Fortification costs\n(billions of 2021 USD)", y="", tag="A") +
-  lims(x=c(0, 25)) +
+  lims(x=c(0, 10)) +
   # Theme
   theme_bw() + base_theme
 g1
