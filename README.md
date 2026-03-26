@@ -1,8 +1,8 @@
 # Impact of large-scale food fortification programs on micronutrient inadequacies
 
-This GitHub repository contains the data and code for the following paper nearing submission:
+This GitHub repository contains the data and code for the following paper:
 
-* Friesen VM, Free CM, Adams KP, Bai Y, Costlow L, Dewey K,  Masters WA, Mbuya MNN,  Nordhagen S, Vasta F, Beal T. Impact of large-scale food fortification programs on micronutrient inadequacies and their implementation costs: a modelling analysis. *Near submission* to _The Lancet_.
+* Friesen VM**, Free CM**, Adams KP, Bai Y, Costlow L, Dewey KG, Masters W, Mbuya MNN, Nordhagen S, Vasta FC, Beal T (2026) Impact of large-scale food fortification programmes on micronutrient inadequacies and their implementation costs: a modelling analysis. *The Lancet Global Health*: 10.1016/S2214-109X(26)00023-9.
 
 ## Repository structure
 
